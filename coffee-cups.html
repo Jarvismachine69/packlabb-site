@@ -252,15 +252,15 @@
       <div class="pricing-table" style="margin-bottom:36px;">
         <table>
           <thead>
-            <tr>
-              <th>Quantity</th>
-              <th class="hl">Printed (ex GST)</th>
-              <th>Plain (ex GST)</th>
-            </tr>
+            <tr><th>Quantity</th><th class="hl">Printed (ex GST)</th><th>Plain (ex GST)</th></tr>
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
             <tr><td>1,000</td><td class="lime">$168.00</td><td>$66.00</td></tr>
+            <tr><td>2,000</td><td class="lime">$320.00</td><td>$126.00</td></tr>
+            <tr><td>3,000</td><td class="lime">$468.00</td><td>$183.00</td></tr>
+            <tr><td>5,000</td><td class="lime">$750.00</td><td>$295.00</td></tr>
+            <tr><td>10,000</td><td class="lime">$1,400.00</td><td>$560.00</td></tr>
           </tbody>
         </table>
       </div>
@@ -270,15 +270,15 @@
       <div class="pricing-table" style="margin-bottom:36px;">
         <table>
           <thead>
-            <tr>
-              <th>Quantity</th>
-              <th class="hl">Printed (ex GST)</th>
-              <th>Plain (ex GST)</th>
-            </tr>
+            <tr><th>Quantity</th><th class="hl">Printed (ex GST)</th><th>Plain (ex GST)</th></tr>
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
             <tr><td>1,000</td><td class="lime">$197.00</td><td>$95.00</td></tr>
+            <tr><td>2,000</td><td class="lime">$378.00</td><td>$182.00</td></tr>
+            <tr><td>3,000</td><td class="lime">$549.00</td><td>$264.00</td></tr>
+            <tr><td>5,000</td><td class="lime">$880.00</td><td>$425.00</td></tr>
+            <tr><td>10,000</td><td class="lime">$1,650.00</td><td>$800.00</td></tr>
           </tbody>
         </table>
       </div>
@@ -288,15 +288,15 @@
       <div class="pricing-table" style="margin-bottom:24px;">
         <table>
           <thead>
-            <tr>
-              <th>Quantity</th>
-              <th class="hl">Printed (ex GST)</th>
-              <th>Plain (ex GST)</th>
-            </tr>
+            <tr><th>Quantity</th><th class="hl">Printed (ex GST)</th><th>Plain (ex GST)</th></tr>
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
             <tr><td>1,000</td><td class="lime">$197.00</td><td>$95.00</td></tr>
+            <tr><td>2,000</td><td class="lime">$378.00</td><td>$182.00</td></tr>
+            <tr><td>3,000</td><td class="lime">$549.00</td><td>$264.00</td></tr>
+            <tr><td>5,000</td><td class="lime">$880.00</td><td>$425.00</td></tr>
+            <tr><td>10,000</td><td class="lime">$1,650.00</td><td>$800.00</td></tr>
           </tbody>
         </table>
       </div>
@@ -349,12 +349,12 @@
 <script>
 // -- PRICING DATA --
 var PRICING = {
-  '8oz':  { printed: { 1: 15.00, 1000: 168.00 }, plain: { 1: 15.00, 1000: 66.00 } },
-  '12oz': { printed: { 1: 15.00, 1000: 197.00 }, plain: { 1: 15.00, 1000: 95.00 } },
-  '16oz': { printed: { 1: 15.00, 1000: 197.00 }, plain: { 1: 15.00, 1000: 95.00 } }
+  '8oz':  { printed: { 1: 15.00, 1000: 168.00, 2000: 320.00, 3000: 468.00, 5000: 750.00, 10000: 1400.00 }, plain: { 1: 15.00, 1000: 66.00, 2000: 126.00, 3000: 183.00, 5000: 295.00, 10000: 560.00 } },
+  '12oz': { printed: { 1: 15.00, 1000: 197.00, 2000: 378.00, 3000: 549.00, 5000: 880.00, 10000: 1650.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 182.00, 3000: 264.00, 5000: 425.00, 10000: 800.00 } },
+  '16oz': { printed: { 1: 15.00, 1000: 197.00, 2000: 378.00, 3000: 549.00, 5000: 880.00, 10000: 1650.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 182.00, 3000: 264.00, 5000: 425.00, 10000: 800.00 } }
 };
 
-var QTY_OPTIONS = [1, 1000];
+var QTY_OPTIONS = [1, 1000, 2000, 3000, 5000, 10000];
 
 var state = { size: '8oz', type: 'printed', qty: 1 };
 
