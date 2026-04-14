@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Can Sealing Machine — Packlabb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .product-hero { display:grid; grid-template-columns:1fr 1fr; gap:64px; padding:72px 48px; max-width:1140px; margin:0 auto; align-items:start; }
+    .product-hero-img { background:linear-gradient(135deg,#f0f0eb,#222); border-radius:16px; height:460px; display:flex; align-items:center; justify-content:center; font-size:120px; position:sticky; top:90px; }
+    .product-title { font-size:clamp(28px,4vw,44px); font-weight:900; letter-spacing:-1px; margin-bottom:12px; }
+    .breadcrumb { font-size:13px; color:var(--muted); margin-bottom:20px; }
+    .breadcrumb a { color:var(--muted); } .breadcrumb a:hover { color:var(--white); }
+    .spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; }
+    .spec-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; }
+    .spec-card .label { font-size:12px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+    .spec-card .value { font-size:18px; font-weight:700; }
+    .roi-results { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:36px; }
+    .roi-number { font-size:56px; font-weight:900; color:var(--lime); letter-spacing:-2px; line-height:1; margin-bottom:6px; }
+    .roi-row { display:flex; justify-content:space-between; font-size:14px; padding:10px 0; border-bottom:1px solid var(--border); }
+    .roi-row:last-child { border-bottom:none; }
+    .roi-row .val { font-weight:700; }
+    .add-cart-btn { width:100%; background:var(--lime); color:var(--black); font-size:17px; font-weight:800; padding:18px; border-radius:10px; border:none; cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s; margin-bottom:12px; }
+    .add-cart-btn:hover { opacity:0.87; }
+    #cart-toast { position:fixed; bottom:32px; right:32px; background:var(--lime); color:var(--black); padding:16px 24px; border-radius:10px; font-size:15px; font-weight:700; box-shadow:0 8px 32px rgba(0,0,0,.4); display:none; z-index:999; align-items:center; gap:12px; }
+    @media(max-width:900px){ .product-hero{grid-template-columns:1fr;padding:32px 20px;gap:32px;} .product-hero-img{height:260px;font-size:80px;position:static;} .spec-grid{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">pack<span>labb</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
+    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
+    <li><a href="machine.html" class="active">Sealing Machine</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="printed-cans.html#order" class="nav-cta">Order Cans</a>
+</nav>
+
+<div class="trust-bar">
+  <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
+  <span>⚡ 2–3 Day Turnaround</span>
+  <span>📦 No Minimum Order</span>
+  <span>💰 Sample Cost Off Your Next Order at 200+</span>
+  <span>🚚 Free Express Shipping over </span>
+</div>
+
+<div class="product-hero">
+  <div>
+    <div class="product-hero-img" style="padding:0; overflow:hidden;"><img src="hero-machine.png" alt="Can Sealing Machine" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+  </div>
+  <div>
+    <div class="breadcrumb"><a href="products.html">Products</a> / Sealing Machine</div>
+    <h1 class="product-title">Can Sealing Machine</h1>
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:14px; color:var(--muted);">
+      <span style="color:var(--lime); letter-spacing:2px;">★★★★★</span>
+      <span>4.8 · 31 reviews</span>
+    </div>
+    <p style="font-size:15px; color:var(--light); margin-bottom:28px; line-height:1.65;">Commercial-grade can sealing machine for cafés, bars, venues and events. Seals any 330ml or 500ml PET can in under 5 seconds. Same specs as the big brands — at 20% less.</p>
+
+    <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:10px; padding:16px 20px; margin-bottom:28px; font-size:14px; color:#3B82F6; display:flex; align-items:center; gap:10px;">
+      <span>💰</span>
+      <span><strong>Save $300+ vs CanGo:</strong> Same machine, 20% cheaper. CanGo charges $1,536–$1,673 for equivalent models.</span>
+    </div>
+
+    <div class="price-display" style="margin:0 0 24px; padding:20px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div style="font-size:44px; font-weight:900; color:var(--lime); letter-spacing:-1.5px; line-height:1;">$1,229</div>
+      <div style="font-size:13px; color:var(--muted); margin-top:4px;">ex GST · Free shipping included · 12 month warranty</div>
+    </div>
+
+    <ul class="product-features" style="margin-bottom:28px;">
+      <li>Seals 330ml and 500ml PET cans</li>
+      <li>Under 5 seconds per can</li>
+      <li>Compact bench-top design</li>
+      <li>Standard power outlet — no special wiring</li>
+      <li>Compatible with all Packlabb PET cans</li>
+      <li>12 month warranty</li>
+      <li>Australian support team</li>
+      <li>Free express shipping included</li>
+    </ul>
+
+    <button class="add-cart-btn" onclick="addMachineToCart()">Add to Cart — $1,229 ex GST →</button>
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-size:12px; color:var(--muted);">
+      <span>🔒 Secure checkout</span>
+      <span>✓ Free shipping</span>
+      <span>✓ 12 month warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPECS -->
+<section style="background:#EFEFEA;">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Built for commercial use</h2>
+    <div class="spec-grid">
+      <div class="spec-card"><div class="label">Compatible cans</div><div class="value">330ml, 500ml PET</div></div>
+      <div class="spec-card"><div class="label">Seal speed</div><div class="value">Under 5 seconds</div></div>
+      <div class="spec-card"><div class="label">Power</div><div class="value">Standard outlet (220V)</div></div>
+      <div class="spec-card"><div class="label">Warranty</div><div class="value">12 months</div></div>
+      <div class="spec-card"><div class="label">Shipping</div><div class="value">Free express</div></div>
+      <div class="spec-card"><div class="label">Support</div><div class="value">Australian team</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section>
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div class="section-label">ROI Calculator</div>
+        <h2 class="section-title">How quickly will it pay for itself?</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Adjust the sliders to match your venue. Most cafés cover the machine cost within 30–60 days.</p>
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <div>
+            <label style="display:flex; justify-content:space-between; font-size:14px; font-weight:600; margin-bottom:10px;">Drinks sealed per day <span style="color:var(--lime)" id="dVal">40</span></label>
+            <input type="range" min="5" max="200" value="40" id="dSlider" oninput="calcROI()"/>
+          </div>
+          <div>
+            <label style="display:flex; justify-content:space-between; font-size:14px; font-weight:600; margin-bottom:10px;">Sell price per drink <span style="color:var(--lime)">$<span id="pVal">8.00</span></span></label>
+            <input type="range" min="4" max="15" value="8" step="0.5" id="pSlider" oninput="calcROI()"/>
+          </div>
+          <div>
+            <label style="display:flex; justify-content:space-between; font-size:14px; font-weight:600; margin-bottom:10px;">Ingredient cost per drink <span style="color:var(--lime)">$<span id="cVal">2.00</span></span></label>
+            <input type="range" min="0.5" max="6" value="2" step="0.5" id="cSlider" oninput="calcROI()"/>
+          </div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div style="font-size:12px; font-weight:700; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:20px;">Your estimated return</div>
+        <div class="roi-number" id="rMonthly">$0</div>
+        <div style="font-size:13px; color:var(--muted); margin-bottom:28px;">monthly profit</div>
+        <div>
+          <div class="roi-row"><span>Daily revenue</span><span class="val" id="rDaily">$0</span></div>
+          <div class="roi-row"><span>Can cost (per drink)</span><span class="val">$0.69</span></div>
+          <div class="roi-row"><span>Profit per drink</span><span class="val" id="rPerDrink">$0</span></div>
+          <div class="roi-row"><span>Machine pays for itself in</span><span class="val" id="rPayback" style="color:var(--lime)">0 days</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE PROMO -->
+<section style="background:#EFEFEA;">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,#eff6ff,#e0eefe); border:1px solid #93c5fd; border-radius:16px; padding:48px 52px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <div>
+        <div class="section-label">Bundle Deal</div>
+        <h2 class="section-title" style="margin-bottom:12px;">Machine + 500 custom printed cans</h2>
+        <p style="font-size:16px; color:var(--light); max-width:480px;">Get set up and sealed in one order. Machine delivered with your first run of custom printed cans — ready to serve from day one.</p>
+      </div>
+      <div style="text-align:center; flex-shrink:0;">
+        <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Bundle price</div>
+        <div style="font-size:40px; font-weight:900; color:var(--lime); letter-spacing:-1px; margin-bottom:16px;">$1,599 <span style="font-size:14px; color:var(--muted); font-weight:400;">ex GST</span></div>
+        <a href="contact.html" class="btn-primary">Get the Bundle →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="cart-toast" style="position:fixed;bottom:32px;right:32px;background:var(--lime);color:var(--black);padding:16px 24px;border-radius:10px;font-size:15px;font-weight:700;box-shadow:0 8px 32px rgba(0,0,0,.4);display:none;z-index:999;align-items:center;gap:12px;">
+  <span>🛒</span><span id="toast-msg">Added to cart!</span>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">pack<span>labb</span></div>
+  <ul class="footer-links">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
+    <li><a href="machine.html">Sealing Machine</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Packlabb. Printed in Australia</div>
+</footer>
+
+<script>
+function calcROI(){
+  var d=parseInt(document.getElementById('dSlider').value);
+  var p=parseFloat(document.getElementById('pSlider').value);
+  var c=parseFloat(document.getElementById('cSlider').value);
+  var can=0.69;
+  document.getElementById('dVal').textContent=d;
+  document.getElementById('pVal').textContent=p.toFixed(2);
+  document.getElementById('cVal').textContent=c.toFixed(2);
+  var ppd=p-c-can;
+  var monthly=ppd*d*26;
+  var daily=d*p;
+  var payback=Math.ceil(1229/(ppd*d));
+  document.getElementById('rMonthly').textContent='$'+Math.round(monthly).toLocaleString();
+  document.getElementById('rDaily').textContent='$'+Math.round(daily).toLocaleString();
+  document.getElementById('rPerDrink').textContent='$'+ppd.toFixed(2);
+  document.getElementById('rPayback').textContent=payback>0?payback+' days':'Already paid off';
+}
+calcROI();
+
+function addMachineToCart(){
+  var t=document.getElementById('cart-toast');
+  document.getElementById('toast-msg').textContent='✓ Sealing Machine — $1,229 added to cart';
+  t.style.display='flex';
+  setTimeout(function(){t.style.display='none';},3500);
+}
+</script>
+</body>
+</html>
+
+
+
+
+

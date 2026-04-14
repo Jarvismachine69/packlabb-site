@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works  -  Packlabb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero { padding:72px 48px 48px; text-align:center; max-width:700px; margin:0 auto; }
+    .page-hero h1 { font-size:clamp(36px,5vw,60px); font-weight:900; letter-spacing:-1.5px; margin-bottom:16px; }
+    .page-hero h1 em { font-style:normal; color:var(--lime); }
+    .page-hero p { font-size:18px; color:var(--light); line-height:1.6; }
+    .big-step { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:56px 0; border-bottom:1px solid var(--border); }
+    .big-step:last-child { border-bottom:none; }
+    .big-step.reverse { direction:rtl; }
+    .big-step.reverse > * { direction:ltr; }
+    .step-visual { background:linear-gradient(135deg,#f0f0eb,#1f1f1f); border-radius:16px; height:300px; display:flex; align-items:center; justify-content:center; font-size:100px; border:1px solid var(--border); }
+    .step-num-big { font-size:80px; font-weight:900; color:#1E1E1E; line-height:1; margin-bottom:8px; }
+    .step-tag { display:inline-block; background:var(--lime); color:var(--black); font-size:11px; font-weight:800; padding:4px 12px; border-radius:4px; letter-spacing:1px; text-transform:uppercase; margin-bottom:16px; }
+    .step-title { font-size:28px; font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+    .step-desc { font-size:16px; color:var(--light); line-height:1.7; margin-bottom:20px; }
+    .step-detail { font-size:14px; color:var(--muted); line-height:1.7; }
+    .faq-list { margin-top:48px; }
+    @media(max-width:900px){ .page-hero{padding:48px 20px 40px;} .big-step{grid-template-columns:1fr;gap:28px;padding:40px 0;} .big-step.reverse{direction:ltr;} }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">pack<span>labb</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
+    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
+    <li><a href="machine.html">Sealing Machine</a></li>
+    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="printed-cans.html#order" class="nav-cta">Order Now</a>
+</nav>
+
+<div class="trust-bar">
+  <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
+  <span>⚡ 2-3 Day Turnaround</span>
+  <span>📦 No Minimum Order</span>
+  <span>💰 Sample Cost Off Your Next Order at 200+</span>
+  <span>🚚 Free Express Shipping over </span>
+</div>
+
+<div class="page-hero">
+  <div class="section-label">The Process</div>
+  <h1>Simple. Fast.<br><em>Done in days.</em></h1>
+  <p>From your artwork to your hands in 2-3 business days. Here's exactly how it works.</p>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="big-step">
+      <div class="step-visual" style="padding:0; overflow:hidden;"><img src="step-01.png" alt="Choose your size and quantity" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+      <div>
+        <div class="step-num-big">01</div>
+        <div class="step-tag">Place your order</div>
+        <div class="step-title">Choose your size, quantity and type</div>
+        <p class="step-desc">Pick 330ml or 500ml, printed or unprinted, and how many you need - from 1 sample to 10,000+. Price updates instantly based on your quantity.</p>
+        <p class="step-detail">Not sure what size or quantity? Start with a sample. Order 1 can for $15.00, get it in 2-3 days, and make your decision from there. We'll take the \.50 off your next order when you place a full order of 200+.</p>
+      </div>
+    </div>
+
+    <div class="big-step reverse">
+      <div class="step-visual" style="padding:0; overflow:hidden;"><img src="step-02.png" alt="Upload your artwork" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+      <div>
+        <div class="step-num-big">02</div>
+        <div class="step-tag">Upload your artwork</div>
+        <div class="step-title">Send us your logo or design file</div>
+        <p class="step-desc">Upload your artwork at checkout or after ordering - we'll email you before anything is printed. We accept AI, PDF and high-resolution PNG files.</p>
+        <p class="step-detail">Our team reviews every file before it goes to print. If there's a resolution issue, a colour problem, or anything that might affect the print quality, we'll tell you before it's a problem. You'll never be surprised by the result.</p>
+      </div>
+    </div>
+
+    <div class="big-step">
+      <div class="step-visual" style="padding:0; overflow:hidden;"><img src="step-03.png" alt="Approve your proof" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+      <div>
+        <div class="step-num-big">03</div>
+        <div class="step-tag">Approve your proof</div>
+        <div class="step-title">See it before we print a single can</div>
+        <p class="step-desc">We send a free digital proof showing exactly how your logo will look on the can. You approve it - then and only then do we print.</p>
+        <p class="step-detail">This step protects you completely. If you're not happy with the proof, we'll fix it. No can gets printed without your sign-off. Most proofs are turned around within a few hours of receiving your artwork.</p>
+      </div>
+    </div>
+
+    <div class="big-step reverse">
+      <div class="step-visual" style="padding:0; overflow:hidden;"><img src="step-04.png" alt="Printed in Australia" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+      <div>
+        <div class="step-num-big">04</div>
+        <div class="step-tag">Printed in Australia</div>
+        <div class="step-title">Your cans are printed in our Australian facility</div>
+        <p class="step-desc">This is why we're fast. While other suppliers wait 2-6 weeks for cans to arrive from overseas, we print in Australia. Once your proof is approved, your order goes straight to print.</p>
+        <p class="step-detail">Your logo is printed directly on the front face of the can - not a full wrap. Clean, minimal and premium. The rest of the can remains clear so your drink is visible inside.</p>
+      </div>
+    </div>
+
+    <div class="big-step">
+      <div class="step-visual" style="padding:0; overflow:hidden;"><img src="step-05.png" alt="Delivered to your door" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /></div>
+      <div>
+        <div class="step-num-big">05</div>
+        <div class="step-tag">Delivered to your door</div>
+        <div class="step-title">In your hands within days</div>
+        <p class="step-desc">Orders are dispatched the same day if placed before 2pm. Most customers receive their cans within 2-3 business days of placing the order.</p>
+        <p class="step-detail">Free express shipping on orders over $100. We ship Australia-wide, including Western Australia - see the WA note in the FAQ below.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARTWORK SPECS -->
+<section style="background:#EFEFEA;">
+  <div class="container">
+    <div class="section-label">Artwork Guidelines</div>
+    <h2 class="section-title">What to send us</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px;">
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:28px;">
+        <div style="font-size:32px; margin-bottom:12px;">🎨</div>
+        <h3 style="font-size:17px; font-weight:700; margin-bottom:10px; color:var(--lime);">Best formats</h3>
+        <ul class="product-features">
+          <li>Adobe Illustrator (.ai) - ideal</li>
+          <li>PDF with embedded fonts</li>
+          <li>PNG at 300dpi or higher</li>
+          <li>Vector files preferred</li>
+        </ul>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:28px;">
+        <div style="font-size:32px; margin-bottom:12px;">🖍️</div>
+        <h3 style="font-size:17px; font-weight:700; margin-bottom:10px;">Colour mode</h3>
+        <ul class="product-features">
+          <li>CMYK preferred for print</li>
+          <li>RGB also accepted - we convert</li>
+          <li>Pantone colours: let us know</li>
+          <li>White ink: available, specify clearly</li>
+        </ul>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:28px;">
+        <div style="font-size:32px; margin-bottom:12px;">🖨️</div>
+        <h3 style="font-size:17px; font-weight:700; margin-bottom:10px;">Print area</h3>
+        <ul class="product-features">
+          <li>Front face of can (not full wrap)</li>
+          <li>Logo and text on one face</li>
+          <li>Clear can visible on all sides</li>
+          <li>We'll confirm dimensions with your proof</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; margin-top:20px; font-size:14px; color:var(--light); line-height:1.7;">
+      <strong style="color:var(--white);">Not sure if your file is ready?</strong> Just send it. Our team checks every file before it goes to print and will let you know if anything needs adjusting. No order gets printed without your approval.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does it actually take? <div class="faq-icon">+</div></div>
+        <div class="faq-a">We print in Australia, not overseas. Once your artwork is approved, your order is dispatched within 1-2 business days. Order before 2pm for same-day dispatch. Standard delivery is then 1-2 days. Most customers have their cans within 2-3 business days total.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does the sample credit work? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Order 1 sample can for $15.00 and see the quality for yourself. When you place a follow-up order of 200 cans or more, we automatically take the $15.00 off that order — no refund process, no requests, nothing to chase up. It just comes off the total at checkout. Simple.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What file format do I need for artwork? <div class="faq-icon">+</div></div>
+        <div class="faq-a">We accept AI (Adobe Illustrator), PDF, and high-resolution PNG files. Our team reviews every artwork file before it goes to print and will contact you if anything needs adjusting. You'll always see a free digital proof before we print anything.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Are the cans food-safe? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes. All our cans are food-grade, BPA-free PET. Suitable for cold beverages including iced coffees, juices, cold brew, kombucha, smoothies and more. The cans form an airtight seal when used with a compatible sealing machine.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Are your cans compatible with other sealing machines? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes. Our PET cans are compatible with all major sealing machines including CanGo, iPAk, Rosa and our own Packlabb machine. If you already have a machine, our cans will work with it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I'm in Western Australia - can I order? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes, we ship to WA. However, under Western Australia's Plan for Plastics (2025), PET cans cannot be used for beverages filled and sealed on-site (e.g. a café sealing an iced latte to order). They can be used for pre-packaged beverages filled off-site. WA customers are responsible for ensuring use complies with state regulations. Visit plasticsbanwa.com.au for full details.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I order unprinted cans? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Absolutely. We sell both custom printed and unprinted clear cans. Unprinted cans are 5% cheaper and are popular with businesses who want to use their own labels, or just need a clean sealed takeaway container.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I don't like my proof? <div class="faq-icon">+</div></div>
+        <div class="faq-a">We'll fix it. Nothing is printed without your approval. If the proof doesn't look right, let us know what needs changing and we'll revise it. We don't run a single can until you're happy with what you see.</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <p style="font-size:16px; color:var(--muted); margin-bottom:20px;">Still have a question?</p>
+      <a href="contact.html" class="btn-primary">Contact Us →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-logo">pack<span>labb</span></div>
+  <ul class="footer-links">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
+    <li><a href="machine.html">Sealing Machine</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Packlabb. Printed in Australia</div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
+
+
+
+
