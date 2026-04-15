@@ -1,29 +1,57 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packlabb — Custom Printed Cans, Printed in Australia</title>
+  <title>Packlabb — Custom Printed Packaging, Printed in Australia</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .hero { padding: 100px 48px 80px; max-width: 1140px; margin: 0 auto; text-align: center; }
+    .hero { padding: 80px 48px 72px; max-width: 1140px; margin: 0 auto; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-left {}
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: #f0f0eb; border: 1px solid var(--border); color: var(--lime);
       font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
     }
     .hero h1 {
-      font-size: clamp(44px, 7vw, 84px); font-weight: 900;
-      line-height: 1.03; letter-spacing: -2.5px; margin-bottom: 24px;
+      font-size: clamp(36px, 5vw, 64px); font-weight: 900;
+      line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px;
     }
     .hero h1 em { font-style: normal; color: var(--lime); }
-    .hero-sub { font-size: 20px; color: var(--light); max-width: 620px; margin: 0 auto 16px; line-height: 1.6; }
-    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
-    .hero-stats { display: flex; justify-content: center; gap: 52px; flex-wrap: wrap; margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
-    .hero-stat strong { display: block; font-size: 38px; font-weight: 900; color: var(--lime); letter-spacing: -1px; }
-    .hero-stat span { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .hero-sub { font-size: 18px; color: var(--light); line-height: 1.65; margin-bottom: 8px; }
+    .hero-problem { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; padding: 14px 18px; background: var(--card); border-left: 3px solid var(--lime); border-radius: 0 8px 8px 0; }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-sample-note { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+    .hero-right { position: relative; }
+    .hero-img-wrap { border-radius: 16px; overflow: hidden; height: 460px; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-sample-card {
+      position: absolute; bottom: -20px; left: -20px;
+      background: white; border-radius: 12px; padding: 16px 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12); border: 1px solid var(--border);
+      max-width: 220px;
+    }
+    .hero-sample-card .sc-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .hero-sample-card .sc-title { font-size: 15px; font-weight: 800; color: var(--lime); margin-bottom: 4px; }
+    .hero-sample-card .sc-sub { font-size: 12px; color: var(--text2); line-height: 1.5; }
+    .hero-dispatch-badge {
+      position: absolute; top: 16px; right: -12px;
+      background: var(--lime); color: var(--black); border-radius: 8px;
+      padding: 8px 14px; font-size: 12px; font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid var(--border); margin-top: 28px; }
+    .hero-stat strong { display: block; font-size: 28px; font-weight: 900; color: var(--lime); letter-spacing: -0.5px; }
+    .hero-stat span { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    .urgency-bar {
+      background: var(--lime); color: var(--black);
+      padding: 10px 48px; text-align: center; font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
 
     .au-strip {
       background: #EFEFEA; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
@@ -31,8 +59,27 @@
       gap: 12px; font-size: 15px; font-weight: 600;
     }
 
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; }
-    .coming-soon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+    .pas-section { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px; }
+    .pas-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .pas-inner h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2; }
+    .pas-inner p { font-size: 16px; color: var(--light); line-height: 1.7; }
+    .pas-inner .solution { color: var(--lime); font-weight: 700; }
+
+    .sample-hero-banner {
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border: 1px solid #93c5fd; border-radius: 16px; padding: 40px 48px;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; margin-top: 48px;
+    }
+    .shb-left h2 { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; line-height: 1.2; }
+    .shb-left h2 em { font-style: normal; color: var(--lime); }
+    .shb-left p { font-size: 15px; color: var(--light); line-height: 1.65; max-width: 480px; }
+    .shb-right { text-align: center; flex-shrink: 0; }
+    .shb-price { font-size: 52px; font-weight: 900; color: var(--lime); letter-spacing: -2px; line-height: 1; }
+    .shb-price-sub { font-size: 13px; color: var(--text2); margin-bottom: 16px; }
+
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 56px; }
+    .products-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+
     .coming-card {
       background: var(--card); border: 1px dashed var(--border); border-radius: 12px;
       padding: 28px 20px; text-align: center; opacity: 0.6;
@@ -57,140 +104,177 @@
 
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; }
 
-    .sample-banner {
-      background: linear-gradient(135deg, #eff6ff 0%, #eff6ff 100%);
-      border: 1px solid #93c5fd; border-radius: 16px; padding: 52px 56px;
-      display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
-    }
-    .sample-banner h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
-    .sample-banner h2 em { font-style: normal; color: var(--lime); }
-    .sample-banner p { font-size: 16px; color: var(--light); max-width: 500px; line-height: 1.6; }
+    .trust-badges { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; padding: 28px 48px; border-top: 1px solid var(--border); }
+    .trust-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); font-weight: 500; }
+    .trust-badge svg { width: 16px; height: 16px; color: var(--lime); flex-shrink: 0; }
 
     .cta-footer { text-align: center; padding: 100px 48px; background: #EFEFEA; }
-    .cta-footer h2 { font-size: clamp(32px, 5vw, 60px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 20px; }
+    .cta-footer h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
     .cta-footer h2 em { font-style: normal; color: var(--lime); }
-    .cta-footer p { font-size: 18px; color: var(--light); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-footer p { font-size: 17px; color: var(--light); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-footer-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
-      .hero { padding: 64px 20px 56px; }
+      .hero { padding: 48px 20px 56px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-img-wrap { height: 280px; }
+      .hero-sample-card { position: static; margin-top: 12px; max-width: 100%; }
+      .hero-dispatch-badge { display: none; }
+      .urgency-bar { padding: 10px 20px; font-size: 12px; }
       .au-strip { padding: 16px 20px; font-size: 13px; }
-      .products-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .coming-soon-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: 1fr; }
+      .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: 1fr 1fr; }
       .step:first-child { border-radius: 12px 0 0 0; }
       .step:nth-child(2) { border-radius: 0 12px 0 0; }
       .step:nth-child(3) { border-radius: 0 0 0 12px; }
       .step:last-child   { border-radius: 0 0 12px 0; }
-      .sample-banner { flex-direction: column; padding: 36px 28px; }
-      .hero-stats { gap: 28px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .sample-hero-banner { grid-template-columns: 1fr; padding: 28px; }
+      .pas-section { padding: 36px 20px; }
+      .trust-badges { padding: 20px; gap: 16px; }
     }
   </style>
 </head>
 <body>
 
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span>⚡</span>
+  <span>Order before 2pm — dispatched today. Free express shipping over $100.</span>
+</div>
+
 <nav>
   <a href="index.html" class="nav-logo">pack<span>labb</span></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
-    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
-    <li><a href="coffee-cups.html">Custom Coffee Cups</a></li>
-    <li><a href="machine.html">Sealing Machine</a></li>
+  <ul class="nav-links">
+    <li><a href="products.html">Products</a></li>
     <li><a href="how-it-works.html">How It Works</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="printed-cans.html#order" class="nav-cta">Order Now</a>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="printed-cans.html#order" class="btn-secondary" style="font-size:13px;padding:8px 16px;">Try $15 Sample</a>
+    <a href="products.html" class="nav-cta">Order Now</a>
+  </div>
 </nav>
 
 <div class="trust-bar">
   <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
   <span>⚡ 2–3 Day Turnaround</span>
-  <span>📦 No Minimum Order</span>
-  <span>💰 Sample Cost Off Your Next Order at 200+</span>
-  <span>🚚 Free Express Shipping over </span>
+  <span>📦 Start from 1 Unit</span>
+  <span>💰 $15 Sample — Credited Back</span>
+  <span>🚚 Free Express Shipping over $100</span>
 </div>
 
 <!-- HERO -->
 <div class="hero" id="top">
-  <div class="hero-badge">🧪 Australia's fastest custom can printing</div>
-  <h1>Your brand on a can.<br><em>In days, not weeks.</em></h1>
-  <p class="hero-sub">Custom printed PET cans with no minimum order. Order 1 or order 10,000. Printed in Australia and in your hands in days.</p>
-  <div class="green-callout" style="max-width:560px; margin: 20px auto 0;">
-    <span>🎉</span>
-    <span><strong>Try before you commit:</strong> Order 1 sample can for $15.00. Place an order of 200+ and we credit the cost off your next order automatically. No catch.</span>
-  </div>
-  <div class="hero-buttons">
-    <a href="printed-cans.html#order" class="btn-primary" style="font-size:16px; padding:16px 36px;">Order Now</a>
-    <a href="products.html" class="btn-secondary" style="font-size:16px; padding:16px 36px;">See All Products</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat"><strong>2–3</strong><span>days turnaround</span></div>
-    <div class="hero-stat"><strong>1</strong><span>minimum order</span></div>
-    <div class="hero-stat"><strong>$0</strong><span>MOQ commitment</span></div>
-    <div class="hero-stat"><strong>100%</strong><span>printed in Australia</span></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">🇦🇺 Printed in Australia, dispatched in days</div>
+      <h1>Your brand on everything.<br><em>In days, not weeks.</em></h1>
+      <p class="hero-sub">Custom printed cans, coffee cups, and packaging — printed in Australia, starting from 1 unit, in your hands in 2–3 days.</p>
+      <div class="hero-problem">Most suppliers want 1,000 minimum, a 6-week wait, and upfront setup fees. By the time your order arrives, your launch window is gone. We don't work that way.</div>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn-primary" style="font-size:15px; padding:14px 32px;">Order Now</a>
+        <a href="printed-cans.html#order" class="btn-secondary" style="font-size:15px; padding:14px 32px;">Try a $15 Sample</a>
+      </div>
+      <div class="hero-sample-note">
+        <svg viewBox="0 0 16 16" fill="currentColor" style="width:14px;height:14px;color:var(--lime);flex-shrink:0;"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+        $15 sample credited back automatically when you order 200+ cans. No catch, no forms.
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>2–3</strong><span>days turnaround</span></div>
+        <div class="hero-stat"><strong>1</strong><span>minimum order</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Australian printed</span></div>
+        <div class="hero-stat"><strong>$0</strong><span>MOQ commitment</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <img src="hero-cans.png" alt="Custom printed PET cans — Packlabb" />
+      </div>
+      <div class="hero-dispatch-badge">⚡ Dispatched same day</div>
+      <div class="hero-sample-card">
+        <div class="sc-label">Zero risk</div>
+        <div class="sc-title">$15 sample</div>
+        <div class="sc-sub">Order 1 can with your logo. Love it and order 200+, we credit the $15 back automatically.</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- AU STRIP -->
 <div class="au-strip">
   <span style="font-size:22px">🇦🇺</span>
-  <span>Every can printed in our Australian facility. No overseas wait. No 6-week lead times. Your cans, this week.</span>
+  <span>Every order printed in our Australian facility. No overseas wait. No 6-week lead times. Your packaging, this week.</span>
 </div>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS — NOW FEATURING CANS + CUPS AS EQUAL PRODUCTS -->
 <section style="background:#EFEFEA;">
   <div class="container">
-    <div class="section-label">Products</div>
-    <h2 class="section-title">Everything your brand needs, in one place</h2>
-    <p class="section-sub">Starting with custom printed cans — with more packaging products coming soon.</p>
+    <div class="section-label">Products — Available Now</div>
+    <h2 class="section-title">Custom printed packaging for Australian brands</h2>
+    <p class="section-sub">Cans, coffee cups, and more — all printed in Australia, no MOQ, 2–3 day turnaround.</p>
 
     <div class="products-grid">
+      <!-- CANS -->
       <div class="product-card">
         <div class="product-img">
-          <img src="card-330ml.png" alt="330ml Custom Printed Can" style="width:100%;height:100%;object-fit:cover;border-radius:12px 12px 0 0;" />
+          <img src="hero-cans.png" alt="Custom Printed PET Cans" style="width:100%;height:100%;object-fit:cover;border-radius:12px 12px 0 0;" />
           <div class="product-badge">Most Popular</div>
         </div>
         <div class="product-body">
-          <h3>330ml Custom Printed Can</h3>
-          <p>Single-serve size. Perfect for iced coffees, cold brew, juices and specialty drinks. No minimum order.</p>
+          <h3>Custom Printed PET Cans</h3>
+          <p>330ml and 500ml clear food-grade cans with your logo printed directly on the can. No minimum. In your hands in days.</p>
           <div class="product-price">
             <span class="from">from</span>
-            <span class="amount">$0.709</span>
-            <span class="unit">/ can ex GST</span>
+            <span class="amount">$15.00</span>
+            <span class="unit">for 1 sample</span>
           </div>
           <ul class="product-features">
-            <li>Custom printed in Australia</li>
-            <li>No minimum order</li>
+            <li>330ml and 500ml available</li>
+            <li>No minimum order — start from 1</li>
             <li>2–3 day turnaround</li>
-            <li>Free digital proof</li>
+            <li>Free digital proof every order</li>
+            <li>$15 sample credited back at 200+</li>
           </ul>
           <a href="printed-cans.html" class="product-btn">View & Order</a>
         </div>
       </div>
 
+      <!-- COFFEE CUPS -->
       <div class="product-card">
-        <div class="product-img"><img src="card-500ml.png" alt="500ml Custom Printed Can" style="width:100%;height:100%;object-fit:cover;border-radius:12px 12px 0 0;" /></div>
+        <div class="product-img">
+          <img src="hero-cups.jpg" alt="Custom Printed Coffee Cups" style="width:100%;height:100%;object-fit:cover;border-radius:12px 12px 0 0;" />
+          <div class="product-badge" style="background:#2563EB;">Now Available</div>
+        </div>
         <div class="product-body">
-          <h3>500ml Custom Printed Can</h3>
-          <p>Larger format for smoothies, kombucha, premium beverages and high-volume hospitality orders.</p>
+          <h3>Custom Printed Coffee Cups</h3>
+          <p>Single wall paper cups with your logo printed on every one. 8oz, 12oz, 16oz. Perfect for cafes, events, and hospitality.</p>
           <div class="product-price">
             <span class="from">from</span>
-            <span class="amount">$0.709</span>
-            <span class="unit">/ can ex GST</span>
+            <span class="amount">$168.00</span>
+            <span class="unit">per 1,000 ex GST</span>
           </div>
           <ul class="product-features">
-            <li>Custom printed in Australia</li>
-            <li>No minimum order</li>
+            <li>8oz, 12oz, 16oz available</li>
+            <li>1,000 minimum order</li>
             <li>2–3 day turnaround</li>
-            <li>Free digital proof</li>
+            <li>Free digital proof every order</li>
+            <li>$15 sample credited back at 1,000+</li>
           </ul>
-          <a href="printed-cans.html" class="product-btn">View & Order</a>
+          <a href="coffee-cups.html" class="product-btn">View & Order</a>
         </div>
       </div>
+    </div>
 
+    <!-- MACHINE + COMING SOON -->
+    <div style="margin-top:20px; display:grid; grid-template-columns:1fr 2fr; gap:20px; align-items:start;">
+      <!-- Machine -->
       <div class="product-card">
         <div class="product-img"><img src="card-machine.png" alt="Can Sealing Machine" style="width:100%;height:100%;object-fit:cover;border-radius:12px 12px 0 0;" /></div>
         <div class="product-body">
           <h3>Can Sealing Machine</h3>
-          <p>Commercial-grade. Seals any 330ml or 500ml PET can in under 5 seconds. Same specs as competitors, 20% less.</p>
+          <p>Commercial-grade. Seals 330ml or 500ml PET cans in under 5 seconds. 20% below market price.</p>
           <div class="product-price">
             <span class="from">from</span>
             <span class="amount">$1,229</span>
@@ -200,91 +284,88 @@
             <li>12 month warranty</li>
             <li>Free shipping</li>
             <li>Australian support</li>
-            <li>20% below market price</li>
           </ul>
           <a href="machine.html" class="product-btn">View Machine</a>
         </div>
       </div>
-    </div>
 
-    <!-- COMING SOON -->
-    <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:8px;">
-        <div>
-          <div class="section-label">Coming Soon</div>
-          <h3 style="font-size:24px; font-weight:800; letter-spacing:-0.5px;">More packaging products on the way</h3>
+      <!-- Coming soon grid -->
+      <div>
+        <div style="padding:16px 0 12px;">
+          <div class="section-label" style="margin-bottom:6px;">Coming Soon</div>
+          <p style="font-size:14px; color:var(--muted);">More custom printed packaging — Australian-printed, no MOQ, fast turnaround.</p>
         </div>
-        <div style="background:#f0f0eb; border:1px solid var(--border); border-radius:8px; padding:10px 18px; font-size:13px; color:var(--muted);">
-          📬 <a href="contact.html" style="color:var(--lime); font-weight:600;">Get notified when they launch →</a>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+          <div class="coming-card">
+            <div class="icon">🧃</div>
+            <h4>PET Cups</h4>
+            <p>Clear printed cups for cold drinks and bubble tea</p>
+            <div class="pill">Coming Soon</div>
+          </div>
+          <div class="coming-card">
+            <div class="icon">📦</div>
+            <h4>Mailer Boxes</h4>
+            <p>Branded shipping boxes for e-commerce</p>
+            <div class="pill">Coming Soon</div>
+          </div>
+          <div class="coming-card">
+            <div class="icon">🛍️</div>
+            <h4>Packaging Bags</h4>
+            <p>Custom printed bags for retail and gifting</p>
+            <div class="pill">Coming Soon</div>
+          </div>
+        </div>
+        <div style="margin-top:12px; background:#f0f0eb; border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:13px; color:var(--muted);">
+          📬 <a href="contact.html" style="color:var(--lime); font-weight:600;">Get notified when new products launch →</a>
         </div>
       </div>
-      <p style="font-size:15px; color:var(--muted); margin-bottom:28px; max-width:560px;">Packlabb is building a full custom printed packaging range. Everything below will be custom printable, Australian-printed, and available with no MOQ.</p>
-      <div class="coming-soon-grid">
-        <a href="coffee-cups.html" style="text-decoration:none;color:inherit;">
-        <div class="coming-card" style="opacity:1; border:1px solid var(--lime); cursor:pointer; padding:0; overflow:hidden; border-radius:12px; transition:box-shadow 0.15s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='none'">
-          <div style="height:130px; overflow:hidden;">
-            <img src="card-cups.jpg" alt="Custom Coffee Cups" style="width:100%;height:100%;object-fit:cover;" />
-          </div>
-          <div style="padding:14px 16px 18px;">
-            <h4 style="font-size:14px; font-weight:700; margin-bottom:4px;">Custom Coffee Cups</h4>
-            <p style="font-size:11px; margin-bottom:8px;">Branded takeaway cups for cafes and events</p>
-            <div class="pill" style="background:var(--lime); color:var(--black);">Order Now →</div>
-          </div>
-        </div>
-        </a>
-        <div class="coming-card">
-          <div class="icon">🥡</div>
-          <h4>Takeaway Containers</h4>
-          <p>Custom printed food containers for hospitality</p>
-          <div class="pill">Coming Soon</div>
-        </div>
-        <div class="coming-card">
-          <div class="icon">📦</div>
-          <h4>Mailer Boxes</h4>
-          <p>Branded shipping boxes for e-commerce brands</p>
-          <div class="pill">Coming Soon</div>
-        </div>
-        <div class="coming-card">
-          <div class="icon">🛍️</div>
-          <h4>Packaging Bags</h4>
-          <p>Custom printed bags for retail and gifting</p>
-          <div class="pill">Coming Soon</div>
-        </div>
+    </div>
+
+    <!-- SAMPLE OFFER — ELEVATED -->
+    <div class="sample-hero-banner">
+      <div class="shb-left">
+        <h2>Zero risk.<br><em>Try before you commit.</em></h2>
+        <p>Order one can with your branding on it. Get it in 2–3 days. If you love it and order 200 or more, we credit the $15 back automatically. No forms, no requests, no catch.</p>
+      </div>
+      <div class="shb-right">
+        <div class="shb-price">$15</div>
+        <div class="shb-price-sub">one sample can, ex GST</div>
+        <a href="printed-cans.html#order" class="btn-primary" style="font-size:15px; padding:14px 28px; white-space:nowrap;">Order a Sample →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS SUMMARY -->
+<!-- HOW IT WORKS -->
 <section>
   <div class="container">
     <div class="section-label">Simple process</div>
-    <h2 class="section-title">From artwork to your hands in days</h2>
-    <p class="section-sub">Other suppliers ask you to wait 6 weeks and commit to thousands of cans. We don't.</p>
+    <h2 class="section-title">From artwork to your door in days</h2>
+    <p class="section-sub">Other suppliers ask you to wait 6 weeks and commit to thousands of units. We don't.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-icon">🎨</div>
         <h3>Upload your artwork</h3>
-        <p>Send your logo or design file. Our team checks every file before print.</p>
+        <p>Send your logo or design file. Our team checks every file before print — nothing goes to print with an error.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-icon">✅</div>
         <h3>Approve your proof</h3>
-        <p>Free digital proof before we print a single can. You approve, we go.</p>
+        <p>Free digital proof before we print a single unit. You approve, we go. No surprises.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-icon">🖨️</div>
         <h3>Printed in Australia</h3>
-        <p>Your cans are printed in our Australian facility. That's why we're fast.</p>
+        <p>Your order is printed in our Australian facility. That's why we can turn it around in 2–3 days — not 6 weeks.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-icon">📬</div>
         <h3>Delivered to your door</h3>
-        <p>Free express shipping over $100. Order before 2pm, dispatched same day.</p>
+        <p>Free express shipping over $100. Order before 2pm and we dispatch the same day.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top:36px;">
@@ -293,21 +374,8 @@
   </div>
 </section>
 
-<!-- SAMPLE OFFER -->
-<section style="background:#EFEFEA; padding-top:0;">
-  <div class="container">
-    <div class="sample-banner">
-      <div>
-        <h2>Try before you commit.<br><em>$15.00 for one sample.</em></h2>
-        <p>Order one can with your branding on it. Get it in 2–3 days. If you love it and order 200 or more, we take the \.50 off your next order automatically. No hoops, no requests needed.</p>
-      </div>
-      <a href="printed-cans.html#order" class="btn-primary" style="font-size:16px; padding:18px 40px; white-space:nowrap;">Order a Sample Now →</a>
-    </div>
-  </div>
-</section>
-
 <!-- COMPARISON -->
-<section>
+<section style="background:#EFEFEA;">
   <div class="container">
     <div class="section-label">Why Packlabb</div>
     <h2 class="section-title">See how we compare</h2>
@@ -324,8 +392,8 @@
         <tbody>
           <tr>
             <td class="label">Minimum order (custom print)</td>
-            <td class="them-val">1,000 – 3,000 cans</td>
-            <td class="us-val">1 can</td>
+            <td class="them-val">1,000 – 3,000 units</td>
+            <td class="us-val">1 unit (cans) / 1,000 (cups)</td>
           </tr>
           <tr>
             <td class="label">Turnaround time</td>
@@ -340,17 +408,17 @@
           <tr>
             <td class="label">Sample option</td>
             <td class="them-val"><span class="cross">✕</span> Not available</td>
-            <td class="us-val"><span class="tick">✓</span> $15.00, Credited off next order at 200+</td>
+            <td class="us-val"><span class="tick">✓</span> $15, credited back automatically</td>
           </tr>
           <tr>
             <td class="label">Free digital proof</td>
             <td class="them-val"><span class="cross">✕</span> Not included</td>
-            <td class="us-val"><span class="tick">✓</span> Every order</td>
+            <td class="us-val"><span class="tick">✓</span> Every order, no exceptions</td>
           </tr>
           <tr>
-            <td class="label">Price vs competitors</td>
-            <td class="them-val">Standard</td>
-            <td class="us-val">5% cheaper</td>
+            <td class="label">Setup fees</td>
+            <td class="them-val">Often $100 – $300+</td>
+            <td class="us-val"><span class="tick">✓</span> None</td>
           </tr>
         </tbody>
       </table>
@@ -359,25 +427,34 @@
 </section>
 
 <!-- REVIEWS -->
-<section style="background:#EFEFEA;">
+<section>
   <div class="container">
     <div class="section-label">Reviews</div>
     <h2 class="section-title">What our customers say</h2>
+    <p class="section-sub" style="margin-bottom:0;">Real businesses, real orders, real results.</p>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Ordered a sample on Tuesday, had it Thursday. Print quality is incredible. Ordered 500 the next day — sample cost taken off my next order straight away."</p>
+        <p class="review-text">"Ordered a sample on Tuesday, had it Thursday. Print quality is incredible. Ordered 500 the next day — sample cost credited back straight away. The whole process took less than a week."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">☕</div>
-          <div><div class="reviewer-name">Sarah M.</div><div class="reviewer-role">Owner, Miro Coffee</div></div>
+          <div>
+            <div class="reviewer-name">Sarah M.</div>
+            <div class="reviewer-role">Owner, Miro Coffee</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:2px;">Ordered 500 cans</div>
+          </div>
         </div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">"Every other supplier wanted 1,000 minimum and 4 weeks. Packlabb had my branded cans ready for our launch event in 3 days."</p>
+        <p class="review-text">"Every other supplier wanted 1,000 minimum and 4 weeks. Packlabb had my branded cans ready for our launch event in 3 days. Different league."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">🧃</div>
-          <div><div class="reviewer-name">Tom K.</div><div class="reviewer-role">Founder, Press'd Juice Co.</div></div>
+          <div>
+            <div class="reviewer-name">Tom K.</div>
+            <div class="reviewer-role">Founder, Press'd Juice Co.</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:2px;">Ordered for product launch</div>
+          </div>
         </div>
       </div>
       <div class="review-card">
@@ -385,18 +462,49 @@
         <p class="review-text">"Machine was set up in 10 minutes, sealing drinks the same afternoon. Our iced lattes look like a proper retail product now."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">🍵</div>
-          <div><div class="reviewer-name">Alinta W.</div><div class="reviewer-role">Manager, Grounds Collective</div></div>
+          <div>
+            <div class="reviewer-name">Alinta W.</div>
+            <div class="reviewer-role">Manager, Grounds Collective</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:2px;">Can + Sealing Machine</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TRUST BADGES -->
+<div class="trust-badges">
+  <div class="trust-badge">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+    Secure checkout
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+    Free digital proof every order
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+    $15 sample credited back automatically
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+    Printed in Australia
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+    Free express shipping over $100
+  </div>
+</div>
+
 <!-- FINAL CTA -->
 <div class="cta-footer">
-  <h2>Your brand deserves to be on a can.<br><em>Start with one.</em></h2>
-  <p>Order a single sample for $15.00. Love it, then scale. Sample cost credited off your next order at 200+.</p>
-  <a href="printed-cans.html#order" class="btn-primary" style="font-size:17px; padding:18px 44px;">Order Now →</a>
+  <h2>Your brand on everything.<br><em>Start today.</em></h2>
+  <p>Order a $15 sample can with your logo on it. In your hands Thursday. Credit it back when you scale.</p>
+  <div class="cta-footer-btns">
+    <a href="printed-cans.html#order" class="btn-primary" style="font-size:16px; padding:16px 40px;">Order a $15 Sample →</a>
+    <a href="products.html" class="btn-secondary" style="font-size:16px; padding:16px 40px;">See All Products</a>
+  </div>
 </div>
 
 <footer class="site-footer">
@@ -408,16 +516,9 @@
     <li><a href="machine.html">Sealing Machine</a></li>
     <li><a href="how-it-works.html">How It Works</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="#">Shipping Policy</a></li>
-    <li><a href="#">Privacy Policy</a></li>
   </ul>
-  <div class="footer-copy">© 2025 Packlabb. ABN XX XXX XXX XXX &nbsp;·&nbsp; Printed in Australia</div>
+  <div class="footer-copy">© 2025 Packlabb. Printed in Australia</div>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
