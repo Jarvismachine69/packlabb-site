@@ -254,7 +254,8 @@
 
     <!-- PRICING -->
     <div class="tab-content" id="tab-pricing">
-      <p style="font-size:15px; color:var(--muted); margin-bottom:28px; max-width:680px;">All prices ex GST. GST added at checkout. Sample automatically credited when you order 1,000+. Need a larger run? <a href="contact.html" style="color:var(--lime);">Contact us for a custom quote.</a></p>
+      <p style="font-size:15px; color:var(--muted); margin-bottom:16px; max-width:680px;">All prices ex GST. GST added at checkout. Sample automatically credited when you order 1,000+. Need a larger run? <a href="contact.html" style="color:var(--lime);">Contact us for a custom quote.</a></p>
+      <div style="background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.25); border-radius:8px; padding:12px 16px; font-size:14px; color:var(--muted); margin-bottom:28px;">☕ <strong style="color:var(--lime);">Small runs available.</strong> For best value, 1,000+ is recommended.</div>
 
       <!-- 8oz -->
       <h3 style="font-size:18px; font-weight:700; margin-bottom:16px; color:var(--white);">8oz Cups</h3>
@@ -265,6 +266,9 @@
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
+            <tr style="opacity:0.7;"><td>50 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$55.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>100 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$95.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>500 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$145.00</td><td>—</td></tr>
             <tr><td>1,000</td><td class="lime">$168.00</td><td>$66.00</td></tr>
             <tr><td>2,000</td><td class="lime">$334.00</td><td>$131.00</td></tr>
             <tr><td>3,000</td><td class="lime">$499.00</td><td>$196.00</td></tr>
@@ -283,6 +287,9 @@
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
+            <tr style="opacity:0.7;"><td>50 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$65.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>100 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$115.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>500 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$175.00</td><td>—</td></tr>
             <tr><td>1,000</td><td class="lime">$197.00</td><td>$95.00</td></tr>
             <tr><td>2,000</td><td class="lime">$392.00</td><td>$189.00</td></tr>
             <tr><td>3,000</td><td class="lime">$586.00</td><td>$282.00</td></tr>
@@ -301,6 +308,9 @@
           </thead>
           <tbody>
             <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td></tr>
+            <tr style="opacity:0.7;"><td>50 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$65.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>100 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$115.00</td><td>—</td></tr>
+            <tr style="opacity:0.7;"><td>500 <span style="font-size:11px; color:var(--lime); font-weight:600;">Small Run</span></td><td class="lime">$175.00</td><td>—</td></tr>
             <tr><td>1,000</td><td class="lime">$197.00</td><td>$95.00</td></tr>
             <tr><td>2,000</td><td class="lime">$392.00</td><td>$189.00</td></tr>
             <tr><td>3,000</td><td class="lime">$586.00</td><td>$282.00</td></tr>
@@ -390,12 +400,12 @@
 <script>
 // -- PRICING DATA --
 var PRICING = {
-  '8oz':  { printed: { 1: 15.00, 1000: 168.00, 2000: 334.00, 3000: 499.00, 5000: 823.00, 10000: 1604.00 }, plain: { 1: 15.00, 1000: 66.00, 2000: 131.00, 3000: 196.00, 5000: 323.00, 10000: 630.00 } },
-  '12oz': { printed: { 1: 15.00, 1000: 197.00, 2000: 392.00, 3000: 586.00, 5000: 965.00, 10000: 1881.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 189.00, 3000: 282.00, 5000: 466.00, 10000: 907.00 } },
-  '16oz': { printed: { 1: 15.00, 1000: 197.00, 2000: 392.00, 3000: 586.00, 5000: 965.00, 10000: 1881.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 189.00, 3000: 282.00, 5000: 466.00, 10000: 907.00 } }
+  '8oz':  { printed: { 1: 15.00, 50: 55.00, 100: 95.00, 500: 145.00, 1000: 168.00, 2000: 334.00, 3000: 499.00, 5000: 823.00, 10000: 1604.00 }, plain: { 1: 15.00, 1000: 66.00, 2000: 131.00, 3000: 196.00, 5000: 323.00, 10000: 630.00 } },
+  '12oz': { printed: { 1: 15.00, 50: 65.00, 100: 115.00, 500: 175.00, 1000: 197.00, 2000: 392.00, 3000: 586.00, 5000: 965.00, 10000: 1881.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 189.00, 3000: 282.00, 5000: 466.00, 10000: 907.00 } },
+  '16oz': { printed: { 1: 15.00, 50: 65.00, 100: 115.00, 500: 175.00, 1000: 197.00, 2000: 392.00, 3000: 586.00, 5000: 965.00, 10000: 1881.00 }, plain: { 1: 15.00, 1000: 95.00, 2000: 189.00, 3000: 282.00, 5000: 466.00, 10000: 907.00 } }
 };
 
-var QTY_OPTIONS = [1, 1000, 2000, 3000, 5000, 10000];
+var QTY_OPTIONS = [1, 50, 100, 500, 1000, 2000, 3000, 5000, 10000];
 
 var state = { size: '8oz', type: 'printed', qty: 1 };
 
