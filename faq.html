@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Packlabb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .faq-hero {
+      padding: 72px 48px 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .faq-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      line-height: 1.05;
+    }
+    .faq-hero p {
+      font-size: 18px;
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    .faq-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px 48px;
+    }
+
+    .faq-category {
+      margin-bottom: 48px;
+    }
+
+    .faq-category-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--white);
+      gap: 16px;
+      user-select: none;
+    }
+
+    .faq-q:hover { color: var(--lime); }
+
+    .faq-icon {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--lime);
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 0 18px 0;
+      font-size: 14px;
+      color: var(--light);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    .faq-cta {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      margin: 56px 48px 64px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq-cta h2 {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .faq-cta p {
+      font-size: 15px;
+      color: var(--light);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    .faq-cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .faq-hero { padding: 48px 20px 36px; }
+      .faq-section { padding: 0 20px 40px; }
+      .faq-cta { margin: 40px 20px 48px; padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">pack<span>labb</span></a>
+  <ul class="nav-links">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="printed-cans.html#order" class="btn-secondary" style="font-size:13px;padding:8px 16px;">Try $15 Sample</a>
+    <a href="products.html" class="nav-cta">Order Now</a>
+  </div>
+</nav>
+
+<div class="trust-bar">
+  <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
+  <span>⚡ 2–3 Day Turnaround</span>
+  <span>📦 Start from 1 Unit</span>
+  <span>💰 $15 Sample — Credited Back</span>
+  <span>🚚 Free Express Shipping over $100</span>
+</div>
+
+<!-- HERO -->
+<div class="faq-hero">
+  <div class="section-label">Help Centre</div>
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know about ordering, artwork, delivery, and pricing.</p>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-section">
+
+  <!-- ORDERING -->
+  <div class="faq-category">
+    <div class="faq-category-label">Ordering</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What's the minimum order?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">For custom printed PET cans, from 1 unit. For coffee cups, 1,000. No minimum for the sealing machine.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How do I place an order?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Select your product, choose size and quantity, upload your artwork, complete checkout. You'll get a free digital proof before anything prints.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I order a sample first?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Yes. $15 sample can with your artwork. Order 200+ after and we credit the $15 back automatically — no forms needed.</div>
+    </div>
+  </div>
+
+  <!-- ARTWORK & PROOFING -->
+  <div class="faq-category">
+    <div class="faq-category-label">Artwork &amp; Proofing</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What file format do I need?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">AI, EPS, PDF, or high-res PNG (300dpi+). Send what you have and we'll advise.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do I get a proof?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Yes, free digital proof on every order. Nothing prints until you approve.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What if my artwork needs changes?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Send what you have. Minor adjustments are included free.</div>
+    </div>
+  </div>
+
+  <!-- DELIVERY -->
+  <div class="faq-category">
+    <div class="faq-category-label">Delivery</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How fast is turnaround?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">2–3 business days from artwork approval. Order before 2pm, dispatched same day once approved.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do you ship Australia-wide?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Yes. Free express shipping over $100. All orders tracked.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I get it faster?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Usually yes if artwork is print-ready. Contact us if you have a hard deadline.</div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="faq-category">
+    <div class="faq-category-label">Pricing</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Are prices inc GST?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">All prices ex GST. GST added at checkout.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Are there setup fees?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">No setup fees on any order.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Does the $15 sample credit back automatically?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Yes. Order 200+ cans and the credit is applied automatically.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="faq-cta">
+  <h2>Still have a question?</h2>
+  <p>Our team is here to help. Reach out directly and we'll get back to you fast.</p>
+  <div class="faq-cta-btns">
+    <a href="products.html" class="btn-primary" style="font-size:15px; padding:14px 28px;">View Products</a>
+    <a href="contact.html" class="btn-secondary" style="font-size:15px; padding:14px 28px;">Contact Us</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">pack<span>labb</span></div>
+  <ul class="footer-links">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
+    <li><a href="coffee-cups.html">Custom Coffee Cups</a></li>
+    <li><a href="machine.html">Sealing Machine</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
