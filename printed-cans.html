@@ -1,423 +1,437 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Printed Cans — Packlabb</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .product-hero { display:grid; grid-template-columns:1fr 1fr; gap:64px; padding:72px 48px; max-width:1140px; margin:0 auto; align-items:start; }
-    .product-hero-img { background:linear-gradient(135deg,#f0f0eb,#e8e8e3); border-radius:16px; height:460px; display:flex; align-items:center; justify-content:center; font-size:120px; border:1px solid var(--border); }
-    .breadcrumb { font-size:13px; color:var(--muted); margin-bottom:20px; }
-    .breadcrumb a { color:var(--muted); } .breadcrumb a:hover { color:var(--white); }
-    .product-title { font-size:clamp(28px,4vw,44px); font-weight:900; letter-spacing:-1px; margin-bottom:12px; line-height:1.1; }
-    .product-rating { display:flex; align-items:center; gap:8px; margin-bottom:20px; font-size:14px; color:var(--muted); }
-    .product-rating .stars { color:var(--lime); letter-spacing:2px; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Custom printed PET cans. No MOQ. Melbourne. | Packlabb</title>
+<meta name="description" content="Custom printed 250ml, 330ml and 500ml PET cans. No minimums, 2 to 3 day turnaround, printed in Melbourne. $15 sample credited at 200+." />
+<link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 
-    .selector-label { font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
-    .selector-group { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
-    .selector-btn {
-      padding:12px 20px; border-radius:8px; border:2px solid var(--border);
-      background:var(--card); color:var(--white); font-size:14px; font-weight:600;
-      cursor:pointer; font-family:'Inter',sans-serif; transition:all 0.15s; text-align:center;
-    }
-    .selector-btn:hover { border-color:#555; }
-    .selector-btn.active { border-color:var(--lime); background:#eff6ff; color:var(--lime); }
-    .selector-btn small { display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:2px; }
-    .selector-btn.active small { color:#2563EB; }
-
-    .qty-btns { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
-
-    .price-display { margin:20px 0; padding:20px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .price-big { font-size:44px; font-weight:900; color:var(--lime); letter-spacing:-1.5px; line-height:1; }
-    .price-sub { font-size:13px; color:var(--muted); margin-top:4px; }
-    .price-per { font-size:15px; color:var(--light); margin-top:8px; }
-
-    .add-cart-btn {
-      width:100%; background:var(--lime); color:var(--black);
-      font-size:17px; font-weight:800; padding:18px; border-radius:10px;
-      border:none; cursor:pointer; font-family:'Inter',sans-serif;
-      transition:opacity 0.2s; margin-bottom:12px;
-    }
-    .add-cart-btn:hover { opacity:0.87; }
-    .trust-mini { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:8px; }
-
-    .artwork-box {
-      background:var(--card); border:2px dashed var(--border); border-radius:10px;
-      padding:24px; text-align:center; cursor:pointer; margin-bottom:12px;
-      transition:border-color 0.2s;
-    }
-    .artwork-box:hover { border-color:var(--lime); }
-
-    .tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:40px; }
-    .tab-btn {
-      padding:14px 24px; font-size:14px; font-weight:600; cursor:pointer;
-      color:var(--muted); background:none; border:none; border-bottom:2px solid transparent;
-      font-family:'Inter',sans-serif; transition:all 0.2s; margin-bottom:-1px;
-    }
-    .tab-btn.active { color:var(--white); border-bottom-color:var(--lime); }
-    .tab-content { display:none; } .tab-content.active { display:block; }
-
-    #cart-toast { position:fixed; bottom:32px; right:32px; background:var(--lime); color:var(--black); padding:16px 24px; border-radius:10px; font-size:15px; font-weight:700; box-shadow:0 8px 32px rgba(0,0,0,0.4); display:none; z-index:999; align-items:center; gap:12px; }
-
-    .bulk-note { background:#f5f5f0; border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:13px; color:var(--muted); margin-top:8px; }
-
-    @media(max-width:900px) {
-      .product-hero { grid-template-columns:1fr; padding:32px 20px; gap:32px; }
-      .product-hero-img { height:260px; font-size:80px; position:static; }
-    }
-  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Custom Printed PET Cans",
+  "image": "https://packlabb.com.au/hero-cans.png",
+  "description": "Food-grade PET cans with direct UV print. 250ml, 330ml and 500ml. No minimums. 2 to 3 day turnaround. Printed in Melbourne.",
+  "brand": {"@type": "Brand", "name": "Packlabb"},
+  "manufacturer": {"@type": "Organization", "name": "Packlabb", "address": {"@type":"PostalAddress","addressLocality":"Melbourne","addressCountry":"AU"}},
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "AUD",
+    "lowPrice": "0.636",
+    "highPrice": "15.00",
+    "offerCount": "30",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://packlabb.com.au"},
+    {"@type": "ListItem", "position": 2, "name": "Products", "item": "https://packlabb.com.au/products.html"},
+    {"@type": "ListItem", "position": 3, "name": "PET Cans", "item": "https://packlabb.com.au/printed-cans.html"}
+  ]
+}
+</script>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">pack<span>labb</span></a>
-  <ul class="nav-links">
-    <li><a href="products.html">Products</a></li>
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div style="display:flex;gap:10px;align-items:center;">
-    <a href="printed-cans.html#order" class="btn-secondary" style="font-size:13px;padding:8px 16px;">Try $15 Sample</a>
-    <a href="products.html" class="nav-cta">Order Now</a>
+<div class="topbar"><strong>2 to 3 day turnaround.</strong> <span>Free express over $200.<span class="mobile-hide"> Melbourne visits by appointment.</span></span></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">pack<b>labb</b></a>
+    <nav>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="on">Products</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="byo-stock.html">BYO printing</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+61415743691" class="nav-call">0415 743 691</a>
+      <button class="nav-cart" onclick="cartOpen()" aria-label="View cart">??<span id="cart-count">0</span></button>
+      <a href="#order" class="nav-cta nav-cta-mobile-hide">Order sample</a>
+      <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
-</nav>
+</header>
 
-<div class="trust-bar">
-  <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
-  <span>? 2–3 Day Turnaround</span>
-  <span>📦 No Minimum Order</span>
-  <span>💰 Sample Refunded at 200+</span>
-  <span>🚚 Free Express Shipping over $100</span>
-</div>
-
-<!-- PRODUCT ORDER BUILDER -->
-<div class="product-hero" id="order">
-
-  <!-- Left: image -->
-  <div>
-    <div class="product-hero-img" style="padding:0; overflow:hidden;">
-      <img src="hero-cans.png" alt="Custom Printed Cans" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" />
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:10px;" id="thumb-row">
-      <div class="thumb active-thumb" style="background:#f0f0eb; border-radius:8px; height:76px; overflow:hidden; border:2px solid var(--lime); cursor:pointer;" onclick="switchImg('hero-cans.png', this)">
-        <img src="hero-cans.png" alt="Custom Printed Cans" style="width:100%;height:100%;object-fit:cover;" />
-      </div>
-      <div class="thumb" style="background:#f0f0eb; border-radius:8px; height:76px; overflow:hidden; border:1px solid var(--border); cursor:pointer;" onclick="switchImg('card-330ml.png', this)">
-        <img src="card-330ml.png" alt="330ml Can" style="width:100%;height:100%;object-fit:cover;" />
-      </div>
-      <div class="thumb" style="background:#f0f0eb; border-radius:8px; height:76px; overflow:hidden; border:1px solid var(--border); cursor:pointer;" onclick="switchImg('card-500ml.png', this)">
-        <img src="card-500ml.png" alt="500ml Can" style="width:100%;height:100%;object-fit:cover;" />
-      </div>
-    </div>
-
-    <!-- ROI Calculator -->
-    <div style="margin-top:16px; background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:10px; font-weight:700; color:var(--lime); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:5px;">ROI Calculator</div>
-      <h3 style="font-size:15px; font-weight:800; color:#111; margin-bottom:3px;">How much could branded cans make you?</h3>
-      <p style="font-size:11px; color:#777; margin-bottom:14px;">Adjust to match your business.</p>
-      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">
-        <div>
-          <label style="display:flex; justify-content:space-between; font-size:12px; font-weight:600; margin-bottom:4px; color:#111;">Cans sold per day <span style="color:var(--lime);" id="cVal2">50</span></label>
-          <input type="range" min="5" max="300" value="50" id="cSlider2" oninput="calcCansROI()"/>
+<!-- PRODUCT HERO -->
+<section class="product-hero" id="order">
+  <div class="wrap">
+    <div class="product-hero-grid">
+      <!-- Left: media -->
+      <div class="product-media">
+        <div class="product-media-main">
+          <img src="hero-cans.png" alt="Custom printed Packlabb PET cans, 250ml 330ml 500ml" id="main-img" />
         </div>
-        <div>
-          <label style="display:flex; justify-content:space-between; font-size:12px; font-weight:600; margin-bottom:4px; color:#111;">Sell price per can <span style="color:var(--lime);">$<span id="sVal2">4.50</span></span></label>
-          <input type="range" min="3" max="15" value="4.5" step="0.5" id="sSlider2" oninput="calcCansROI()"/>
-        </div>
-        <div>
-          <label style="display:flex; justify-content:space-between; font-size:12px; font-weight:600; margin-bottom:4px; color:#111;">Ingredient cost <span style="color:var(--lime);">$<span id="iVal2">2.00</span></span></label>
-          <input type="range" min="0.5" max="6" value="2" step="0.5" id="iSlider2" oninput="calcCansROI()"/>
+        <div class="product-media-thumbs" id="thumbs">
+          <div class="on" onclick="setImg(this,'hero-cans.png')"><img src="hero-cans.png" alt="All sizes" loading="lazy"></div>
+          <div onclick="setImg(this,'can-250ml.png')"><img src="can-250ml.png" alt="250ml" loading="lazy"></div>
+          <div onclick="setImg(this,'can-330ml.png')"><img src="can-330ml.png" alt="330ml" loading="lazy"></div>
+          <div onclick="setImg(this,'can-500ml.png')"><img src="can-500ml.png" alt="500ml" loading="lazy"></div>
+          <div onclick="setImg(this,'lifestyle-cans.jpg')"><img src="lifestyle-cans.jpg" alt="In cafe" loading="lazy"></div>
         </div>
       </div>
-      <div style="background:#f5f8ff; border:1px solid #dbeafe; border-radius:10px; padding:14px 16px;">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
-          <div>
-            <div style="font-size:26px; font-weight:900; color:var(--lime); letter-spacing:-1px; line-height:1;" id="rMonthly2">$0</div>
-            <div style="font-size:11px; color:#777; margin-top:2px;">monthly profit</div>
-          </div>
-          <div>
-            <div style="font-size:26px; font-weight:900; color:#111; letter-spacing:-1px; line-height:1;" id="rAnnual2">$0</div>
-            <div style="font-size:11px; color:#777; margin-top:2px;">annual profit</div>
+      <!-- Right: configurator -->
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / PET Cans</div>
+        <h1 class="product-title">Custom printed PET cans</h1>
+        <p class="product-intro">250ml, 330ml and 500ml food-grade PET. Your logo UV printed direct on the can. Not a sticker. Not a wrap. Printed in Melbourne. Order 1 or 10,000.</p>
+
+        <div class="product-badges">
+          <span>Printed in Melbourne</span>
+          <span>No MOQ</span>
+          <span>2 to 3 days</span>
+          <span>Reprint on any defect</span>
+        </div>
+
+        <!-- Size -->
+        <div class="field">
+          <label class="field-label">Can size</label>
+          <div class="opt-row">
+            <button class="opt" id="s250" onclick="setSize('250')">250ml <small>Shots, samples</small></button>
+            <button class="opt on" id="s330" onclick="setSize('330')">330ml <small>Iced coffee, juice</small></button>
+            <button class="opt" id="s500" onclick="setSize('500')">500ml <small>Smoothies, kombucha</small></button>
           </div>
         </div>
-        <div style="font-size:12px; display:flex; justify-content:space-between; gap:12px;">
-          <div style="color:#555;">Profit/can: <strong style="color:#111;" id="rPerCan2">$0</strong></div>
-          <div style="color:#555;">Daily revenue: <strong style="color:#111;" id="rDaily2">$0</strong></div>
+
+        <!-- Type -->
+        <div class="field">
+          <label class="field-label">Type</label>
+          <div class="opt-row">
+            <button class="opt on" id="tP" onclick="setType('printed')">Custom printed <small>Your logo on the can</small></button>
+            <button class="opt" id="tU" onclick="setType('unprinted')">Unprinted clear <small>Per carton only</small></button>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Right: order form -->
-  <div style="position:sticky; top:90px;">
-    <div class="breadcrumb"><a href="products.html">Products</a> / Custom Printed Cans</div>
-    <h1 class="product-title">Custom Printed PET Cans</h1>
-    <div class="product-rating">
-      <span class="stars">★★★★★</span>
-      <span>4.9 · 47 reviews</span>
-    </div>
-    <p style="font-size:15px; color:var(--light); margin-bottom:28px; line-height:1.65;">Your logo printed directly on a clear food-grade PET can. Printed in Australia. In your hands in days. No minimum order.</p>
-
-    <!-- Size -->
-    <div class="selector-label">Can Size</div>
-    <div class="selector-group">
-      <button class="selector-btn active" id="btn-size-330" onclick="setSize('330')">
-        330ml <small>Iced coffees, cold brew, juices</small>
-      </button>
-      <button class="selector-btn" id="btn-size-500" onclick="setSize('500')">
-        500ml <small>Smoothies, kombucha, larger drinks</small>
-      </button>
-    </div>
-
-    <!-- Type -->
-    <div class="selector-label">Type</div>
-    <div class="selector-group">
-      <button class="selector-btn active" id="btn-type-printed" onclick="setType('printed')">
-        Custom Printed <small>Your logo on the can</small>
-      </button>
-      <button class="selector-btn" id="btn-type-unprinted" onclick="setType('unprinted')">
-        Unprinted Clear <small>Apply your own labels</small>
-      </button>
-    </div>
-
-    <!-- Quantity (populated by JS based on size selection) -->
-    <div class="selector-label">Quantity</div>
-    <div class="qty-btns" id="qty-buttons"></div>
-    <div class="bulk-note">
-      Need more than 10,000 cans? <a href="contact.html" style="color:var(--lime); font-weight:600;">Contact us for volume pricing →</a>
-    </div>
-
-    <!-- Price -->
-    <div class="price-display">
-      <div class="price-big" id="price-display">$15.00</div>
-      <div class="price-sub" id="price-gst">ex GST · 1 · 330ml Custom Printed Can</div>
-      <div class="price-per" id="price-per">Single sample</div>
-    </div>
-
-    <!-- Sample refund callout (only for qty=1) -->
-    <div class="green-callout" id="sample-notice" style="margin-bottom:20px;">
-      <span>🎉</span>
-      <span><strong>Sample deal:</strong> This $15.00 is automatically credited off your next order when you order 200+ cans.</span>
-    </div>
-
-    <!-- Delivery estimate -->
-    <div style="background:#f5f5f0; border-radius:8px; padding:12px 16px; font-size:13px; color:var(--muted); margin-bottom:20px; display:flex; align-items:center; gap:8px;">
-      <span>⚡</span>
-      <span>Order before 2pm — dispatched today. <strong style="color:var(--white);" id="delivery-date">Calculating delivery...</strong></span>
-    </div>
-
-    <!-- Artwork upload -->
-    <div id="artwork-section" style="margin-bottom:20px;">
-      <div class="selector-label">Artwork</div>
-      <div class="artwork-box" onclick="document.getElementById('artFile').click()">
-        <div style="font-size:26px; margin-bottom:6px;">📎</div>
-        <div style="font-size:14px; font-weight:600; margin-bottom:4px;">Upload your artwork</div>
-        <div style="font-size:12px; color:var(--muted);">AI, PDF, PNG — or upload after ordering, we'll follow up before printing</div>
-        <input type="file" id="artFile" accept=".ai,.pdf,.png,.jpg,.svg" style="display:none" onchange="artUploaded(this)" />
-      </div>
-      <div id="art-name" style="font-size:13px; color:var(--lime); margin-bottom:14px; display:none;"></div>
-      <div style="font-size:12px; color:var(--muted);">Not ready? Upload after ordering — nothing prints until you approve a proof.</div>
-    </div>
-
-    <button class="add-cart-btn" onclick="addToCart()">Add to Cart →</button>
-    <div class="trust-mini">
-      <span>🔒 Secure checkout</span>
-      <span>✓ Free proof before print</span>
-      <span>✓ Free shipping over $100</span>
-      <span>✓ Sample cost off next order at 200+</span>
-    </div>
-  </div>
-</div>
-
-<!-- TABS -->
-<section>
-  <div class="container">
-    <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('details',this)">Product Details</button>
-      <button class="tab-btn" onclick="showTab('pricing',this)">Full Pricing Table</button>
-      <button class="tab-btn" onclick="showTab('reviews',this)">Reviews (47)</button>
-    </div>
-
-    <!-- DETAILS -->
-    <div class="tab-content active" id="tab-details">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
-        <div>
-          <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">Specifications</h3>
-          <table style="width:100%; border-collapse:collapse; font-size:14px;">
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted); width:45%;">Material</td><td style="padding:12px 0; font-weight:600;">Food-grade, BPA-free PET</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Sizes available</td><td style="padding:12px 0; font-weight:600;">330ml, 500ml</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Print coverage</td><td style="padding:12px 0; font-weight:600;">Logo / front face (not full wrap)</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Print location</td><td style="padding:12px 0; font-weight:600;">Australia 🇦🇺</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Turnaround</td><td style="padding:12px 0; font-weight:600;">2–3 business days</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Minimum order</td><td style="padding:12px 0; font-weight:600; color:var(--lime);">1 can</td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 0; color:var(--muted);">Sealing</td><td style="padding:12px 0; font-weight:600;">Compatible with all PET sealing machines</td></tr>
-            <tr><td style="padding:12px 0; color:var(--muted);">Artwork formats</td><td style="padding:12px 0; font-weight:600;">AI, PDF, PNG (300dpi+)</td></tr>
-          </table>
+        <!-- Qty -->
+        <div class="field">
+          <label class="field-label">Quantity</label>
+          <div class="qty-row" id="qtys"></div>
+          <p style="font-size:12.5px; color:var(--ink-3); margin-top:10px;">Need a bigger run? <a href="contact.html" style="color:var(--brand); font-weight:600;">Get volume pricing â†’</a></p>
         </div>
-        <div>
-          <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">What's included</h3>
-          <ul class="product-features" style="margin-bottom:28px;">
-            <li>Custom printed PET can (your size)</li>
-            <li>Matching lid included</li>
-            <li>Free digital proof before print</li>
-            <li>Artwork file check by our team</li>
-            <li>Express shipping on orders over $100</li>
-          </ul>
-          <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">Suitable for</h3>
-          <ul class="product-features">
-            <li>Iced coffees and cold brew</li>
-            <li>Juices, smoothies, kombucha</li>
-            <li>Specialty drinks and cocktails</li>
-            <li>Branded takeaway beverages</li>
-            <li>Events and product launches</li>
-          </ul>
+
+        <!-- Price -->
+        <div class="price-box">
+          <div class="price-box-row">
+            <div class="price-big" id="p-big">$15.00</div>
+            <div class="price-unit" id="p-unit">ex GST</div>
+          </div>
+          <div class="price-meta" id="p-meta">1 sample can. 330ml custom printed.</div>
         </div>
-      </div>
-    </div>
 
-    <!-- PRICING -->
-    <div class="tab-content" id="tab-pricing">
-      <p style="font-size:15px; color:var(--muted); margin-bottom:28px; max-width:680px;">All prices ex GST. GST added at checkout. Sample automatically refunded when you order 200+. Need more than 10,000? <a href="contact.html" style="color:var(--lime);">Contact us for a custom quote.</a></p>
-
-      <!-- 330ml -->
-      <h3 style="font-size:18px; font-weight:700; margin-bottom:16px; color:var(--white);">330ml Cans</h3>
-      <div class="pricing-table" style="margin-bottom:36px;">
-        <table>
-          <thead>
-            <tr>
-              <th>Quantity</th>
-              <th class="hl">Printed (ex GST)</th>
-              <th>Unprinted (ex GST)</th>
-              <th>Total (printed)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td><td style="color:var(--muted);font-size:13px;">Refunded at 200+ ✓</td></tr>
-            <tr><td>50</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$35.45</td></tr>
-            <tr><td>100</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$70.90</td></tr>
-            <tr><td>200</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$141.80</td></tr>
-            <tr><td>400</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$283.60</td></tr>
-            <tr><td>600</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$425.40</td></tr>
-            <tr><td>800</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$567.20</td></tr>
-            <tr><td>1,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$709.00</td></tr>
-            <tr><td>5,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$3,545.00</td></tr>
-            <tr><td>10,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$7,090.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 500ml -->
-      <h3 style="font-size:18px; font-weight:700; margin-bottom:16px; color:var(--white);">500ml Cans</h3>
-      <div class="pricing-table" style="margin-bottom:24px;">
-        <table>
-          <thead>
-            <tr>
-              <th>Quantity</th>
-              <th class="hl">Printed (ex GST)</th>
-              <th>Unprinted (ex GST)</th>
-              <th>Total (printed)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1 (sample)</td><td class="lime">$15.00 flat</td><td>$15.00 flat</td><td style="color:var(--muted);font-size:13px;">Refunded at 200+ ✓</td></tr>
-            <tr><td>50</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$35.45</td></tr>
-            <tr><td>100</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$70.90</td></tr>
-            <tr><td>200</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$141.80</td></tr>
-            <tr><td>400</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$283.60</td></tr>
-            <tr><td>500</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$354.50</td></tr>
-            <tr><td>600</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$425.40</td></tr>
-            <tr><td>800</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$567.20</td></tr>
-            <tr><td>1,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$709.00</td></tr>
-            <tr><td>5,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$3,545.00</td></tr>
-            <tr><td>10,000</td><td class="lime">$0.709 / can</td><td>$0.691 / can</td><td style="color:var(--muted);font-size:13px;">$7,090.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px 20px; font-size:14px; color:var(--muted);">
-        📦 Need more than 10,000 cans? <a href="contact.html" style="color:var(--lime); font-weight:600;">Contact us for a custom volume quote →</a>
-      </div>
-
-      <div class="wa-notice" style="margin-top:20px;">
-        <span>⚠️</span><span><strong>WA customers:</strong> Under WA's Plan for Plastics (2025), PET cans cannot be used for beverages filled and sealed on-site. They can be used for pre-packaged beverages filled off-site. See <a href="how-it-works.html#faq" style="color:#c0a040; text-decoration:underline">FAQ</a> for details.</span>
-      </div>
-    </div>
-
-    <!-- REVIEWS -->
-    <div class="tab-content" id="tab-reviews">
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
-        <div class="review-card">
-          <div class="stars">?????</div>
-          <p class="review-text">"Ordered a sample Tuesday, had it Thursday. Print quality is incredible. Ordered 500 the next day — sample refunded straight away."</p>
-          <div class="reviewer"><div class="reviewer-avatar">☕</div><div><div class="reviewer-name">Sarah M.</div><div class="reviewer-role">Owner, Miro Coffee</div></div></div>
+        <div class="note-box" id="sample-note">
+          <span>ðŸŽ</span>
+          <span><b>Sample credit:</b> Order 200+ cans afterwards and we credit the $15 off your order.</span>
         </div>
-        <div class="review-card">
-          <div class="stars">?????</div>
-          <p class="review-text">"Every other supplier wanted a big minimum and weeks of waiting. Packlabb had my branded cans ready for our launch in 3 days. Different league."</p>
-          <div class="reviewer"><div class="reviewer-avatar">🧃</div><div><div class="reviewer-name">Tom K.</div><div class="reviewer-role">Founder, Press'd Juice Co.</div></div></div>
+
+        <div class="note-box" id="carton-note" style="display:none;">
+          <span>ðŸ“¦</span>
+          <span><b>1 carton = 200 cans</b> for 250ml &amp; 330ml; <b>100 cans</b> for 500ml. Use the + and âˆ’ buttons to add more cartons.</span>
         </div>
-        <div class="review-card">
-          <div class="stars">?????</div>
-          <p class="review-text">"The proof came back within hours. Print quality was exactly what I hoped. Fast, easy, and the cans look premium."</p>
-          <div class="reviewer"><div class="reviewer-avatar">🌸</div><div><div class="reviewer-name">Priya L.</div><div class="reviewer-role">Founder, Bloom Wellness</div></div></div>
+
+        <div class="field" id="art-wrap">
+          <label class="field-label">Artwork</label>
+          <div class="art-box" onclick="document.getElementById('artFile').click()">
+            <div class="i">ðŸ“Ž</div>
+            <p>Upload your artwork</p>
+            <small>AI, PDF, PNG, JPG, SVG. Or upload after ordering.</small>
+            <input type="file" id="artFile" accept=".ai,.pdf,.png,.jpg,.svg" style="display:none" onchange="artUploaded(this)" />
+          </div>
+          <p id="art-name" style="font-size:13px; color:var(--brand); display:none; margin-bottom:10px;"></p>
+          <p style="font-size:12.5px; color:var(--ink-3);">Not ready? Upload after ordering. Nothing prints until you approve a proof.</p>
+        </div>
+
+        <button class="order-btn" onclick="placeOrder()">Place order â†’</button>
+        <div class="order-assurance">
+          <span>âœ“ Free proof</span>
+          <span>âœ“ Reprint on defect</span>
+          <span>âœ“ Free express over $200</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div id="cart-toast" style="position:fixed;bottom:32px;right:32px;background:var(--lime);color:var(--black);padding:16px 24px;border-radius:10px;font-size:15px;font-weight:700;box-shadow:0 8px 32px rgba(0,0,0,.4);display:none;z-index:999;align-items:center;gap:12px;">
-  <span>✓</span><span id="toast-msg">Added to cart!</span>
-</div>
+<!-- ROI CALCULATOR -->
+<section style="padding:64px 0; background:var(--surface-2);">
+  <div class="wrap">
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:center;">
+      <div>
+        <span class="eyebrow">Run the numbers</span>
+        <h2 style="margin-bottom:14px;">How much could branded cans make you?</h2>
+        <p class="lead" style="margin-bottom:14px;">Drag the sliders to match your business. Real Packlabb pricing under the hood, real margins.</p>
+        <p style="font-size:13.5px; color:var(--ink-3);">Most cafes find branded packaging absorbs into existing margin without raising menu prices. Worth the maths.</p>
+      </div>
+      <div class="roi" id="roi-cans">
+        <div class="roi-eyebrow">ROI calculator</div>
+        <h3>How much could branded cans make you?</h3>
+        <p class="roi-sub">Adjust to match your business.</p>
 
-<!-- PAYMENT TRUST BADGES -->
-<div style="background:#f5f5f0; border-top:1px solid var(--border); padding:24px 48px; text-align:center;">
-  <div style="font-size:11px; color:var(--muted); font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">Secure Payment</div>
-  <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="32" height="20" viewBox="0 0 32 20" fill="none"><rect width="32" height="20" rx="3" fill="#1A1F71"/><text x="4" y="14" font-family="Arial" font-size="9" font-weight="bold" fill="white">VISA</text></svg>
-      Visa
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="32" height="20" viewBox="0 0 32 20" fill="none"><rect width="32" height="20" rx="3" fill="#EB001B"/><circle cx="12" cy="10" r="7" fill="#EB001B"/><circle cx="20" cy="10" r="7" fill="#F79E1B"/><path d="M16 4.8a7 7 0 0 1 0 10.4A7 7 0 0 1 16 4.8z" fill="#FF5F00"/></svg>
-      Mastercard
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="32" height="20" viewBox="0 0 32 20" fill="none"><rect width="32" height="20" rx="3" fill="#003087"/><text x="3" y="14" font-family="Arial" font-size="8" font-weight="bold" fill="white">Pay</text><text x="13" y="14" font-family="Arial" font-size="8" font-weight="bold" fill="#009CDE">Pal</text></svg>
-      PayPal
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="32" height="20" viewBox="0 0 32 20" fill="none"><rect width="32" height="20" rx="3" fill="#000"/><text x="5" y="14" font-family="Arial" font-size="8" font-weight="bold" fill="white">Pay</text></svg>
-      Apple Pay
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="32" height="20" viewBox="0 0 32 20" fill="none"><rect width="32" height="20" rx="3" fill="#B2FCE4"/><text x="2" y="14" font-family="Arial" font-size="7" font-weight="bold" fill="#000">afterpay</text></svg>
-      Afterpay
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
-      SSL Secure
+        <div class="roi-tier">
+          <div class="roi-tier-row">
+            <div>
+              <div class="roi-tier-label">Can size</div>
+              <div class="roi-seg" id="roi-size"></div>
+            </div>
+            <div>
+              <div class="roi-tier-label">Order qty</div>
+              <div class="roi-seg" id="roi-qty"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Cans sold per day</label><span class="val" id="roi-v-daily">50</span></div>
+          <input type="range" class="roi-range" id="roi-s-daily" min="10" max="500" step="5" value="50" oninput="roiUpdate()" />
+        </div>
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Sell price per can</label><span class="val">$<span id="roi-v-sell">4.50</span></span></div>
+          <input type="range" class="roi-range" id="roi-s-sell" min="2" max="12" step="0.10" value="4.50" oninput="roiUpdate()" />
+        </div>
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Ingredient cost</label><span class="val">$<span id="roi-v-ing">2.00</span></span></div>
+          <input type="range" class="roi-range" id="roi-s-ing" min="0.20" max="6" step="0.05" value="2.00" oninput="roiUpdate()" />
+        </div>
+
+        <div class="roi-result">
+          <div class="roi-result-main">
+            <div>
+              <div class="roi-result-num brand">$<span id="roi-r-month">0</span></div>
+              <div class="roi-result-label">monthly profit</div>
+            </div>
+            <div>
+              <div class="roi-result-num">$<span id="roi-r-year">0</span></div>
+              <div class="roi-result-label">annual profit</div>
+            </div>
+          </div>
+          <div class="roi-result-foot">
+            <span>Profit/can: <b>$<span id="roi-r-perunit">0.00</span></b></span>
+            <span>Daily revenue: <b>$<span id="roi-r-rev">0</span></b></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<footer class="site-footer">
-  <div class="footer-logo">pack<span>labb</span></div>
-  <ul class="footer-links">
-    <li><a href="products.html">Products</a></li>
-    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
-    <li><a href="coffee-cups.html">Custom Coffee Cups</a></li>
-    <li><a href="machine.html">Sealing Machine</a></li>
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2025 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
+<!-- TABS -->
+<section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="tabs-nav">
+      <button class="tab-btn on" onclick="showTab('details', this)">Product details</button>
+      <button class="tab-btn" onclick="showTab('pricing', this)">Full pricing</button>
+      <button class="tab-btn" onclick="showTab('artwork', this)">Specs &amp; artwork</button>
+    </div>
+
+    <div class="tab-panel on" id="tab-details">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <h3 style="margin-bottom:16px;">What is included</h3>
+          <ul class="prod-specs" style="margin-bottom:32px;">
+            <li>UV direct print on food-grade PET can</li>
+            <li>Matching lid included</li>
+            <li>Free digital proof before print</li>
+            <li>Artwork file check by our studio</li>
+            <li>Reprint on any print defect, full replacement</li>
+            <li>Free express shipping on orders over $200</li>
+          </ul>
+          <h3 style="margin-bottom:16px;">About the print</h3>
+          <p style="font-size:14.5px; color:var(--ink-2); margin-bottom:12px;">UV printed direct onto the front face of the can. Not a sticker. Not a shrink wrap. The rest of the can stays crystal-clear so customers see the drink from every angle.</p>
+          <p style="font-size:14.5px; color:var(--ink-2);">Full-wrap printing is available on bulk runs. Get in touch for specifics.</p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">Best for</h3>
+          <ul class="prod-specs">
+            <li>Iced coffee and cold brew</li>
+            <li>Juices, smoothies, kombucha</li>
+            <li>Specialty drinks and cocktails</li>
+            <li>Branded takeaway for cafes</li>
+            <li>Events and product launches</li>
+            <li>Retail-ready packaged beverages</li>
+          </ul>
+          <div class="note-box" style="margin-top:24px;">
+            <span>âš™ï¸</span>
+            <span><b>Seals on any standard PET machine.</b> Works with CanGo, iPAK, Rosa and every standard seamer. Our cans use industry-standard sizing.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-pricing">
+      <p style="font-size:15px; color:var(--ink-3); max-width:720px; margin-bottom:32px;">All prices ex GST. Sample automatically credited when you order 200+. Unprinted by the carton only. Need a bigger run? <a href="contact.html" style="color:var(--brand); font-weight:600;">Get a volume quote.</a></p>
+
+      <h3 style="margin-bottom:8px;">250ml printed cans</h3>
+      <p style="font-size:13px; color:var(--ink-3); margin-bottom:14px;">200 cans per carton. About 2.5% under CanGo at every tier.</p>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per can</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td style="color:var(--ink-3); font-size:13px;">Credited at 200+</td></tr>
+            <tr><td>50</td><td class="val">$1.10</td><td>$55.00</td></tr>
+            <tr><td>100</td><td class="val">$1.00</td><td>$100.00</td></tr>
+            <tr class="best"><td>200 <span class="pill">Popular</span></td><td class="val">$0.90</td><td>$180.00</td></tr>
+            <tr><td>400</td><td class="val">$0.80</td><td>$320.00</td></tr>
+            <tr><td>600</td><td class="val">$0.75</td><td>$450.00</td></tr>
+            <tr><td>800</td><td class="val">$0.70</td><td>$560.00</td></tr>
+            <tr><td>1,000</td><td class="val">$0.65</td><td>$650.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.60</td><td>$1,200.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.636</td><td>$3,180.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">330ml printed cans</h3>
+      <p style="font-size:13px; color:var(--ink-3); margin-bottom:14px;">200 cans per carton.</p>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per can</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td style="color:var(--ink-3); font-size:13px;">Credited at 200+</td></tr>
+            <tr><td>50</td><td class="val">$1.20</td><td>$60.00</td></tr>
+            <tr><td>100</td><td class="val">$1.10</td><td>$110.00</td></tr>
+            <tr class="best"><td>200 <span class="pill">Popular</span></td><td class="val">$1.00</td><td>$200.00</td></tr>
+            <tr><td>400</td><td class="val">$0.90</td><td>$360.00</td></tr>
+            <tr><td>600</td><td class="val">$0.85</td><td>$510.00</td></tr>
+            <tr><td>800</td><td class="val">$0.80</td><td>$640.00</td></tr>
+            <tr><td>1,000</td><td class="val">$0.75</td><td>$750.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.70</td><td>$1,400.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.636</td><td>$3,180.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">500ml printed cans</h3>
+      <p style="font-size:13px; color:var(--ink-3); margin-bottom:14px;">100 cans per carton.</p>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per can</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td style="color:var(--ink-3); font-size:13px;">Credited at 200+</td></tr>
+            <tr><td>50</td><td class="val">$1.30</td><td>$65.00</td></tr>
+            <tr><td>100</td><td class="val">$1.20</td><td>$120.00</td></tr>
+            <tr class="best"><td>200 <span class="pill">Popular</span></td><td class="val">$1.10</td><td>$220.00</td></tr>
+            <tr><td>400</td><td class="val">$1.00</td><td>$400.00</td></tr>
+            <tr><td>600</td><td class="val">$0.90</td><td>$540.00</td></tr>
+            <tr><td>800</td><td class="val">$0.85</td><td>$680.00</td></tr>
+            <tr><td>1,000</td><td class="val">$0.80</td><td>$800.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.75</td><td>$1,500.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.727</td><td>$3,635.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">Unprinted clear cans, by the carton</h3>
+      <p style="font-size:13px; color:var(--ink-3); margin-bottom:14px;">Sold by the carton only. No setup, no proof â€” ships next business day.</p>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Size</th><th>Cans per carton</th><th>Per carton</th><th>Per can</th></tr></thead>
+          <tbody>
+            <tr><td>250ml</td><td>200</td><td class="val">$124.00</td><td>$0.62</td></tr>
+            <tr><td>330ml</td><td>200</td><td class="val">$122.00</td><td>$0.61</td></tr>
+            <tr><td>500ml</td><td>100</td><td class="val">$70.00</td><td>$0.70</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box" style="margin-top:24px;">
+        <span>â„¹ï¸</span><span><b>No setup fees. No plate fees. No minimum commitment.</b> The $15 sample is the only upfront cost, and it comes back to you at 200+.</span>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-artwork">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <h3 style="margin-bottom:16px;">Can specifications</h3>
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3); width:45%;">Material</td><td style="padding:12px 0; font-weight:600;">Food-grade BPA-free PET</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Sizes</td><td style="padding:12px 0; font-weight:600;">250ml, 330ml, 500ml</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print method</td><td style="padding:12px 0; font-weight:600;">UV direct-to-can</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print area</td><td style="padding:12px 0; font-weight:600;">Front face</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print location</td><td style="padding:12px 0; font-weight:600;">Melbourne, Australia</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Turnaround</td><td style="padding:12px 0; font-weight:600;">2 to 3 business days</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Minimum</td><td style="padding:12px 0; font-weight:700; color:var(--brand);">1 can</td></tr>
+            <tr><td style="padding:12px 0; color:var(--ink-3);">Sealing</td><td style="padding:12px 0; font-weight:600;">All standard PET seamers</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">Artwork guidelines</h3>
+          <ul class="prod-specs" style="margin-bottom:20px;">
+            <li>Adobe Illustrator (.ai), ideal</li>
+            <li>PDF with embedded fonts</li>
+            <li>PNG at 300dpi or higher</li>
+            <li>CMYK colour mode (RGB accepted, we convert)</li>
+            <li>Pantone colours: specify in your brief</li>
+            <li>White ink available, specify in notes</li>
+          </ul>
+          <div class="note-box">
+            <span>ðŸ‘·</span><span><b>File not print-ready?</b> Send what you have. We check every file. If something needs adjusting, we tell you before a single can prints.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Order your $15 sample today.</h2>
+    <p>One printed can on your stock. If you come back with an order of 200+ cans, the sample is on us.</p>
+    <div class="cta-btns">
+      <a href="#order" class="btn btn-brand btn-lg btn-arrow">Configure and order</a>
+      <a href="tel:+61415743691" class="btn btn-white btn-lg">Call 0415 743 691</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">pack<b>labb</b></a>
+        <p>Print-on-demand packaging, built in Melbourne. No MOQ, 2 to 3 day turnaround.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5>
+        <a href="printed-cans.html">PET Cans</a>
+        <a href="coffee-cups.html">Coffee Cups</a>
+        <a href="pet-cups.html">PET Cups</a>
+        <a href="byo-stock.html">Print on Your Stock</a>
+        <a href="machine.html">Sealing Machine</a>
+      </div>
+      <div class="footer-col"><h5>Info</h5>
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col"><h5>Contact</h5>
+        <a href="mailto:hello@packlabb.com.au">hello@packlabb.com.au</a>
+        <a href="tel:+61415743691">0415 743 691</a>
+        <p style="font-size:13px; padding-top:6px;">Melbourne, VIC</p>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div>Â© 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
+      <div style="display:flex; gap:18px;"><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
 <div style="margin-top:16px;padding-top:12px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af;">
   <a href="https://checkout.packlabb.com.au/policies/privacy-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Privacy Policy</a>
   <a href="https://checkout.packlabb.com.au/policies/refund-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Refund Policy</a>
@@ -426,161 +440,260 @@
 </div>
 </footer>
 
+<!-- ORDER MODAL -->
+<div class="modal" id="order-modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3>Place your order</h3>
+        <p>We review your artwork and send a free proof within 1 business day.</p>
+      </div>
+      <button class="modal-close" onclick="closeOrderModal()" aria-label="Close">Ã—</button>
+    </div>
+    <div class="modal-spec" id="modal-spec"></div>
+    <form class="modal-form" onsubmit="submitOrderForm(event)" id="order-form">
+      <input type="hidden" id="m-product" name="product" />
+      <input type="hidden" id="m-qty" name="quantity" />
+      <input type="hidden" id="m-total" name="total" />
+      <div class="f"><label>Your name</label><input type="text" name="name" required /></div>
+      <div class="f"><label>Email</label><input type="email" name="email" required /></div>
+      <div class="f"><label>Business name</label><input type="text" name="business" /></div>
+      <div class="f"><label>Phone</label><input type="tel" name="phone" required /></div>
+      <div class="f"><label>Notes (optional)</label><textarea name="notes" rows="3" placeholder="Deadline, special requirements, Pantone colours..."></textarea></div>
+      <div class="note"><b>What happens next:</b> We review your order and artwork, send you a free digital proof within 1 business day. Payment is taken only after you approve. Nothing prints until you say go.</div>
+      <button type="submit">Submit order request â†’</button>
+    </form>
+    <div class="modal-ok" id="modal-ok">
+      <div class="tick">âœ“</div>
+      <h3>Order received</h3>
+      <p>We will review your artwork and send a free digital proof within 1 business day. Payment is taken only after you approve the proof.</p>
+      <button onclick="closeOrderModal()" class="btn btn-primary btn-md">Close</button>
+    </div>
+  </div>
+</div>
+
+<a href="#order" class="sticky-cta">
+  <span><b>$15 sample.</b> Your stock, your artwork.</span>
+  <span class="go">Order â†’</span>
+</a>
+
+<script src="app.js"></script>
 <script>
-// -- PRICING DATA --
-var PRICING = {
-  '330': {
-    printed:   { 1:15.00, 50:0.709, 100:0.709, 200:0.709, 400:0.709, 600:0.709, 800:0.709, 1000:0.709, 5000:0.709, 10000:0.709 },
-    unprinted: { 1:15.00, 50:0.691, 100:0.691, 200:0.691, 400:0.691, 600:0.691, 800:0.691, 1000:0.691, 5000:0.691, 10000:0.691 }
-  },
-  '500': {
-    printed:   { 1:15.00, 50:0.709, 100:0.709, 200:0.709, 400:0.709, 500:0.709, 600:0.709, 800:0.709, 1000:0.709, 5000:0.709, 10000:0.709 },
-    unprinted: { 1:15.00, 50:0.691, 100:0.691, 200:0.691, 400:0.691, 500:0.691, 600:0.691, 800:0.691, 1000:0.691, 5000:0.691, 10000:0.691 }
+// Printed: per-can price at each quantity tier
+var PRINTED = {
+  '250': {1:15.00, 50:1.10, 100:1.00, 200:0.90, 400:0.80, 600:0.75, 800:0.70, 1000:0.65, 2000:0.60, 5000:0.636},
+  '330': {1:15.00, 50:1.20, 100:1.10, 200:1.00, 400:0.90, 600:0.85, 800:0.80, 1000:0.75, 2000:0.70, 5000:0.636},
+  '500': {1:15.00, 50:1.30, 100:1.20, 200:1.10, 400:1.00, 600:0.90, 800:0.85, 1000:0.80, 2000:0.75, 5000:0.727}
+};
+// Unprinted: sold by the carton only
+var CTN = { '250': 200, '330': 200, '500': 100 };
+var UNPRINTED_PER_CTN = { '250': 124.00, '330': 122.00, '500': 70.00 };
+var PRINTED_QTYS = [1, 50, 100, 200, 400, 600, 800, 1000, 2000, 5000];
+var MAX_CARTONS = 50;
+var state = { size: '330', type: 'printed', qty: 1, cartons: 1 };
+
+function setSize(s) {
+  state.size = s;
+  if (state.type === 'unprinted') {
+    state.qty = state.cartons * CTN[s];
+  } else {
+    state.qty = 1;
   }
-};
-
-var QTY_OPTIONS = {
-  '330': [1, 50, 100, 200, 400, 600, 800, 1000, 5000, 10000],
-  '500': [1, 50, 100, 200, 400, 500, 600, 800, 1000, 5000, 10000]
-};
-
-var state = { size:'330', type:'printed', qty:1 };
-
-function getPrice(size, type, qty) {
-  return PRICING[size][type][qty] || 15.00;
+  ['250','330','500'].forEach(function(x){ document.getElementById('s'+x).classList.toggle('on', x===s); });
+  // Swap main image to match selected size
+  var imgFor = { '250':'can-250ml.png', '330':'can-330ml.png', '500':'can-500ml.png' };
+  syncImg(imgFor[s]);
+  renderQtys(); updatePrice();
 }
-
-function setSize(size) {
-  state.size = size;
-  state.qty = 1;
-  document.getElementById('btn-size-330').classList.toggle('active', size==='330');
-  document.getElementById('btn-size-500').classList.toggle('active', size==='500');
-  // Auto-switch main image based on size
-  var imgSrc = size === '330' ? 'card-330ml.png' : 'card-500ml.png';
-  document.querySelector('.product-hero-img img').src = imgSrc;
-  // Highlight matching thumb
-  document.querySelectorAll('.thumb').forEach(function(t) {
-    t.style.border = '1px solid var(--border)';
-  });
-  var thumbs = document.querySelectorAll('.thumb');
-  if (size === '330' && thumbs[1]) thumbs[1].style.border = '2px solid var(--lime)';
-  if (size === '500' && thumbs[2]) thumbs[2].style.border = '2px solid var(--lime)';
-  renderQtyButtons();
-  updatePrice();
+// Image gallery: click a thumb OR have setSize call us
+function setImg(thumb, src) {
+  document.getElementById('main-img').src = src;
+  document.querySelectorAll('#thumbs > div').forEach(function(d){ d.classList.remove('on'); });
+  if (thumb) thumb.classList.add('on');
 }
-
-function setType(type) {
-  state.type = type;
-  document.getElementById('btn-type-printed').classList.toggle('active', type==='printed');
-  document.getElementById('btn-type-unprinted').classList.toggle('active', type==='unprinted');
-  document.getElementById('artwork-section').style.display = type==='printed' ? 'block' : 'none';
-  updatePrice();
-}
-
-function setQty(qty) {
-  state.qty = qty;
-  document.querySelectorAll('.qty-btn').forEach(function(b) {
-    b.classList.toggle('qty-active', parseInt(b.dataset.qty) === qty);
-  });
-  updatePrice();
-}
-
-function renderQtyButtons() {
-  var container = document.getElementById('qty-buttons');
-  container.innerHTML = '';
-  QTY_OPTIONS[state.size].forEach(function(q) {
-    var btn = document.createElement('button');
-    btn.className = 'qty-btn' + (q === state.qty ? ' qty-active' : '');
-    btn.dataset.qty = q;
-    btn.textContent = q === 1 ? '1 (Sample)' : q.toLocaleString();
-    btn.onclick = function() { setQty(q); };
-    container.appendChild(btn);
+function syncImg(src) {
+  document.getElementById('main-img').src = src;
+  document.querySelectorAll('#thumbs > div').forEach(function(d){
+    var img = d.querySelector('img');
+    d.classList.toggle('on', img && img.getAttribute('src') === src);
   });
 }
-
+function setType(t) {
+  state.type = t;
+  if (t === 'unprinted') {
+    state.cartons = 1;
+    state.qty = CTN[state.size];
+  } else {
+    state.qty = 1;
+  }
+  document.getElementById('tP').classList.toggle('on', t==='printed');
+  document.getElementById('tU').classList.toggle('on', t==='unprinted');
+  // Artwork upload only relevant for printed
+  var art = document.getElementById('art-wrap');
+  if (art) art.style.display = (t==='printed') ? 'block' : 'none';
+  // Toggle the right note + carton info
+  document.getElementById('sample-note').style.display = (t==='printed') ? 'flex' : 'none';
+  var ctnNote = document.getElementById('carton-note');
+  if (ctnNote) ctnNote.style.display = (t==='unprinted') ? 'flex' : 'none';
+  renderQtys(); updatePrice();
+}
+function setQty(q) {
+  state.qty = q;
+  document.querySelectorAll('#qtys .qbtn').forEach(function(b){ b.classList.toggle('on', parseInt(b.dataset.q)===q); });
+  updatePrice();
+}
+function adjustCartons(delta) {
+  var next = state.cartons + delta;
+  if (next < 1) next = 1;
+  if (next > MAX_CARTONS) next = MAX_CARTONS;
+  state.cartons = next;
+  state.qty = state.cartons * CTN[state.size];
+  renderQtys(); updatePrice();
+}
+function renderQtys() {
+  var c = document.getElementById('qtys'); c.innerHTML = '';
+  if (state.type === 'unprinted') {
+    var ctn = CTN[state.size];
+    var atMin = state.cartons <= 1;
+    var atMax = state.cartons >= MAX_CARTONS;
+    c.innerHTML =
+      '<div>' +
+        '<div class="stepper">' +
+          '<button onclick="adjustCartons(-1)"' + (atMin ? ' disabled' : '') + ' aria-label="Remove carton">âˆ’</button>' +
+          '<div class="stepper-val">' + state.cartons + ' <small>carton' + (state.cartons>1?'s':'') + '</small></div>' +
+          '<button onclick="adjustCartons(1)"' + (atMax ? ' disabled' : '') + ' aria-label="Add carton">+</button>' +
+        '</div>' +
+        '<div class="stepper-meta"><b>1 carton = ' + ctn.toLocaleString() + ' cans</b> (' + state.size + 'ml). ' + state.qty.toLocaleString() + ' cans total.</div>' +
+      '</div>';
+  } else {
+    PRINTED_QTYS.forEach(function(q){
+      var b = document.createElement('button');
+      b.className = 'qbtn' + (q===state.qty?' on':'');
+      b.dataset.q = q;
+      b.textContent = q===1 ? '1 sample' : q.toLocaleString();
+      b.onclick = function(){ setQty(q); };
+      c.appendChild(b);
+    });
+  }
+}
+function getCurrentTotal() {
+  if (state.type === 'unprinted') {
+    return UNPRINTED_PER_CTN[state.size] * state.cartons;
+  }
+  var per = PRINTED[state.size][state.qty] || 0;
+  return state.qty === 1 ? 15.00 : per * state.qty;
+}
 function updatePrice() {
-  var qty  = state.qty;
-  var size = state.size;
-  var type = state.type;
-  var per  = getPrice(size, type, qty);
-  var total = qty === 1 ? 15.00 : per * qty;
-
-  var typeLabel = type === 'printed' ? 'Custom Printed' : 'Unprinted Clear';
-  var sizeLabel = size + 'ml';
-
-  document.getElementById('price-display').textContent = '$' + total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  document.getElementById('price-gst').textContent = 'ex GST · ' + qty.toLocaleString() + ' · ' + sizeLabel + ' ' + typeLabel + ' Can' + (qty > 1 ? 's' : '');
-  document.getElementById('price-per').textContent = qty > 1 ? '$' + per.toFixed(3).replace(/\.?0+$/, '') + ' per can' : 'Single sample can';
-  document.getElementById('sample-notice').style.display = qty === 1 ? 'flex' : 'none';
-
-  // Delivery date
-  var d = new Date(), h = d.getHours();
-  var add = h >= 14 ? 2 : 1, tgt = new Date(d), done = 0;
-  while (done < add + 1) { tgt.setDate(tgt.getDate() + 1); var dw = tgt.getDay(); if (dw !== 0 && dw !== 6) done++; }
-  var days   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('delivery-date').textContent = 'Est. delivery: ' + days[tgt.getDay()] + ' ' + tgt.getDate() + ' ' + months[tgt.getMonth()];
-}
-
-function artUploaded(input) {
-  if (input.files && input.files[0]) {
-    var n = document.getElementById('art-name');
-    n.textContent = '✓ ' + input.files[0].name + ' ready to go';
-    n.style.display = 'block';
-    document.querySelector('.artwork-box').style.borderColor = 'var(--lime)';
+  var total = getCurrentTotal();
+  var typeLbl = state.type === 'printed' ? 'custom printed' : 'unprinted clear';
+  document.getElementById('p-big').textContent = '$' + total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  if (state.type === 'unprinted') {
+    document.getElementById('p-unit').textContent = 'ex GST, ' + state.qty.toLocaleString() + ' cans';
+    document.getElementById('p-meta').innerHTML = '$' + (total/state.qty).toFixed(2) + ' per can. <b>' + state.size + 'ml ' + typeLbl + '.</b>';
+  } else if (state.qty === 1) {
+    document.getElementById('p-unit').textContent = 'ex GST, one sample';
+    document.getElementById('p-meta').innerHTML = '1 sample can. <b>' + state.size + 'ml ' + typeLbl + '.</b>';
+  } else {
+    var per = PRINTED[state.size][state.qty] || 0;
+    document.getElementById('p-unit').textContent = 'ex GST, ' + state.qty.toLocaleString() + ' cans';
+    document.getElementById('p-meta').innerHTML = '$' + per.toFixed(2) + ' per can. <b>' + state.size + 'ml ' + typeLbl + '.</b>';
   }
+  document.getElementById('sample-note').style.display = (state.qty===1 && state.type==='printed') ? 'flex' : 'none';
 }
-
-function addToCart() {
-  var qty  = state.qty, type = state.type, size = state.size;
-  var per  = getPrice(size, type, qty);
-  var total = qty === 1 ? 15.00 : per * qty;
-  var tl   = type === 'printed' ? 'Printed' : 'Unprinted';
-  var toast = document.getElementById('cart-toast');
-  document.getElementById('toast-msg').textContent = qty.toLocaleString() + ' x ' + size + 'ml ' + tl + ' - $' + total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  toast.style.display = 'flex';
-  setTimeout(function() { toast.style.display = 'none'; }, 3500);
+function placeOrder() {
+  var sku, label, price;
+  var typeLbl = state.type === 'unprinted' ? 'Unprinted Clear' : 'Custom Printed';
+  if (state.type === 'unprinted') {
+    sku = 'CAN-' + state.size + '-U-' + state.cartons + 'CTN';
+    label = state.size + 'ml ' + typeLbl + ' Cans (' + state.cartons + ' carton' + (state.cartons > 1 ? 's' : '') + ', ' + state.qty.toLocaleString() + ' cans)';
+    price = getCurrentTotal();
+  } else if (state.qty === 1) {
+    sku = 'CAN-' + state.size + '-SAMPLE';
+    label = state.size + 'ml Sample Can';
+    price = 15.00;
+  } else {
+    sku = 'CAN-' + state.size + '-P-' + state.qty;
+    label = state.size + 'ml ' + typeLbl + ' Cans x' + state.qty.toLocaleString();
+    price = getCurrentTotal();
+  }
+  goToCheckout(sku, label, price);
 }
-
-function showTab(id, el) {
-  document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
-  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-  document.getElementById('tab-' + id).classList.add('active');
-  el.classList.add('active');
-}
-
-function switchImg(src, el) {
-  document.querySelector('.product-hero-img img').src = src;
-  document.querySelectorAll('.thumb').forEach(function(t) {
-    t.style.border = '1px solid var(--border)';
+function placeOrder_legacy() {
+  var total = getCurrentTotal();
+  var typeLbl = state.type === 'printed' ? 'Custom Printed' : 'Unprinted Clear';
+  openOrderModal({
+    product: state.size + 'ml ' + typeLbl + ' Can',
+    qty: state.qty,
+    total: total
   });
-  el.style.border = '2px solid var(--lime)';
+}
+renderQtys(); updatePrice();
+
+// ====== ROI CALCULATOR (cans) ======
+var ROI_CANS = {
+  sizes: ['250ml', '330ml', '500ml'],
+  defaultSize: '330ml',
+  plain_per_1000: { '250ml': 500, '330ml': 571, '500ml': 652 },
+  printed: {
+    '250ml': {200:180, 400:320, 1000:650, 2000:1200, 5000:3180},
+    '330ml': {200:200, 400:360, 1000:750, 2000:1400, 5000:3180},
+    '500ml': {200:220, 400:400, 1000:800, 2000:1500, 5000:3635}
+  },
+  qtys: [200, 400, 1000, 2000, 5000],
+  defaultQty: 1000
+};
+var roiState = { size: ROI_CANS.defaultSize, qty: ROI_CANS.defaultQty };
+
+function roiSetSize(s) { roiState.size = s; roiRenderTier(); roiUpdate(); }
+function roiSetQty(q) { roiState.qty = q; roiRenderTier(); roiUpdate(); }
+
+function roiRenderTier() {
+  var sizeEl = document.getElementById('roi-size');
+  sizeEl.innerHTML = '';
+  ROI_CANS.sizes.forEach(function(s) {
+    var b = document.createElement('button');
+    b.textContent = s;
+    if (s === roiState.size) b.className = 'on';
+    b.onclick = function() { roiSetSize(s); };
+    sizeEl.appendChild(b);
+  });
+  var qtyEl = document.getElementById('roi-qty');
+  qtyEl.innerHTML = '';
+  ROI_CANS.qtys.forEach(function(q) {
+    var b = document.createElement('button');
+    b.textContent = q >= 1000 ? (q/1000) + 'k' : q;
+    if (q === roiState.qty) b.className = 'on';
+    b.onclick = function() { roiSetQty(q); };
+    qtyEl.appendChild(b);
+  });
 }
 
-// Init
-renderQtyButtons();
-updatePrice();
-</script>
-<script>
-function calcCansROI() {
-  var cans = parseInt(document.getElementById('cSlider2').value);
-  var sell = parseFloat(document.getElementById('sSlider2').value);
-  var ingr = parseFloat(document.getElementById('iSlider2').value);
-  var canCost = 0.60;
-  document.getElementById('cVal2').textContent = cans;
-  document.getElementById('sVal2').textContent = sell.toFixed(2);
-  document.getElementById('iVal2').textContent = ingr.toFixed(2);
-  var profit = sell - ingr - canCost;
-  document.getElementById('rMonthly2').textContent = '$' + Math.max(0, Math.round(profit * cans * 26)).toLocaleString();
-  document.getElementById('rAnnual2').textContent  = '$' + Math.max(0, Math.round(profit * cans * 312)).toLocaleString();
-  document.getElementById('rPerCan2').textContent  = '$' + profit.toFixed(2);
-  document.getElementById('rDaily2').textContent   = '$' + Math.round(cans * sell).toLocaleString();
+function roiUpdate() {
+  var daily = parseFloat(document.getElementById('roi-s-daily').value);
+  var sell = parseFloat(document.getElementById('roi-s-sell').value);
+  var ing = parseFloat(document.getElementById('roi-s-ing').value);
+  document.getElementById('roi-v-daily').textContent = daily.toLocaleString();
+  document.getElementById('roi-v-sell').textContent = sell.toFixed(2);
+  document.getElementById('roi-v-ing').textContent = ing.toFixed(2);
+
+  var printedTotal = ROI_CANS.printed[roiState.size][roiState.qty] || 0;
+  var printedPerUnit = printedTotal / roiState.qty;
+  var profitPerCan = sell - ing - printedPerUnit;
+  if (profitPerCan < 0) profitPerCan = 0;
+
+  var monthlyUnits = daily * 30;
+  var monthlyProfit = profitPerCan * monthlyUnits;
+  var yearlyProfit = monthlyProfit * 12;
+  var dailyRevenue = daily * sell;
+
+  document.getElementById('roi-r-perunit').textContent = profitPerCan.toFixed(2);
+  document.getElementById('roi-r-month').textContent = Math.round(monthlyProfit).toLocaleString();
+  document.getElementById('roi-r-year').textContent = Math.round(yearlyProfit).toLocaleString();
+  document.getElementById('roi-r-rev').textContent = Math.round(dailyRevenue).toLocaleString();
 }
-window.addEventListener('DOMContentLoaded', calcCansROI);
+
+roiRenderTier();
+roiUpdate();
 </script>
 </body>
 </html>
-
-
-
-

@@ -1,312 +1,208 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ â€” Packlabb</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .faq-hero {
-      padding: 72px 48px 48px;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .faq-hero h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 900;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-      line-height: 1.05;
-    }
-    .faq-hero p {
-      font-size: 18px;
-      color: var(--light);
-      line-height: 1.6;
-    }
-
-    .faq-section {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 48px 48px;
-    }
-
-    .faq-category {
-      margin-bottom: 48px;
-    }
-
-    .faq-category-label {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      color: var(--white);
-      gap: 16px;
-      user-select: none;
-    }
-
-    .faq-q:hover { color: var(--lime); }
-
-    .faq-icon {
-      font-size: 20px;
-      font-weight: 300;
-      color: var(--lime);
-      flex-shrink: 0;
-      line-height: 1;
-      transition: transform 0.2s;
-    }
-
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    .faq-a {
-      display: none;
-      padding: 0 0 18px 0;
-      font-size: 14px;
-      color: var(--light);
-      line-height: 1.75;
-    }
-
-    .faq-item.open .faq-a {
-      display: block;
-    }
-
-    .faq-cta {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px;
-      text-align: center;
-      margin: 56px 48px 64px;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .faq-cta h2 {
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-
-    .faq-cta p {
-      font-size: 15px;
-      color: var(--light);
-      margin-bottom: 28px;
-      line-height: 1.65;
-    }
-
-    .faq-cta-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      .faq-hero { padding: 48px 20px 36px; }
-      .faq-section { padding: 0 20px 40px; }
-      .faq-cta { margin: 40px 20px 48px; padding: 32px 24px; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ. Straight answers about our printing. | Packlabb</title>
+<meta name="description" content="Common questions about Packlabb custom printed packaging. Turnaround, pricing, artwork, shipping, WA plastics regulation and more." />
+<link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Are you actually printing in Australia?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every print runs through our Melbourne facility. Not a reseller. Come watch a job print."}},
+{"@type":"Question","name":"Do you really have no minimum order?","acceptedAnswer":{"@type":"Answer","text":"Yes. Order 1 can for $15 or 10,000 for a production run."}},
+{"@type":"Question","name":"How fast is turnaround?","acceptedAnswer":{"@type":"Answer","text":"2 to 3 business days from artwork approval. Same-day rush available."}},
+{"@type":"Question","name":"What file formats do you accept?","acceptedAnswer":{"@type":"Answer","text":"AI, PDF, PNG, JPG, SVG. Print-ready ideal. We fix or flag anything that isnt."}},
+{"@type":"Question","name":"How does the sample credit work?","acceptedAnswer":{"@type":"Answer","text":"Order 1 for $15. Come back and order 200+ cans or 1,000+ cups, the $15 is credited off that order."}}
+]}
+</script>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">pack<span>labb</span></a>
-  <ul class="nav-links">
-    <li><a href="products.html">Products</a></li>
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div style="display:flex;gap:10px;align-items:center;">
-    <a href="printed-cans.html#order" class="btn-secondary" style="font-size:13px;padding:8px 16px;">Try $15 Sample</a>
-    <a href="products.html" class="nav-cta">Order Now</a>
-  </div>
-</nav>
+<div class="topbar"><strong>2 to 3 day turnaround.</strong> <span>Free express over $200.<span class="mobile-hide"> Melbourne visits by appointment.</span></span></div>
 
-<div class="trust-bar">
-  <span><img src="https://flagcdn.com/16x12/au.png" alt="AU" style="vertical-align:middle;margin-right:5px;border-radius:2px;">Printed in Australia</span>
-  <span>âš¡ 2â€“3 Day Turnaround</span>
-  <span>ðŸ“¦ Start from 1 Unit</span>
-  <span>ðŸ’° $15 Sample â€” Credited Back</span>
-  <span>ðŸšš Free Express Shipping over $100</span>
-</div>
-
-<!-- HERO -->
-<div class="faq-hero">
-  <div class="section-label">Help Centre</div>
-  <h1>Frequently Asked Questions</h1>
-  <p>Everything you need to know about ordering, artwork, delivery, and pricing.</p>
-</div>
-
-<!-- FAQ CONTENT -->
-<div class="faq-section">
-
-  <!-- ORDERING -->
-  <div class="faq-category">
-    <div class="faq-category-label">Ordering</div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What's the minimum order?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">For custom printed PET cans, from 1 unit. For coffee cups, 1,000. No minimum for the sealing machine.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        How do I place an order?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Select your product, choose size and quantity, upload your artwork, complete checkout. You'll get a free digital proof before anything prints.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Can I order a sample first?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. $15 sample can with your artwork. Order 200+ after and we credit the $15 back automatically â€” no forms needed.</div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">pack<b>labb</b></a>
+    <nav><ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="byo-stock.html">BYO printing</a></li>
+      <li><a href="faq.html" class="on">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <a href="tel:+61415743691" class="nav-call">0415 743 691</a>
+      <a href="products.html" class="nav-cta nav-cta-mobile-hide">Order sample</a>
+      <button class="nav-toggle" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
     </div>
   </div>
+</header>
 
-  <!-- ARTWORK & PROOFING -->
-  <div class="faq-category">
-    <div class="faq-category-label">Artwork &amp; Proofing</div>
+<section style="padding:56px 0 24px;">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / FAQ</div>
+    <span class="eyebrow">FAQ</span>
+    <h1 style="max-width:720px;">Straight answers. No sales talk.</h1>
+    <p class="lead" style="margin-top:16px; max-width:660px;">If it is not here, call us on 0415 743 691 or email <a href="mailto:hello@packlabb.com.au" style="color:var(--brand);">hello@packlabb.com.au</a>.</p>
+  </div>
+</section>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What file format do I need?
-        <div class="faq-icon">+</div>
+<section style="padding:32px 0 88px;">
+  <div class="wrap">
+    <div class="faq-list" style="max-width:860px;">
+
+      <h3 style="margin:24px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">The basics</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Are you actually printing in Australia? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Every print runs on our UV printer in Melbourne. We are not a broker. Not a reseller. You can book a visit and watch your job print. Address on the contact page.</div>
       </div>
-      <div class="faq-a">AI, EPS, PDF, or high-res PNG (300dpi+). Send what you have and we'll advise.</div>
-    </div>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Do I get a proof?
-        <div class="faq-icon">+</div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you really have no minimum order? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Order 1 can as a $15 sample. Order 10,000 as a production run. Both go on the same machine, both ship in 2 to 3 business days. There is no catch.</div>
       </div>
-      <div class="faq-a">Yes, free digital proof on every order. Nothing prints until you approve.</div>
-    </div>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What if my artwork needs changes?
-        <div class="faq-icon">+</div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How fast is turnaround? <span class="faq-icon">+</span></div>
+        <div class="faq-a">2 to 3 business days from when you approve the digital proof. Rush jobs (next-day, same-day) are available on request, quoted separately. Tell us your deadline, we will tell you if we can hit it.</div>
       </div>
-      <div class="faq-a">Send what you have. Minor adjustments are included free.</div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How does the $15 sample credit actually work? <span class="faq-icon">+</span></div>
+        <div class="faq-a">You pay $15 ex GST for one printed can or cup. We print it on your real stock with your real artwork. If you come back and place an order of 200+ cans or 1,000+ cups within 90 days, we take $15 off that order. So if you order, the sample is effectively free. If you never come back, you paid $15 for a proof.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you charge setup fees or plate fees? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No setup fees. No plate fees. No design fees if your artwork is print-ready. The price you see on the product page is what you pay.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">Pricing and orders</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Why does price per unit go up on small runs? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Every run has setup time regardless of quantity. When you order 50 cups, that setup spreads across 50 units. At 5,000 units it spreads across 5,000. Same machine, same print quality. Just maths on the per-unit number.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What does print quality look like at 1 unit versus 5,000? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Identical. The $15 sample goes through the same printer, same settings, same stock as a production run. That is the whole point of no-MOQ. Order the sample and compare.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do I pay before you print? <span class="faq-icon">+</span></div>
+        <div class="faq-a">You place an order request. We send a free digital proof within 1 business day. Once you approve the proof, we take payment, then print. If you do not approve, you pay nothing.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I get a quote for more than 10,000 units? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Email <a href="mailto:hello@packlabb.com.au" style="color:var(--brand);">hello@packlabb.com.au</a> with quantity, size, and artwork. Volume quotes usually back within 4 business hours.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">Artwork</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What file formats do you accept? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Adobe Illustrator (.ai) is ideal. PDF with embedded fonts works well. PNG at 300dpi or higher is fine. JPG, SVG also accepted. If your file is low-res or RGB, we will flag it and suggest fixes before anything prints.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">My artwork is not print-ready, can you help? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Send what you have. Our studio reviews every file. If it needs adjusting (bleeds, colour mode, resolution), we either fix it for you or tell you exactly what needs changing. You will not pay for a bad print because your file was off.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can you match Pantone colours? <span class="faq-icon">+</span></div>
+        <div class="faq-a">On bulk runs, yes. Specify the Pantone code in your brief. Small runs (under 500) can get close but we cannot guarantee exact match at that volume. Order the $15 sample to see the actual print before committing.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can you print white ink? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes, white ink is available on clear PET cans and cups. Specify in your order notes. Critical if your artwork relies on white against clear backgrounds.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">Shipping and logistics</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you ship Australia-wide? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes, every state. Free express on orders over $200. Under $200, shipping is calculated at checkout. Melbourne customers can pick up from our facility same-day on request.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">I am in WA, are there restrictions on PET cans? <span class="faq-icon">+</span></div>
+        <div class="faq-a">The WA plastics regulation (from 2025) restricts certain single-use plastics in hospitality venues. Our PET cans and cups are retail-compliant (sold sealed) but may not be suitable for dine-in hospitality use in WA depending on application. Call us to confirm your specific use case.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I pick up in Melbourne? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Pickup is free. Most orders are ready same day once the proof is approved. Book pickup when you place your order.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">Quality and reprints</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What if the print is defective? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We reprint it. Full run, no charge. Send us a photo of the defect within 14 days of receipt and the reprint ships same-week. This is a standing reprint promise, not a subjective call.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is not covered by the reprint promise? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Artwork you approved on the digital proof. If the proof showed the problem and you still approved it, that is on you. We send detailed proofs for this exact reason. If in doubt, order the $15 sample before bulk.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">Reorders and ongoing customers</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How does reordering work? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Once your first order is done, your artwork, stock and specs are saved. For repeat orders on the same artwork, no new proof needed. One click, it goes straight to production. Most of our cafe customers reorder weekly.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you do subscription or standing orders? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Tell us your volume and cadence (e.g. 1,000 cups every 2 weeks) and we pre-schedule production. Locks in your pricing and removes the ordering step from your week.</div>
+      </div>
+
+      <h3 style="margin:40px 0 8px; font-size:18px; color:var(--ink-3); letter-spacing:1px; text-transform:uppercase; font-weight:700;">About the company</h3>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Is Packlabb related to Sticky Sitch? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Packlabb is the sister brand. Sticky Sitch prints stickers and labels. Packlabb prints direct onto packaging. Same owners, same Melbourne facility, two different services.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is your ABN? <span class="faq-icon">+</span></div>
+        <div class="faq-a">ABN 61 661 239 943. Registered Australian business, Melbourne VIC.</div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <!-- DELIVERY -->
-  <div class="faq-category">
-    <div class="faq-category-label">Delivery</div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        How fast is turnaround?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">2â€“3 business days from artwork approval. Order before 2pm, dispatched same day once approved.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Do you ship Australia-wide?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. Free express shipping over $100. All orders tracked.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Can I get it faster?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Usually yes if artwork is print-ready. Contact us if you have a hard deadline.</div>
+<section class="cta">
+  <div class="wrap">
+    <h2>Still got questions?</h2>
+    <p>Call us. We pick up the phone. No automated menu, no forms to fill.</p>
+    <div class="cta-btns">
+      <a href="tel:+61415743691" class="btn btn-brand btn-lg">Call 0415 743 691</a>
+      <a href="mailto:hello@packlabb.com.au" class="btn btn-white btn-lg">Email us</a>
     </div>
   </div>
+</section>
 
-  <!-- PRICING -->
-  <div class="faq-category">
-    <div class="faq-category-label">Pricing</div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Are prices inc GST?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">All prices ex GST. GST added at checkout.</div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="index.html" class="logo">pack<b>labb</b></a><p>Print-on-demand packaging, built in Melbourne.</p></div>
+      <div class="footer-col"><h5>Products</h5><a href="printed-cans.html">PET Cans</a><a href="coffee-cups.html">Coffee Cups</a><a href="pet-cups.html">PET Cups</a><a href="byo-stock.html">Print on Your Stock</a><a href="machine.html">Sealing Machine</a></div>
+      <div class="footer-col"><h5>Info</h5><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h5>Contact</h5><a href="mailto:hello@packlabb.com.au">hello@packlabb.com.au</a><a href="tel:+61415743691">0415 743 691</a><p style="font-size:13px; padding-top:6px;">Melbourne, VIC</p></div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Are there setup fees?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">No setup fees on any order.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Does the $15 sample credit back automatically?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. Order 200+ cans and the credit is applied automatically.</div>
-    </div>
+    <div class="footer-bot"><div>Â© 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</div><div style="display:flex; gap:18px;"><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
   </div>
-
-</div>
-
-<!-- CTA -->
-<div class="faq-cta">
-  <h2>Still have a question?</h2>
-  <p>Our team is here to help. Reach out directly and we'll get back to you fast.</p>
-  <div class="faq-cta-btns">
-    <a href="products.html" class="btn-primary" style="font-size:15px; padding:14px 28px;">View Products</a>
-    <a href="contact.html" class="btn-secondary" style="font-size:15px; padding:14px 28px;">Contact Us</a>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="footer-logo">pack<span>labb</span></div>
-  <ul class="footer-links">
-    <li><a href="products.html">Products</a></li>
-    <li><a href="printed-cans.html">Custom Printed Cans</a></li>
-    <li><a href="coffee-cups.html">Custom Coffee Cups</a></li>
-    <li><a href="machine.html">Sealing Machine</a></li>
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="footer-copy">Â© 2025 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
 <div style="margin-top:16px;padding-top:12px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af;">
   <a href="https://checkout.packlabb.com.au/policies/privacy-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Privacy Policy</a>
   <a href="https://checkout.packlabb.com.au/policies/refund-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Refund Policy</a>
@@ -315,10 +211,6 @@
 </div>
 </footer>
 
-<script>
-function toggleFaq(el) {
-  el.parentElement.classList.toggle('open');
-}
-</script>
+<script src="app.js"></script>
 </body>
 </html>
