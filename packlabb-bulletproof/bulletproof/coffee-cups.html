@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Custom printed coffee cups. No MOQ. Melbourne. | Packlabb</title>
+<meta name="description" content="Printed single-wall paper coffee cups in 8oz, 12oz and 16oz. No MOQ, $15 sample. 2 to 3 day turnaround, printed in Melbourne. Lids sold separately." />
+<link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Custom Printed Coffee Cups","image":"https://packlabb.com.au/hero-cups.jpg","description":"Single-wall paper coffee cups with custom UV print. 8oz, 12oz, 16oz. No MOQ. Printed in Melbourne.","brand":{"@type":"Brand","name":"Packlabb"},"offers":{"@type":"AggregateOffer","priceCurrency":"AUD","lowPrice":"15","highPrice":"2800","availability":"https://schema.org/InStock"}}
+</script>
+</head>
+<body>
+
+<div class="topbar"><strong>2 to 3 day turnaround.</strong> <span>Free express over $200.<span class="mobile-hide"> Melbourne visits by appointment.</span></span></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">pack<b>labb</b></a>
+    <nav><ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="on">Products</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="byo-stock.html">BYO printing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <a href="tel:+61415743691" class="nav-call">0415 743 691</a>
+      <button class="nav-cart" onclick="cartOpen()" aria-label="View cart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span id="cart-count">0</span></button>
+      <a href="#order" class="nav-cta nav-cta-mobile-hide">Order sample</a>
+      <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="product-hero" id="order">
+  <div class="wrap">
+    <div class="product-hero-grid">
+      <div class="product-media">
+        <div class="product-media-main"><img src="hero-cups.jpg" alt="Custom printed coffee cups by Packlabb, 8oz 12oz 16oz" id="main-img" /></div>
+        <div class="product-media-thumbs" id="thumbs">
+          <div class="on" data-src="hero-cups.jpg" onclick="setImg(this,'hero-cups.jpg')"><img src="hero-cups.jpg" alt="Coffee cups" loading="lazy"></div>
+          <div data-src="lifestyle-cups.jpg" onclick="setImg(this,'lifestyle-cups.jpg')"><img src="lifestyle-cups.jpg" alt="In cafe" loading="lazy"></div>
+        </div>
+      </div>
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / Coffee Cups</div>
+        <h1 class="product-title">Custom printed coffee cups</h1>
+        <p class="product-intro">Single-wall paper cups with your logo on every one. 8oz, 12oz, 16oz. Cafe-ready. Printed in Melbourne. No MOQ, $15 sample available. Lids sold separately.</p>
+
+        <div class="product-badges">
+          <span>Printed in Melbourne</span>
+          <span>No MOQ</span>
+          <span>2 to 3 days</span>
+          <span>Lids available</span>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Cup size</label>
+          <div class="opt-row">
+            <button class="opt on" id="s8" onclick="setSize('8oz')">8oz <small>Standard</small></button>
+            <button class="opt" id="s12" onclick="setSize('12oz')">12oz <small>Medium</small></button>
+            <button class="opt" id="s16" onclick="setSize('16oz')">16oz <small>Large</small></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Type</label>
+          <div class="opt-row">
+            <button class="opt on" id="tP" onclick="setType('printed')">Custom printed <small>Your logo on every cup</small></button>
+            <button class="opt" id="tU" onclick="setType('plain')">Plain unprinted <small>Per carton of 1,000</small></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Quantity</label>
+          <div class="qty-row" id="qtys"></div>
+          <p style="font-size:12.5px; color:var(--ink-3); margin-top:10px;">Need more than 10,000? <a href="contact.html" style="color:var(--brand); font-weight:600;">Volume pricing &#8594;</a></p>
+        </div>
+
+        <div class="price-box">
+          <div class="price-box-row">
+            <div class="price-big" id="p-big">$15.00</div>
+            <div class="price-unit" id="p-unit">ex GST</div>
+          </div>
+          <div class="price-meta" id="p-meta">1 sample cup. 8oz custom printed.</div>
+        </div>
+
+        <div class="note-box" id="sample-note">
+          <span>&#127873;</span>
+          <span><b>Sample credit:</b> Order 1,000+ cups afterwards and we credit the $15 off your order.</span>
+        </div>
+        <div class="note-box" id="plain-note" style="display:none;">
+          <span>&#128230;</span><span><b>1 carton = 1,000 cups.</b> Use the + and &#8722; buttons to add more cartons. Need lids? <a href="#lids" style="color:var(--brand); font-weight:700;">See lids &#8594;</a></span>
+        </div>
+
+        <div class="field" id="art-wrap">
+          <label class="field-label">Artwork</label>
+          <div class="art-box" onclick="document.getElementById('artFile').click()">
+            <div class="i">&#128270;</div>
+            <p>Upload your artwork</p>
+            <small>AI, PDF, PNG, JPG, SVG. Or upload after ordering.</small>
+            <input type="file" id="artFile" accept=".ai,.pdf,.png,.jpg,.svg" style="display:none" onchange="artUploaded(this)" />
+          </div>
+          <p id="art-name" style="font-size:13px; color:var(--brand); display:none; margin-bottom:10px;"></p>
+        </div>
+
+        <button class="order-btn" onclick="placeOrder()">Place order &#8594;</button>
+        <div class="order-assurance">
+          <span>&#10003; Free proof</span>
+          <span>&#10003; Reprint on defect</span>
+          <span>&#10003; Free express over $200</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section style="padding:64px 0; background:var(--surface-2);">
+  <div class="wrap">
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:center;">
+      <div>
+        <span class="eyebrow">Run the numbers</span>
+        <h2 style="margin-bottom:14px;">How much could branded cups make you?</h2>
+        <p class="lead" style="margin-bottom:14px;">Drag the sliders to match your cafe. Real Packlabb pricing, real margins.</p>
+        <p style="font-size:13.5px; color:var(--ink-3);">Most cafes find branded packaging absorbs into existing margin without raising menu prices. Worth the maths.</p>
+      </div>
+      <div class="roi" id="roi-cups">
+        <div class="roi-eyebrow">ROI calculator</div>
+        <h3>How much could branded cups make you?</h3>
+        <p class="roi-sub">Adjust to match your cafe.</p>
+
+        <div class="roi-tier">
+          <div class="roi-tier-row">
+            <div>
+              <div class="roi-tier-label">Cup size</div>
+              <div class="roi-seg" id="roi-size"></div>
+            </div>
+            <div>
+              <div class="roi-tier-label">Order qty</div>
+              <div class="roi-seg" id="roi-qty"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Cups sold per day</label><span class="val" id="roi-v-daily">100</span></div>
+          <input type="range" class="roi-range" id="roi-s-daily" min="10" max="1000" step="10" value="100" oninput="roiUpdate()" />
+        </div>
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Sell price per drink</label><span class="val">$<span id="roi-v-sell">6.50</span></span></div>
+          <input type="range" class="roi-range" id="roi-s-sell" min="3" max="12" step="0.10" value="6.50" oninput="roiUpdate()" />
+        </div>
+        <div class="roi-slider">
+          <div class="roi-slider-head"><label>Ingredient cost</label><span class="val">$<span id="roi-v-ing">1.20</span></span></div>
+          <input type="range" class="roi-range" id="roi-s-ing" min="0.20" max="5" step="0.05" value="1.20" oninput="roiUpdate()" />
+        </div>
+
+        <div class="roi-result">
+          <div class="roi-result-main">
+            <div>
+              <div class="roi-result-num brand">$<span id="roi-r-month">0</span></div>
+              <div class="roi-result-label">monthly profit</div>
+            </div>
+            <div>
+              <div class="roi-result-num">$<span id="roi-r-year">0</span></div>
+              <div class="roi-result-label">annual profit</div>
+            </div>
+          </div>
+          <div class="roi-result-foot">
+            <span>Profit/cup: <b>$<span id="roi-r-perunit">0.00</span></b></span>
+            <span>Daily revenue: <b>$<span id="roi-r-rev">0</span></b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="tabs-nav">
+      <button class="tab-btn on" onclick="showTab('details', this)">Product details</button>
+      <button class="tab-btn" onclick="showTab('pricing', this)">Full pricing</button>
+      <button class="tab-btn" onclick="showTab('artwork', this)">Specs &amp; artwork</button>
+      <button class="tab-btn" onclick="showTab('lids', this)">Lids</button>
+    </div>
+
+    <div class="tab-panel on" id="tab-details">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <h3 style="margin-bottom:16px;">Specifications</h3>
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3); width:45%;">Material</td><td style="padding:12px 0; font-weight:600;">Single-wall paper</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Sizes</td><td style="padding:12px 0; font-weight:600;">8oz, 12oz, 16oz</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print method</td><td style="padding:12px 0; font-weight:600;">UV direct</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Turnaround</td><td style="padding:12px 0; font-weight:600;">2 to 3 business days</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Min order, printed</td><td style="padding:12px 0; font-weight:700; color:var(--brand);">50 cups</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Min order, plain</td><td style="padding:12px 0; font-weight:700; color:var(--brand);">1,000 per carton</td></tr>
+            <tr><td style="padding:12px 0; color:var(--ink-3);">Lids</td><td style="padding:12px 0; font-weight:600;">Sold separately</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">Best for</h3>
+          <ul class="prod-specs" style="margin-bottom:24px;">
+            <li>Cafes on repeat weekly orders</li>
+            <li>Events and pop-ups</li>
+            <li>Catering and hospitality</li>
+            <li>Corporate branding and office coffee</li>
+          </ul>
+          <h3 style="margin-bottom:16px;">What is included</h3>
+          <ul class="prod-specs">
+            <li>Custom printed cups, your artwork</li>
+            <li>Free digital proof before print</li>
+            <li>Artwork file check by our studio</li>
+            <li>Reprint on any print defect</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-pricing">
+      <p style="font-size:15px; color:var(--ink-3); max-width:720px; margin-bottom:32px;">All prices ex GST. Lids sold separately. Plain cups sold by the carton of 1,000 only. Need 10,000+? <a href="contact.html" style="color:var(--brand); font-weight:600;">Get a volume quote.</a></p>
+
+      <h3 style="margin-bottom:8px;">8oz printed</h3>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per cup</th><th>Order total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td>$15.00</td></tr>
+            <tr><td>50</td><td class="val">$1.000</td><td>$50.00</td></tr>
+            <tr><td>100</td><td class="val">$0.700</td><td>$70.00</td></tr>
+            <tr><td>250</td><td class="val">$0.450</td><td>$112.50</td></tr>
+            <tr><td>500</td><td class="val">$0.325</td><td>$162.50</td></tr>
+            <tr class="best"><td>1,000 <span class="pill">Best value</span></td><td class="val">$0.190</td><td>$190.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.184</td><td>$368.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.180</td><td>$900.00</td></tr>
+            <tr><td>10,000</td><td class="val">$0.171</td><td>$1,710.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">12oz printed</h3>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per cup</th><th>Order total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td>$15.00</td></tr>
+            <tr><td>50</td><td class="val">$1.200</td><td>$60.00</td></tr>
+            <tr><td>100</td><td class="val">$0.850</td><td>$85.00</td></tr>
+            <tr><td>250</td><td class="val">$0.550</td><td>$137.50</td></tr>
+            <tr><td>500</td><td class="val">$0.420</td><td>$210.00</td></tr>
+            <tr class="best"><td>1,000 <span class="pill">Best value</span></td><td class="val">$0.250</td><td>$250.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.240</td><td>$480.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.230</td><td>$1,150.00</td></tr>
+            <tr><td>10,000</td><td class="val">$0.219</td><td>$2,190.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">16oz printed</h3>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Quantity</th><th>Per cup</th><th>Order total</th></tr></thead>
+          <tbody>
+            <tr><td>1 (sample)</td><td class="val">$15.00 flat</td><td>$15.00</td></tr>
+            <tr><td>50</td><td class="val">$1.500</td><td>$75.00</td></tr>
+            <tr><td>100</td><td class="val">$1.100</td><td>$110.00</td></tr>
+            <tr><td>250</td><td class="val">$0.720</td><td>$180.00</td></tr>
+            <tr><td>500</td><td class="val">$0.550</td><td>$275.00</td></tr>
+            <tr class="best"><td>1,000 <span class="pill">Best value</span></td><td class="val">$0.320</td><td>$320.00</td></tr>
+            <tr><td>2,000</td><td class="val">$0.308</td><td>$615.00</td></tr>
+            <tr><td>5,000</td><td class="val">$0.295</td><td>$1,475.00</td></tr>
+            <tr><td>10,000</td><td class="val">$0.280</td><td>$2,800.00</td></tr>
+            <tr class="contact"><td>10,000+</td><td colspan="2">Contact us for volume pricing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:32px 0 8px;">Plain unprinted cups, by the carton of 1,000</h3>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Size</th><th>Per 1,000</th><th>Per cup</th></tr></thead>
+          <tbody>
+            <tr><td>8oz</td><td class="val">$66.00</td><td>$0.066</td></tr>
+            <tr><td>12oz</td><td class="val">$94.80</td><td>$0.095</td></tr>
+            <tr><td>16oz</td><td class="val">$94.90</td><td>$0.095</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-artwork">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <h3 style="margin-bottom:16px;">Cup specifications</h3>
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3); width:45%;">Material</td><td style="padding:12px 0; font-weight:600;">Single-wall paper</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Sizes</td><td style="padding:12px 0; font-weight:600;">8oz, 12oz, 16oz</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print method</td><td style="padding:12px 0; font-weight:600;">UV direct-to-cup</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print area</td><td style="padding:12px 0; font-weight:600;">Wraparound or front face</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Print location</td><td style="padding:12px 0; font-weight:600;">Melbourne, Australia</td></tr>
+            <tr style="border-bottom:1px solid var(--line-2);"><td style="padding:12px 0; color:var(--ink-3);">Turnaround</td><td style="padding:12px 0; font-weight:600;">2 to 3 business days</td></tr>
+            <tr><td style="padding:12px 0; color:var(--ink-3);">Minimum</td><td style="padding:12px 0; font-weight:700; color:var(--brand);">1 cup ($15 sample)</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">Artwork guidelines</h3>
+          <ul class="prod-specs" style="margin-bottom:20px;">
+            <li>Adobe Illustrator (.ai), ideal</li>
+            <li>PDF with embedded fonts</li>
+            <li>PNG at 300dpi or higher</li>
+            <li>CMYK colour mode (RGB accepted, we convert)</li>
+            <li>Pantone colours: specify in your brief</li>
+            <li>White ink available, specify in notes</li>
+          </ul>
+          <div class="note-box">
+            <span>&#128119;</span><span><b>File not print-ready?</b> Send what you have. We check every file. If something needs adjusting, we tell you before a single cup prints.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-lids">
+      <p style="font-size:15px; color:var(--ink-3); max-width:720px; margin-bottom:32px;" id="lids">Lids sold separately in cartons of 1,000. All 80mm diameter. All prices ex GST.</p>
+      <div class="price-table">
+        <table>
+          <thead><tr><th>Lid type</th><th>Per 1,000</th><th>Per lid</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>Flat lid</td><td class="val">$41.70</td><td>$0.042</td><td>Hot coffee, standard takeaway</td></tr>
+            <tr><td>Dome lid</td><td class="val">$41.70</td><td>$0.042</td><td>Cold drinks, smoothies</td></tr>
+            <tr><td>Slipper lid</td><td class="val">$59.90</td><td>$0.060</td><td>Hot coffee, spill resistant</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box" style="margin-top:20px;">
+        <span>&#8505;&#65039;</span><span>All lids fit 80mm cup diameter. Sold by the carton of 1,000 only. Mix and match across cup sizes.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Branded cups in your cafe this week.</h2>
+    <p>No MOQ. $15 sample available. Dispatched in 2 to 3 business days.</p>
+    <div class="cta-btns">
+      <a href="#order" class="btn btn-brand btn-lg btn-arrow">Configure and order</a>
+      <a href="tel:+61415743691" class="btn btn-white btn-lg">Call 0415 743 691</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="index.html" class="logo">pack<b>labb</b></a><p>Print-on-demand packaging, built in Melbourne. No MOQ, 2 to 3 day turnaround.</p></div>
+      <div class="footer-col"><h5>Products</h5><a href="printed-cans.html">PET Cans</a><a href="coffee-cups.html">Coffee Cups</a><a href="pet-cups.html">PET Cups</a><a href="byo-stock.html">Print on Your Stock</a><a href="machine.html">Sealing Machine</a></div>
+      <div class="footer-col"><h5>Info</h5><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h5>Contact</h5><a href="mailto:hello@packlabb.com.au">hello@packlabb.com.au</a><a href="tel:+61415743691">0415 743 691</a><p style="font-size:13px; padding-top:6px;">Melbourne, VIC</p></div>
+    </div>
+    <div class="footer-bot">
+      <div>&#169; 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
+      <div style="display:flex; gap:18px;"><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+<div style="margin-top:16px;padding-top:12px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af;">
+  <a href="https://checkout.packlabb.com.au/policies/privacy-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Privacy Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/refund-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Refund Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/shipping-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Shipping Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/terms-of-service" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Terms of Service</a>
+</div>
+</footer>
+
+<div class="modal" id="order-modal">
+  <div class="modal-box">
+    <div class="modal-head"><div><h3>Place your order</h3><p>Free proof within 1 business day.</p></div><button class="modal-close" onclick="closeOrderModal()">&#215;</button></div>
+    <div class="modal-spec" id="modal-spec"></div>
+    <form class="modal-form" onsubmit="submitOrderForm(event)" id="order-form">
+      <input type="hidden" id="m-product" name="product" />
+      <input type="hidden" id="m-qty" name="quantity" />
+      <input type="hidden" id="m-total" name="total" />
+      <div class="f"><label>Your name</label><input type="text" name="name" required /></div>
+      <div class="f"><label>Email</label><input type="email" name="email" required /></div>
+      <div class="f"><label>Business name</label><input type="text" name="business" /></div>
+      <div class="f"><label>Phone</label><input type="tel" name="phone" required /></div>
+      <div class="f"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
+      <div class="note"><b>What happens next:</b> We review your order and artwork, send a free digital proof within 1 business day. Payment is taken after you approve.</div>
+      <button type="submit">Submit order request &#8594;</button>
+    </form>
+    <div class="modal-ok" id="modal-ok">
+      <div class="tick">&#10003;</div><h3>Order received</h3><p>We will send a free digital proof within 1 business day.</p>
+      <button onclick="closeOrderModal()" class="btn btn-primary btn-md">Close</button>
+    </div>
+  </div>
+</div>
+
+<a href="#order" class="sticky-cta"><span><b>$15 sample.</b> Your artwork, Melbourne print.</span><span class="go">Order &#8594;</span></a>
+
+<script src="app.js"></script>
+<script>
+// Image gallery
+function setImg(thumb, src) {
+  document.getElementById('main-img').src = src;
+  document.querySelectorAll('#thumbs > div').forEach(function(d){ d.classList.remove('on'); });
+  if (thumb) thumb.classList.add('on');
+}
+
+var PRICING = {
+  '8oz':  { printed: {1:15, 50:50, 100:70, 250:112.5, 500:162.5, 1000:190, 2000:368, 5000:900, 10000:1710}, plain_per_carton: 66 },
+  '12oz': { printed: {1:15, 50:60, 100:85, 250:137.5, 500:210, 1000:250, 2000:480, 5000:1150, 10000:2190}, plain_per_carton: 94.8 },
+  '16oz': { printed: {1:15, 50:75, 100:110, 250:180, 500:275, 1000:320, 2000:615, 5000:1475, 10000:2800}, plain_per_carton: 94.9 }
+};
+var PRINTED_QTYS = [1, 50, 100, 250, 500, 1000, 2000, 5000, 10000];
+var CARTON_SIZE = 1000;
+var MAX_CARTONS = 50; // up to 50,000 cups before contact us
+var state = { size: '8oz', type: 'printed', qty: 1, cartons: 1 };
+
+function setSize(s) {
+  state.size = s;
+  if (state.type === 'plain') {
+    state.qty = state.cartons * CARTON_SIZE;
+  } else {
+    state.qty = 1;
+  }
+  ['8','12','16'].forEach(function(x){ document.getElementById('s'+x).classList.toggle('on', ('s'+x)===('s'+s.replace('oz',''))); });
+  renderQtys(); updatePrice();
+}
+function setType(t) {
+  state.type = t;
+  if (t === 'plain') {
+    state.cartons = 1;
+    state.qty = CARTON_SIZE;
+  } else {
+    state.qty = 1;
+  }
+  document.getElementById('tP').classList.toggle('on', t==='printed');
+  document.getElementById('tU').classList.toggle('on', t==='plain');
+  document.getElementById('sample-note').style.display = t==='printed' && state.qty===1 ? 'flex' : 'none';
+  document.getElementById('plain-note').style.display = t==='plain' ? 'flex' : 'none';
+  document.getElementById('art-wrap').style.display = t==='printed' ? 'block' : 'none';
+  renderQtys(); updatePrice();
+}
+function setQty(q) {
+  state.qty = q;
+  document.querySelectorAll('#qtys .qbtn').forEach(function(b){ b.classList.toggle('on', parseInt(b.dataset.q)===q); });
+  updatePrice();
+}
+function adjustCartons(delta) {
+  var next = state.cartons + delta;
+  if (next < 1) next = 1;
+  if (next > MAX_CARTONS) next = MAX_CARTONS;
+  state.cartons = next;
+  state.qty = state.cartons * CARTON_SIZE;
+  renderQtys(); updatePrice();
+}
+function renderQtys() {
+  var c = document.getElementById('qtys'); c.innerHTML = '';
+  if (state.type === 'plain') {
+    // Stepper UI
+    var atMin = state.cartons <= 1;
+    var atMax = state.cartons >= MAX_CARTONS;
+    c.innerHTML =
+      '<div>' +
+        '<div class="stepper">' +
+          '<button onclick="adjustCartons(-1)"' + (atMin ? ' disabled' : '') + ' aria-label="Remove carton">&#8722;</button>' +
+          '<div class="stepper-val">' + state.cartons + ' <small>carton' + (state.cartons>1?'s':'') + '</small></div>' +
+          '<button onclick="adjustCartons(1)"' + (atMax ? ' disabled' : '') + ' aria-label="Add carton">+</button>' +
+        '</div>' +
+        '<div class="stepper-meta"><b>1 carton = ' + CARTON_SIZE.toLocaleString() + ' cups.</b> ' + state.qty.toLocaleString() + ' cups total.</div>' +
+      '</div>';
+  } else {
+    PRINTED_QTYS.forEach(function(q){
+      var b = document.createElement('button');
+      b.className = 'qbtn' + (q===state.qty?' on':'');
+      b.dataset.q = q;
+      b.textContent = q===1 ? '1 sample' : q.toLocaleString();
+      b.onclick = function(){ setQty(q); };
+      c.appendChild(b);
+    });
+  }
+}
+function getCurrentPrice() {
+  if (state.type === 'plain') {
+    return PRICING[state.size].plain_per_carton * state.cartons;
+  }
+  return PRICING[state.size].printed[state.qty] || 15;
+}
+function updatePrice() {
+  var p = getCurrentPrice();
+  var typeLbl = state.type === 'printed' ? 'custom printed' : 'plain unprinted';
+  document.getElementById('p-big').textContent = '$' + p.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  if (state.type === 'plain') {
+    document.getElementById('p-unit').textContent = 'ex GST, ' + state.qty.toLocaleString() + ' cups';
+    document.getElementById('p-meta').innerHTML = '$' + (p/state.qty).toFixed(3) + ' per cup. <b>' + state.size + ' ' + typeLbl + '.</b>';
+  } else if (state.qty === 1) {
+    document.getElementById('p-unit').textContent = 'ex GST, one sample';
+    document.getElementById('p-meta').innerHTML = '1 sample cup. <b>' + state.size + ' ' + typeLbl + '.</b>';
+  } else {
+    document.getElementById('p-unit').textContent = 'ex GST, ' + state.qty.toLocaleString() + ' cups';
+    document.getElementById('p-meta').innerHTML = '$' + (p/state.qty).toFixed(3) + ' per cup. <b>' + state.size + ' ' + typeLbl + '.</b>';
+  }
+  document.getElementById('sample-note').style.display = (state.qty===1 && state.type==='printed') ? 'flex' : 'none';
+  document.getElementById('plain-note').style.display = state.type==='plain' ? 'flex' : 'none';
+}
+function placeOrder() {
+  var sku, label, price;
+  var sizeKey = state.size.replace('oz','');
+  var typeLbl = state.type === 'plain' ? 'Plain' : 'Custom Printed';
+  if (state.type === 'plain') {
+    sku = 'CUP-' + sizeKey + '-U-1CTN';
+    label = state.size + ' ' + typeLbl + ' Coffee Cups (' + state.cartons + ' carton' + (state.cartons > 1 ? 's' : '') + ', ' + state.qty.toLocaleString() + ' cups)';
+    price = getCurrentPrice();
+  } else if (state.qty === 1) {
+    sku = 'CUP-SAMPLE';
+    label = state.size + ' Coffee Cup Sample';
+    price = 15.00;
+  } else {
+    sku = 'CUP-' + sizeKey + '-P-' + state.qty;
+    label = state.size + ' ' + typeLbl + ' Coffee Cups x' + state.qty.toLocaleString();
+    price = getCurrentPrice();
+  }
+  goToCheckout(sku, label, price);
+}
+renderQtys(); updatePrice();
+
+// ====== ROI CALCULATOR (coffee cups) ======
+var ROI_COFFEE = {
+  sizes: ['8oz', '12oz', '16oz'],
+  defaultSize: '12oz',
+  plain_per_1000: { '8oz': 66, '12oz': 94.8, '16oz': 94.9 },
+  printed: {
+    '8oz':  {100:70, 250:112.5, 500:162.5, 1000:190, 2000:368, 5000:900},
+    '12oz': {100:85, 250:137.5, 500:210, 1000:250, 2000:480, 5000:1150},
+    '16oz': {100:110, 250:180, 500:275, 1000:320, 2000:615, 5000:1475}
+  },
+  qtys: [100, 250, 500, 1000, 2000, 5000],
+  defaultQty: 1000
+};
+var roiState = { size: ROI_COFFEE.defaultSize, qty: ROI_COFFEE.defaultQty };
+
+function roiSetSize(s) { roiState.size = s; roiRenderTier(); roiUpdate(); }
+function roiSetQty(q) { roiState.qty = q; roiRenderTier(); roiUpdate(); }
+
+function roiRenderTier() {
+  var sizeEl = document.getElementById('roi-size');
+  sizeEl.innerHTML = '';
+  ROI_COFFEE.sizes.forEach(function(s) {
+    var b = document.createElement('button');
+    b.textContent = s;
+    if (s === roiState.size) b.className = 'on';
+    b.onclick = function() { roiSetSize(s); };
+    sizeEl.appendChild(b);
+  });
+  var qtyEl = document.getElementById('roi-qty');
+  qtyEl.innerHTML = '';
+  ROI_COFFEE.qtys.forEach(function(q) {
+    var b = document.createElement('button');
+    b.textContent = q >= 1000 ? (q/1000) + 'k' : q;
+    if (q === roiState.qty) b.className = 'on';
+    b.onclick = function() { roiSetQty(q); };
+    qtyEl.appendChild(b);
+  });
+}
+
+function roiUpdate() {
+  var daily = parseFloat(document.getElementById('roi-s-daily').value);
+  var sell = parseFloat(document.getElementById('roi-s-sell').value);
+  var ing = parseFloat(document.getElementById('roi-s-ing').value);
+  document.getElementById('roi-v-daily').textContent = daily.toLocaleString();
+  document.getElementById('roi-v-sell').textContent = sell.toFixed(2);
+  document.getElementById('roi-v-ing').textContent = ing.toFixed(2);
+
+  var printedTotal = ROI_COFFEE.printed[roiState.size][roiState.qty] || 0;
+  var printedPerUnit = printedTotal / roiState.qty;
+  var profitPerCup = sell - ing - printedPerUnit;
+  if (profitPerCup < 0) profitPerCup = 0;
+
+  var monthlyUnits = daily * 30;
+  var monthlyProfit = profitPerCup * monthlyUnits;
+  var yearlyProfit = monthlyProfit * 12;
+  var dailyRevenue = daily * sell;
+
+  document.getElementById('roi-r-perunit').textContent = profitPerCup.toFixed(2);
+  document.getElementById('roi-r-month').textContent = Math.round(monthlyProfit).toLocaleString();
+  document.getElementById('roi-r-year').textContent = Math.round(yearlyProfit).toLocaleString();
+  document.getElementById('roi-r-rev').textContent = Math.round(dailyRevenue).toLocaleString();
+}
+
+roiRenderTier();
+roiUpdate();
+</script>
+</body>
+</html>

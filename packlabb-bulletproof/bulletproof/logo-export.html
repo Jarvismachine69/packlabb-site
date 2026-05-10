@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Packlabb Logo Export</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f0f0eb; font-family: 'Inter', sans-serif; padding: 60px 40px; }
+    h2 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 24px; }
+    .grid { display: flex; flex-direction: column; gap: 48px; max-width: 700px; }
+    .variant { background: #fff; border: 1px solid #e0e0dc; border-radius: 12px; padding: 40px; }
+    .variant.dark { background: #111; }
+    .variant.blue { background: #3B82F6; }
+    .variant label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; margin-bottom: 24px; }
+    .variant.dark label, .variant.blue label { color: rgba(255,255,255,0.5); }
+
+    /* ── LOGO SIZES ── */
+    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo-icon { flex-shrink: 0; }
+    .logo-icon rect.bg  { fill: #3B82F6; }
+    .logo-icon rect.line { fill: #fff; }
+    .wordmark { font-family: 'Inter', sans-serif; font-weight: 900; line-height: 1; letter-spacing: -1.5px; color: #111; }
+    .wordmark span { color: #3B82F6; }
+    .variant.dark .wordmark { color: #fff; }
+    .variant.blue .wordmark { color: #fff; }
+    .variant.blue .wordmark span { color: rgba(255,255,255,0.7); }
+
+    .sz-lg .wordmark { font-size: 52px; letter-spacing: -2px; }
+    .sz-md .wordmark { font-size: 36px; letter-spacing: -1.5px; }
+    .sz-sm .wordmark { font-size: 22px; letter-spacing: -0.8px; }
+    .sz-xs .wordmark { font-size: 14px; letter-spacing: -0.4px; }
+
+    /* icon scales */
+    .sz-lg .logo-icon svg { width: 56px; height: 56px; }
+    .sz-md .logo-icon svg { width: 40px; height: 40px; }
+    .sz-sm .logo-icon svg { width: 26px; height: 26px; }
+    .sz-xs .logo-icon svg { width: 18px; height: 18px; }
+
+    /* wordmark only */
+    .wordmark-only .wordmark { font-size: 52px; letter-spacing: -2px; }
+
+    /* icon only */
+    .icon-only svg { width: 72px; height: 72px; }
+
+    .sizes { display: flex; flex-direction: column; gap: 28px; }
+
+    /* export tip */
+    .tip { margin-top: 48px; background: #fff; border: 1px solid #e0e0dc; border-radius: 12px; padding: 32px; font-size: 14px; line-height: 1.8; color: #444; }
+    .tip h3 { font-size: 15px; font-weight: 800; color: #111; margin-bottom: 12px; }
+    .tip code { background: #f0f0eb; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 13px; color: #3B82F6; }
+    .tip ol { padding-left: 20px; }
+    .tip li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<div class="grid">
+
+  <!-- LIGHT BG -->
+  <div class="variant">
+    <label>Light background — primary</label>
+    <div class="sizes">
+      <div class="logo sz-lg">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+      <div class="logo sz-md">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+      <div class="logo sz-sm">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+      <div class="logo sz-xs">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DARK BG -->
+  <div class="variant dark">
+    <label>Dark background</label>
+    <div class="sizes">
+      <div class="logo sz-lg">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLUE BG -->
+  <div class="variant blue">
+    <label>Blue background</label>
+    <div class="sizes">
+      <div class="logo sz-lg">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="rgba(255,255,255,0.2)"/>
+            <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+            <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+            <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <div class="wordmark">pack<span>labb</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORDMARK ONLY -->
+  <div class="variant">
+    <label>Wordmark only</label>
+    <div class="wordmark wordmark-only">pack<span>labb</span></div>
+  </div>
+
+  <!-- ICON ONLY -->
+  <div class="variant">
+    <label>Icon / favicon</label>
+    <div class="icon-only">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+        <rect x="11" y="13" width="26" height="4" rx="2" fill="white"/>
+        <rect x="11" y="22" width="18" height="4" rx="2" fill="white"/>
+        <rect x="11" y="31" width="22" height="4" rx="2" fill="white"/>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<div class="tip">
+  <h3>How to export this as a real logo file</h3>
+  <ol>
+    <li><strong>Screenshot method (quickest):</strong> Right-click any logo above → "Inspect" → find the element → right-click in DevTools → "Capture node screenshot". Done, PNG saved.</li>
+    <li><strong>Full page screenshot:</strong> In Chrome, press <code>F12</code> → <code>Ctrl+Shift+P</code> → type <code>screenshot</code> → "Capture full size screenshot".</li>
+    <li><strong>For a proper vector file (AI/SVG):</strong> You'll want to open this in Figma — paste the SVG code below and export from there. Or use a designer to finalise it with outlined fonts so it works everywhere.</li>
+    <li><strong>Figma tip:</strong> Go to <a href="https://figma.com" target="_blank">figma.com</a> → New file → paste the SVG icon code → set font to Inter 900 → type "pack" in black, "labb" in #3B82F6.</li>
+  </ol>
+</div>
+
+</body>
+</html>
