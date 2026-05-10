@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8" />
@@ -28,7 +28,7 @@
     </ul></nav>
     <div class="nav-right">
       <a href="tel:+61415743691" class="nav-call">0415 743 691</a>
-      <button class="nav-cart" onclick="cartOpen()" aria-label="View cart">??<span id="cart-count">0</span></button>
+      <button class="nav-cart" onclick="cartOpen()" aria-label="View cart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span id="cart-count">0</span></button>
       <a href="#order" class="nav-cta nav-cta-mobile-hide">Order sample</a>
       <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -85,7 +85,7 @@
         <div class="field">
           <label class="field-label">Quantity</label>
           <div class="qty-row" id="qtys"></div>
-          <p style="font-size:12.5px; color:var(--ink-3); margin-top:10px;">Need more than 10 cartons? <a href="contact.html" style="color:var(--brand); font-weight:600;">Volume pricing â†’</a></p>
+          <p style="font-size:12.5px; color:var(--ink-3); margin-top:10px;">Need more than 10 cartons? <a href="contact.html" style="color:var(--brand); font-weight:600;">Volume pricing &#8594;</a></p>
         </div>
 
         <div class="price-box">
@@ -97,26 +97,26 @@
         </div>
 
         <div class="note-box" id="sample-note">
-          <span>ðŸŽ</span><span><b>Sample credit:</b> Order 1 carton+ afterwards and we credit the $15 off your order.</span>
+          <span>&#127873;</span><span><b>Sample credit:</b> Order 1 carton+ afterwards and we credit the $15 off your order.</span>
         </div>
         <div class="note-box" id="plain-note" style="display:none;">
-          <span>ðŸ“¦</span><span><b>1 carton = 1,000 cups for 12, 16, 20oz; 600 for 24oz.</b> Use the + and âˆ’ buttons to add more cartons. <a href="#lids" style="color:var(--brand); font-weight:700;">Lids sold separately â†’</a></span>
+          <span>&#128230;</span><span><b>1 carton = 1,000 cups for 12, 16, 20oz; 600 for 24oz.</b> Use the + and &#8722; buttons to add more cartons. <a href="#lids" style="color:var(--brand); font-weight:700;">Lids sold separately &#8594;</a></span>
         </div>
 
         <div class="field" id="art-wrap">
           <label class="field-label">Artwork</label>
           <div class="art-box" onclick="document.getElementById('artFile').click()">
-            <div class="i">ðŸ“Ž</div><p>Upload your artwork</p><small>AI, PDF, PNG, JPG, SVG</small>
+            <div class="i">&#128231;</div><p>Upload your artwork</p><small>AI, PDF, PNG, JPG, SVG</small>
             <input type="file" id="artFile" accept=".ai,.pdf,.png,.jpg,.svg" style="display:none" onchange="artUploaded(this)" />
           </div>
           <p id="art-name" style="font-size:13px; color:var(--brand); display:none;"></p>
         </div>
 
-        <button class="order-btn" onclick="placeOrder()">Place order â†’</button>
+        <button class="order-btn" onclick="placeOrder()">Place order &#8594;</button>
         <div class="order-assurance">
-          <span>âœ“ Free proof</span>
-          <span>âœ“ Reprint on defect</span>
-          <span>âœ“ Free express over $200</span>
+          <span>&#10003; Free proof</span>
+          <span>&#10003; Reprint on defect</span>
+          <span>&#10003; Free express over $200</span>
         </div>
       </div>
     </div>
@@ -311,7 +311,7 @@
             <li>White ink available, specify in notes</li>
           </ul>
           <div class="note-box">
-            <span>ðŸ‘·</span><span><b>File not print-ready?</b> Send what you have. We check every file. If something needs adjusting, we tell you before a single cup prints.</span>
+            <span>&#128119;</span><span><b>File not print-ready?</b> Send what you have. We check every file. If something needs adjusting, we tell you before a single cup prints.</span>
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@
           </tbody>
         </table>
       </div>
-      <div class="note-box" style="margin-top:20px;"><span>â„¹ï¸</span><span>Flat and dome lids fit 98mm PET cups. Sold by the carton of 1,000 only.</span></div>
+      <div class="note-box" style="margin-top:20px;"><span>&#8505;&#65039;</span><span>Flat and dome lids fit 98mm PET cups. Sold by the carton of 1,000 only.</span></div>
     </div>
   </div>
 </section>
@@ -354,7 +354,7 @@
       <div class="footer-col"><h5>Contact</h5><a href="mailto:hello@packlabb.com.au">hello@packlabb.com.au</a><a href="tel:+61415743691">0415 743 691</a><p style="font-size:13px; padding-top:6px;">Melbourne, VIC</p></div>
     </div>
     <div class="footer-bot">
-      <div>Â© 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
+      <div>&#169; 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</div>
       <div style="display:flex; gap:18px;"><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
     </div>
   </div>
@@ -368,7 +368,7 @@
 
 <div class="modal" id="order-modal">
   <div class="modal-box">
-    <div class="modal-head"><div><h3>Place your order</h3><p>Free proof within 1 business day.</p></div><button class="modal-close" onclick="closeOrderModal()">Ã—</button></div>
+    <div class="modal-head"><div><h3>Place your order</h3><p>Free proof within 1 business day.</p></div><button class="modal-close" onclick="closeOrderModal()">&#215;</button></div>
     <div class="modal-spec" id="modal-spec"></div>
     <form class="modal-form" onsubmit="submitOrderForm(event)" id="order-form">
       <input type="hidden" id="m-product" name="product" />
@@ -380,16 +380,16 @@
       <div class="f"><label>Phone</label><input type="tel" name="phone" required /></div>
       <div class="f"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
       <div class="note"><b>What happens next:</b> We review your artwork and send a free proof within 1 business day.</div>
-      <button type="submit">Submit order request â†’</button>
+      <button type="submit">Submit order request &#8594;</button>
     </form>
     <div class="modal-ok" id="modal-ok">
-      <div class="tick">âœ“</div><h3>Order received</h3><p>We will send a free digital proof within 1 business day.</p>
+      <div class="tick">&#10003;</div><h3>Order received</h3><p>We will send a free digital proof within 1 business day.</p>
       <button onclick="closeOrderModal()" class="btn btn-primary btn-md">Close</button>
     </div>
   </div>
 </div>
 
-<a href="#order" class="sticky-cta"><span><b>$15 sample.</b> Your stock, your artwork.</span><span class="go">Order â†’</span></a>
+<a href="#order" class="sticky-cta"><span><b>$15 sample.</b> Your stock, your artwork.</span><span class="go">Order &#8594;</span></a>
 
 <script src="app.js"></script>
 <script>
@@ -517,7 +517,7 @@ function renderQtys() {
     c.innerHTML =
       '<div>' +
         '<div class="stepper">' +
-          '<button onclick="adjustCartons(-1)"' + (atMin ? ' disabled' : '') + ' aria-label="Remove carton">âˆ’</button>' +
+          '<button onclick="adjustCartons(-1)"' + (atMin ? ' disabled' : '') + ' aria-label="Remove carton">&#8722;</button>' +
           '<div class="stepper-val">' + state.cartons + ' <small>carton' + (state.cartons>1?'s':'') + '</small></div>' +
           '<button onclick="adjustCartons(1)"' + (atMax ? ' disabled' : '') + ' aria-label="Add carton">+</button>' +
         '</div>' +
