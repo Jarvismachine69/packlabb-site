@@ -642,6 +642,17 @@ p { color: var(--ink-2); }
   align-items: center; justify-content: center;
 }
 
+/* ============ BYO Stock page specific ============ */
+@media (max-width: 640px) {
+  .byo-hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .byo-two-col { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .byo-how-grid { grid-template-columns: 1fr 1fr !important; }
+  .byo-hero-grid > div:last-child { display: none; } /* hide pricing card on mobile — it's in body */
+}
+
+/* ============ Global overflow fix ============ */
+html, body { overflow-x: hidden; max-width: 100vw; }
+
 /* ============ Very small phones (≤380px) ============ */
 @media (max-width: 380px) {
   .product-title { font-size: 23px !important; }
