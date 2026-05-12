@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Custom printed clear PET cups. Bubble tea, iced coffee. | Packlabb</title>
 <meta name="description" content="Custom printed clear PET cups for cold drinks, bubble tea and iced coffee. 12oz, 16oz, 20oz, 24oz. Normal or U-cup. No MOQ, $15 sample. Melbourne." />
+<meta property="og:title" content="Custom printed clear PET cups. | Packlabb" />
+<meta property="og:description" content="Custom printed clear PET cups for bubble tea, iced coffee and cold drinks. 12oz, 16oz, 20oz, 24oz. Normal or U-cup. No MOQ." />
+<meta property="og:image" content="https://packlabb.com.au/hero-petcups.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://packlabb.com.au/pet-cups.html" />
+<link rel="canonical" href="https://packlabb.com.au/pet-cups.html" />
 <link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,6 +118,66 @@
           <p id="art-name" style="font-size:13px; color:var(--brand); display:none;"></p>
         </div>
 
+
+        <!-- LIDS ADD-ON -->
+        <div id="lids-addon" style="margin:20px 0; border:1.5px solid var(--line); border-radius:var(--radius-lg); overflow:hidden;">
+          <div style="background:var(--surface-2); padding:14px 18px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--ink);">Add matching lids?</div>
+              <div style="font-size:12px; color:var(--ink-3); margin-top:2px;">98mm. Carton of 1,000. Ships with your cups.</div>
+            </div>
+            <span style="font-size:11px; font-weight:700; letter-spacing:0.05em; background:#EEF3FF; color:#1D4ED8; padding:3px 10px; border-radius:99px;">OPTIONAL</span>
+          </div>
+          <div style="padding:16px 18px;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-3); margin-bottom:10px;">Lid type</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px;">
+              <button class="lid-opt" onclick="setLid(this,'flat',41.70)" data-lid="flat" style="background:var(--surface); border:1.5px solid var(--line); border-radius:10px; padding:14px 10px; cursor:pointer; text-align:center; transition:all 0.15s;">
+                <img src="lid-flat.png" alt="Flat lid" style="width:90px; height:90px; object-fit:contain; display:block; margin:0 auto 10px;">
+                <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Flat</div>
+                <div style="font-size:12px; color:var(--ink-3); margin-bottom:8px; line-height:1.4;">Cold drinks, smoothies</div>
+                <div style="font-size:14px; font-weight:700; color:var(--ink);">$41.70</div>
+                <div style="font-size:12px; color:var(--ink-3);">per 1,000</div>
+              </button>
+              <button class="lid-opt" onclick="setLid(this,'dome',41.70)" data-lid="dome" style="background:var(--surface); border:1.5px solid var(--line); border-radius:10px; padding:14px 10px; cursor:pointer; text-align:center; transition:all 0.15s;">
+                <img src="lid-dome.png" alt="Dome lid" style="width:90px; height:90px; object-fit:contain; display:block; margin:0 auto 10px;">
+                <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Dome</div>
+                <div style="font-size:12px; color:var(--ink-3); margin-bottom:8px; line-height:1.4;">Bubble tea, toppings</div>
+                <div style="font-size:14px; font-weight:700; color:var(--ink);">$41.70</div>
+                <div style="font-size:12px; color:var(--ink-3);">per 1,000</div>
+              </button>
+              <button class="lid-opt" onclick="setLid(this,'slipper',59.90)" data-lid="slipper" style="background:var(--surface); border:1.5px solid var(--line); border-radius:10px; padding:14px 10px; cursor:pointer; text-align:center; transition:all 0.15s;">
+                <img src="lid-slipper.png" alt="Slipper lid" style="width:90px; height:90px; object-fit:contain; display:block; margin:0 auto 10px;">
+                <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Slipper</div>
+                <div style="font-size:12px; color:var(--ink-3); margin-bottom:8px; line-height:1.4;">Spill resistant</div>
+                <div style="font-size:14px; font-weight:700; color:var(--ink);">$59.90</div>
+                <div style="font-size:12px; color:var(--ink-3);">per 1,000</div>
+              </button>
+            </div>
+            <div id="lid-stepper-wrap" style="display:none; margin-bottom:12px;">
+              <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px;">Cartons of lids</div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div class="stepper">
+                  <button onclick="adjLidQty(-1)" id="lid-minus" disabled aria-label="Remove carton">&#8722;</button>
+                  <div class="stepper-val" id="lid-ctn-display">1 <small>carton</small></div>
+                  <button onclick="adjLidQty(1)" id="lid-plus" aria-label="Add carton">+</button>
+                </div>
+                <div style="font-size:12px; color:var(--ink-3);" id="lid-unit-count">1,000 lids total</div>
+              </div>
+            </div>
+            <div id="lid-compat" style="display:none; font-size:12px; color:var(--ink-3); background:var(--surface-2); border-radius:8px; padding:8px 12px; margin-bottom:14px; line-height:1.5;">&#9432; <span id="lid-compat-text"></span></div>
+            <div id="lid-summary" style="display:none; border-top:1px solid var(--line); padding-top:12px; margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:4px;">
+                <span style="color:var(--ink-3);" id="lid-sum-label"></span>
+                <span style="font-weight:700; color:var(--ink);" id="lid-sum-price"></span>
+              </div>
+              <div style="font-size:12px; color:var(--ink-3);" id="lid-sum-note"></div>
+            </div>
+            <button id="lid-add-btn" onclick="addLidsToOrder()" style="width:100%; background:#1A1A18; color:#fff; border:none; border-radius:10px; padding:13px; font-size:14px; font-weight:700; cursor:pointer; opacity:0.35; transition:opacity 0.2s;" disabled>Add lids to order &#8594;</button>
+            <button onclick="skipLids()" id="lid-skip-btn" style="width:100%; background:none; border:none; color:var(--ink-3); font-size:12px; padding:10px; cursor:pointer; margin-top:4px; text-decoration:underline;">No lids this time</button>
+            <div id="lid-added-msg" style="display:none; text-align:center; font-size:13px; font-weight:700; color:#1D4ED8; padding:12px 0;">&#10003; Lids added &#8212; <a href="#" onclick="resetLids(); return false;" style="color:var(--ink-3); font-weight:400; font-size:12px;">change</a></div>
+          </div>
+        </div>
+        <!-- END LIDS ADD-ON -->
         <button class="order-btn" onclick="placeOrder()">Place order &#8594;</button>
         <div class="order-assurance">
           <span>&#10003; Free proof</span>
@@ -138,18 +204,6 @@
         <h3>How much could branded cups make you?</h3>
         <p class="roi-sub">Adjust to match your business.</p>
 
-        <div class="roi-tier">
-          <div class="roi-tier-row">
-            <div>
-              <div class="roi-tier-label">Cup size</div>
-              <div class="roi-seg" id="roi-size"></div>
-            </div>
-            <div>
-              <div class="roi-tier-label">Order qty</div>
-              <div class="roi-seg" id="roi-qty"></div>
-            </div>
-          </div>
-        </div>
 
         <div class="roi-slider">
           <div class="roi-slider-head"><label>Cups sold per day</label><span class="val" id="roi-v-daily">80</span></div>
@@ -160,7 +214,7 @@
           <input type="range" class="roi-range" id="roi-s-sell" min="3" max="15" step="0.10" value="8.00" oninput="roiUpdate()" />
         </div>
         <div class="roi-slider">
-          <div class="roi-slider-head"><label>Ingredient cost</label><span class="val">$<span id="roi-v-ing">2.50</span></span></div>
+          <div class="roi-slider-head"><label>Cost price</label><span class="val">$<span id="roi-v-ing">2.50</span></span></div>
           <input type="range" class="roi-range" id="roi-s-ing" min="0.20" max="6" step="0.05" value="2.50" oninput="roiUpdate()" />
         </div>
 
@@ -349,7 +403,9 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand"><a href="index.html" class="logo">pack<b>labb</b></a><p>Print-on-demand packaging, built in Melbourne.</p></div>
-      <div class="footer-col"><h5>Products</h5><a href="printed-cans.html">PET Cans</a><a href="coffee-cups.html">Coffee Cups</a><a href="pet-cups.html">PET Cups</a><a href="byo-stock.html">Print on Your Stock</a><a href="machine.html">Sealing Machine</a></div>
+      <div class="footer-col"><h5>Products</h5><a href="printed-cans.html">PET Cans</a><a href="coffee-cups.html">Coffee Cups</a><a href="pet-cups.html">PET Cups</a><a href="straws.html">Straws</a>
+      <a href="menus.html">Menus</a>
+      <a href="byo-stock.html">Print on Your Stock</a><a href="machine.html">Sealing Machine</a></div>
       <div class="footer-col"><h5>Info</h5><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
       <div class="footer-col"><h5>Contact</h5><a href="mailto:info@packlabb.com.au" style="color:var(--brand);">info@packlabb.com.au</a>
         <a href="contact.html" class="btn btn-white" style="margin-top:12px; font-size:13px; padding:8px 16px; display:inline-block;">Contact us &#8594;</a></div>
@@ -582,6 +638,8 @@ function placeOrder() {
 }
 renderSizes(); renderQtys(); updatePrice();
 
+
+
 // ====== ROI CALCULATOR (PET cups) ======
 var ROI_PETCUPS = {
   sizes: ['12oz', '16oz', '20oz'],
@@ -595,48 +653,21 @@ var ROI_PETCUPS = {
   qtys: [100, 250, 500, 1000, 2000, 5000],
   defaultQty: 1000
 };
-var roiState = { size: ROI_PETCUPS.defaultSize, qty: ROI_PETCUPS.defaultQty };
-
-function roiSetSize(s) { roiState.size = s; roiRenderTier(); roiUpdate(); }
-function roiSetQty(q) { roiState.qty = q; roiRenderTier(); roiUpdate(); }
-
-function roiRenderTier() {
-  var sizeEl = document.getElementById('roi-size');
-  sizeEl.innerHTML = '';
-  ROI_PETCUPS.sizes.forEach(function(s) {
-    var b = document.createElement('button');
-    b.textContent = s;
-    if (s === roiState.size) b.className = 'on';
-    b.onclick = function() { roiSetSize(s); };
-    sizeEl.appendChild(b);
-  });
-  var qtyEl = document.getElementById('roi-qty');
-  qtyEl.innerHTML = '';
-  ROI_PETCUPS.qtys.forEach(function(q) {
-    var b = document.createElement('button');
-    b.textContent = q >= 1000 ? (q/1000) + 'k' : q;
-    if (q === roiState.qty) b.className = 'on';
-    b.onclick = function() { roiSetQty(q); };
-    qtyEl.appendChild(b);
-  });
-}
 
 function roiUpdate() {
   var daily = parseFloat(document.getElementById('roi-s-daily').value);
   var sell = parseFloat(document.getElementById('roi-s-sell').value);
   var ing = parseFloat(document.getElementById('roi-s-ing').value);
-  document.getElementById('roi-v-daily').textContent = daily.toLocaleString();
+  document.getElementById('roi-v-daily').textContent = Math.round(daily).toLocaleString();
   document.getElementById('roi-v-sell').textContent = sell.toFixed(2);
   document.getElementById('roi-v-ing').textContent = ing.toFixed(2);
 
-  var printedTotal = ROI_PETCUPS.printed[roiState.size][roiState.qty] || 0;
-  var printedPerUnit = printedTotal / roiState.qty;
-  var profitPerCup = sell - ing - printedPerUnit;
+  var cupCost = 0.10;
+  var profitPerCup = sell - ing - cupCost;
   if (profitPerCup < 0) profitPerCup = 0;
 
-  var monthlyUnits = daily * 30;
-  var monthlyProfit = profitPerCup * monthlyUnits;
-  var yearlyProfit = monthlyProfit * 12;
+  var monthlyProfit = profitPerCup * daily * 30;
+  var yearlyProfit = profitPerCup * daily * 365;
   var dailyRevenue = daily * sell;
 
   document.getElementById('roi-r-perunit').textContent = profitPerCup.toFixed(2);
@@ -645,8 +676,142 @@ function roiUpdate() {
   document.getElementById('roi-r-rev').textContent = Math.round(dailyRevenue).toLocaleString();
 }
 
-roiRenderTier();
 roiUpdate();
+
+var lidState = { type: null, qty: 1, price: 0, added: false };
+var LID_NAMES = { flat: 'Flat lids', dome: 'Dome lids', slipper: 'Slipper lid' };
+var LID_COMPAT = {
+  flat: 'Flat lids fit 98mm cups &#8212; all sizes (12&#8211;24oz), Normal and U-cup styles.',
+  dome: 'Dome lids fit 98mm cups &#8212; all sizes (12&#8211;24oz), Normal and U-cup styles. Best for bubble tea.',
+  slipper: 'Slipper lids fit all cup sizes and styles. Spill-resistant opening.'
+};
+function setLid(el, type, price) {
+  document.querySelectorAll('.lid-opt').forEach(function(b){ b.style.border='1.5px solid var(--line)'; b.style.background='var(--surface)'; });
+  el.style.border='2px solid #1D4ED8'; el.style.background='#EEF3FF';
+  lidState.type=type; lidState.price=price; lidState.qty=1;
+  document.getElementById('lid-stepper-wrap').style.display='block';
+  document.getElementById('lid-compat').style.display='block';
+  document.getElementById('lid-compat-text').innerHTML=LID_COMPAT[type];
+  document.getElementById('lid-minus').disabled=true;
+  document.getElementById('lid-ctn-display').innerHTML='1 <small>carton</small>';
+  document.getElementById('lid-unit-count').textContent='1,000 lids total';
+  updateLidSummary();
+  document.getElementById('lid-add-btn').disabled=false;
+  document.getElementById('lid-add-btn').style.opacity='1';
+}
+function adjLidQty(delta) {
+  lidState.qty=Math.max(1,Math.min(20,lidState.qty+delta));
+  document.getElementById('lid-minus').disabled=lidState.qty<=1;
+  document.getElementById('lid-plus').disabled=lidState.qty>=20;
+  document.getElementById('lid-ctn-display').innerHTML=lidState.qty+' <small>carton'+(lidState.qty>1?'s':'')+'</small>';
+  document.getElementById('lid-unit-count').textContent=(lidState.qty*1000).toLocaleString()+' lids total';
+  updateLidSummary();
+}
+function updateLidSummary() {
+  var total=(lidState.qty*lidState.price).toFixed(2);
+  document.getElementById('lid-summary').style.display='block';
+  document.getElementById('lid-sum-label').textContent=LID_NAMES[lidState.type]+' \u00d7 '+lidState.qty+' carton'+(lidState.qty>1?'s':'');
+  document.getElementById('lid-sum-price').textContent='$'+parseFloat(total).toLocaleString('en-AU',{minimumFractionDigits:2});
+  document.getElementById('lid-sum-note').textContent=(lidState.qty*1000).toLocaleString()+' lids';
+}
+function addLidsToOrder() {
+  if (!lidState.type) return;
+  var sku = 'LID-PET-' + lidState.type.toUpperCase();
+  var vid = SHOPIFY_VARIANTS[sku];
+  if (!vid) {
+    alert('We could not add lids automatically. Please call 0415 743 691 or email info@packlabb.com.au and quote SKU: ' + sku);
+    return;
+  }
+  var label = LID_NAMES[lidState.type] + ' x ' + lidState.qty + ' carton' + (lidState.qty > 1 ? 's' : '') + ' (' + (lidState.qty * 1000).toLocaleString() + ' lids)';
+  var existing = cartGetSku(sku);
+  if (existing) { existing.qty += lidState.qty; existing.label = label; }
+  else { cart.push({ sku: sku, variantId: vid, label: label, price: lidState.price, qty: lidState.qty }); }
+  cartSave();
+  cartRender();
+  cartOpen();
+  lidState.added=true;
+  document.getElementById('lid-add-btn').style.display='none';
+  document.getElementById('lid-skip-btn').style.display='none';
+  document.getElementById('lid-added-msg').style.display='block';
+}
+function skipLids() {
+  lidState.added=false; lidState.type=null;
+  ['lid-stepper-wrap','lid-compat','lid-summary'].forEach(function(id){ document.getElementById(id).style.display='none'; });
+  document.getElementById('lid-add-btn').disabled=true; document.getElementById('lid-add-btn').style.opacity='0.35';
+  document.getElementById('lid-add-btn').style.display='block'; document.getElementById('lid-skip-btn').style.display='block';
+  document.getElementById('lid-added-msg').style.display='none';
+  document.querySelectorAll('.lid-opt').forEach(function(b){ b.style.border='1.5px solid var(--line)'; b.style.background='var(--surface)'; });
+}
+
+var strawState = { size: null, qty: 1, price: 0, carton: 0, added: false };
+var STRAW_SKUS = { '6mm': 'STRAW-6MM', '8mm': 'STRAW-8MM', '12mm': 'STRAW-12MM' };
+
+function setStraw(el, size, price, carton) {
+  document.querySelectorAll('.straw-opt').forEach(function(b){ b.style.border='1.5px solid var(--line)'; b.style.background='var(--surface)'; });
+  el.style.border='2px solid #1D4ED8'; el.style.background='#EEF3FF';
+  strawState.size=size; strawState.price=price; strawState.carton=carton; strawState.qty=1;
+  document.getElementById('straw-stepper-wrap').style.display='block';
+  document.getElementById('straw-minus').disabled=true;
+  document.getElementById('straw-plus').disabled=false;
+  document.getElementById('straw-ctn-display').innerHTML='1 <small>carton</small>';
+  document.getElementById('straw-unit-count').textContent=carton.toLocaleString()+' straws total';
+  updateStrawSummary();
+  document.getElementById('straw-add-btn').disabled=false;
+  document.getElementById('straw-add-btn').style.opacity='1';
+}
+function adjStrawQty(delta) {
+  strawState.qty=Math.max(1,Math.min(20,strawState.qty+delta));
+  document.getElementById('straw-minus').disabled=strawState.qty<=1;
+  document.getElementById('straw-plus').disabled=strawState.qty>=20;
+  document.getElementById('straw-ctn-display').innerHTML=strawState.qty+' <small>carton'+(strawState.qty>1?'s':'')+'</small>';
+  document.getElementById('straw-unit-count').textContent=(strawState.qty*strawState.carton).toLocaleString()+' straws total';
+  updateStrawSummary();
+}
+function updateStrawSummary() {
+  var total=(strawState.qty*strawState.price).toFixed(2);
+  document.getElementById('straw-summary').style.display='block';
+  document.getElementById('straw-sum-label').textContent=strawState.size+' Sugarcane Straws \u00d7 '+strawState.qty+' carton'+(strawState.qty>1?'s':'');
+  document.getElementById('straw-sum-price').textContent='$'+parseFloat(total).toLocaleString('en-AU',{minimumFractionDigits:2})+' ex GST';
+  document.getElementById('straw-sum-note').textContent=(strawState.qty*strawState.carton).toLocaleString()+' straws';
+}
+function addStrawsToOrder() {
+  if (!strawState.size) return;
+  var sku = STRAW_SKUS[strawState.size];
+  var vid = SHOPIFY_VARIANTS[sku];
+  if (!vid) {
+    alert('We could not add straws automatically. Please call 0415 743 691 or email info@packlabb.com.au and quote SKU: ' + sku);
+    return;
+  }
+  var label = strawState.size + ' Sugarcane Straws x ' + strawState.qty + ' carton' + (strawState.qty > 1 ? 's' : '') + ' (' + (strawState.qty * strawState.carton).toLocaleString() + ' straws)';
+  var existing = cartGetSku(sku);
+  if (existing) { existing.qty += strawState.qty; existing.label = label; }
+  else { cart.push({ sku: sku, variantId: vid, label: label, price: strawState.price, qty: strawState.qty }); }
+  cartSave();
+  cartRender();
+  cartOpen();
+  strawState.added=true;
+  document.getElementById('straw-add-btn').style.display='none';
+  document.getElementById('straw-skip-btn').style.display='none';
+  document.getElementById('straw-added-msg').style.display='block';
+}
+function skipStraws() {
+  strawState.added=false; strawState.size=null;
+  ['straw-stepper-wrap','straw-summary'].forEach(function(id){ document.getElementById(id).style.display='none'; });
+  document.getElementById('straw-add-btn').disabled=true;
+  document.getElementById('straw-add-btn').style.opacity='0.35';
+  document.getElementById('straw-add-btn').style.display='block';
+  document.getElementById('straw-skip-btn').style.display='block';
+  document.getElementById('straw-added-msg').style.display='none';
+  document.querySelectorAll('.straw-opt').forEach(function(b){ b.style.border='1.5px solid var(--line)'; b.style.background='var(--surface)'; });
+}
+function resetStraws() {
+  strawState.added=false;
+  document.getElementById('straw-add-btn').style.display='block';
+  document.getElementById('straw-skip-btn').style.display='block';
+  document.getElementById('straw-added-msg').style.display='none';
+}
+
+function resetLids() { lidState.added=false; document.getElementById('lid-add-btn').style.display='block'; document.getElementById('lid-skip-btn').style.display='block'; document.getElementById('lid-added-msg').style.display='none'; }
 </script>
 </body>
 </html>

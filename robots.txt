@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /mockup-
+Disallow: /nav.html
+Disallow: /logo-export.html
+
+Sitemap: https://packlabb.com.au/sitemap.xml

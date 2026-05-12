@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sugarcane drinking straws. Individually wrapped. Melbourne. | Packlabb</title>
+<meta name="description" content="Biodegradable sugarcane drinking straws, individually paper-wrapped. 6mm, 8mm, 12mm. PLA-free, BPA-free, never soggy. Sold by the carton. Melbourne." />
+<meta property="og:title" content="Sugarcane drinking straws. Individually wrapped. | Packlabb" />
+<meta property="og:description" content="Biodegradable sugarcane drinking straws, individually paper-wrapped. 6mm, 8mm, 12mm. PLA-free, never soggy." />
+<meta property="og:image" content="https://packlabb.com.au/hero-straws.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://packlabb.com.au/straws.html" />
+<link rel="canonical" href="https://packlabb.com.au/straws.html" />
+<link rel="icon" type="image/svg+xml" href="/packlabb-logo.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/packlabb-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Sugarcane Drinking Straws","description":"Individually paper-wrapped sugarcane straws. 6mm, 8mm, 12mm. Biodegradable, PLA-free, BPA-free. Sold by the carton.","brand":{"@type":"Brand","name":"Packlabb"},"offers":{"@type":"AggregateOffer","priceCurrency":"AUD","lowPrice":"117","highPrice":"175.50","availability":"https://schema.org/InStock"}}
+</script>
+</head>
+<body style="overflow-x:hidden;">
+
+<div class="topbar"><strong>2 to 3 day turnaround.</strong> <span>Free express over $200.<span class="mobile-hide"> Melbourne visits by appointment.</span></span></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">pack<b>labb</b></a>
+    <nav><ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="on">Products</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="byo-stock.html">BYO printing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <a href="tel:+61415743691" class="nav-call">0415 743 691</a>
+      <button class="nav-cart" onclick="cartOpen()" aria-label="View cart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span id="cart-count">0</span></button>
+      <a href="#order" class="nav-cta nav-cta-mobile-hide">Order now</a>
+      <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="product-hero" id="order">
+  <div class="wrap">
+    <div class="product-hero-grid">
+
+      <!-- LEFT: image -->
+      <div class="product-media">
+        <div class="product-media-main"><img src="hero-straws.png" alt="Sugarcane drinking straw in a printed Packlabb PET cup with iced coffee" id="main-img" /></div>
+        <div class="product-media-thumbs" id="thumbs">
+          <div class="on" onclick="setImg(this,'hero-straws.png')"><img src="hero-straws.png" alt="Sugarcane straw in cup" loading="lazy"></div>
+          <div onclick="setImg(this,'straw-wrapped.png')"><img src="straw-wrapped.png" alt="Individually wrapped sugarcane straw" loading="lazy"></div>
+          <div onclick="setImg(this,'straw-single.png')"><img src="straw-single.png" alt="Single sugarcane straw" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: configurator -->
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / Sugarcane Straws</div>
+        <h1 class="product-title">Sugarcane drinking straws</h1>
+        <p class="product-intro">Biodegradable, individually paper-wrapped straws made from sugarcane fibre. PLA-free. BPA-free. Never soggy. Three diameters to match any drink. Sold by the carton.</p>
+
+        <div class="product-badges">
+          <span>Biodegradable</span>
+          <span>Individually wrapped</span>
+          <span>PLA-free</span>
+          <span>Never soggy</span>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Size</label>
+          <div class="opt-row">
+            <button class="opt on" id="sz6" onclick="setSize('6mm')">6mm <small>Cold drinks &amp; juice</small></button>
+            <button class="opt" id="sz8" onclick="setSize('8mm')">8mm <small>Smoothies &amp; iced coffee</small></button>
+            <button class="opt" id="sz12" onclick="setSize('12mm')">12mm <small>Boba &amp; thick shakes</small></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Quantity</label>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
+            <div class="stepper">
+              <button onclick="adjQty(-1)" id="btn-minus" disabled aria-label="Remove carton">&#8722;</button>
+              <div class="stepper-val" id="qty-display">1 <small>carton</small></div>
+              <button onclick="adjQty(1)" id="btn-plus" aria-label="Add carton">+</button>
+            </div>
+            <span style="font-size:13px; color:var(--ink-3);" id="unit-count">5,000 straws</span>
+          </div>
+          <p style="font-size:12px; color:var(--ink-3); margin-top:8px;">Need more than 10 cartons? <a href="contact.html" style="color:var(--brand); font-weight:600;">Volume pricing &#8594;</a></p>
+        </div>
+
+        <div class="price-box">
+          <div class="price-box-row">
+            <div class="price-big" id="p-big">$156.00</div>
+            <div class="price-unit" id="p-unit">ex GST, per carton</div>
+          </div>
+          <div class="price-meta" id="p-meta">5,000 straws &#183; 6mm &#183; $0.031 per straw</div>
+        </div>
+
+        <div class="note-box">
+          <span>&#127807;</span>
+          <span><b>Made from sugarcane fibre.</b> Biodegradable and home-compostable. Individually paper-wrapped for hygiene. Holds its shape for 24+ hours &#8212; never goes soggy.</span>
+        </div>
+
+        <button class="order-btn" id="order-btn" onclick="placeOrder()">Order now &#8594;</button>
+        <div class="order-assurance">
+          <span>&#10003; Free express over $200</span>
+          <span>&#10003; Ships from Melbourne</span>
+          <span>&#10003; Same-day dispatch available</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta">
+  <div>
+    <span class="sticky-cta-label" id="sticky-label">6mm &#183; 5,000 straws</span>
+    <span class="sticky-cta-price" id="sticky-price">$156.00 ex GST</span>
+  </div>
+  <button onclick="placeOrder()">Order &#8594;</button>
+</div>
+
+<!-- SPECS SECTION -->
+<section style="padding:64px 0; background:var(--surface-2);">
+  <div class="wrap">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
+      <div>
+        <span class="eyebrow">Why sugarcane</span>
+        <h2 style="font-size:28px; margin-bottom:20px;">Not paper. Not plastic.</h2>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:36px; height:36px; background:#EEF3FF; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;">&#9989;</div>
+            <div><div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Never soggy</div><div style="font-size:13px; color:var(--ink-3); line-height:1.5;">Holds its shape for 24+ hours in any drink. No papery taste, no collapse mid-sip.</div></div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:36px; height:36px; background:#EEF3FF; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;">&#127807;</div>
+            <div><div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Biodegradable</div><div style="font-size:13px; color:var(--ink-3); line-height:1.5;">Made from sugarcane bagasse &#8212; agricultural fibre that would otherwise be discarded. Home-compostable.</div></div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:36px; height:36px; background:#EEF3FF; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;">&#128230;</div>
+            <div><div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">Individually paper-wrapped</div><div style="font-size:13px; color:var(--ink-3); line-height:1.5;">Each straw is individually wrapped for hygiene. Ready to hand to customers as-is.</div></div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div style="width:36px; height:36px; background:#EEF3FF; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;">&#128683;</div>
+            <div><div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px;">PLA-free &amp; BPA-free</div><div style="font-size:13px; color:var(--ink-3); line-height:1.5;">No plastics, no petroleum. Pure sugarcane fibre. Safe for food contact.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="eyebrow">Size guide</span>
+        <h2 style="font-size:28px; margin-bottom:20px;">Which size do I need?</h2>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center;">
+            <div style="width:10px; height:56px; background:#C8B89A; border-radius:5px;"></div>
+            <div>
+              <div style="font-size:15px; font-weight:700; color:var(--ink); margin-bottom:3px;">6mm &#8212; Standard</div>
+              <div style="font-size:13px; color:var(--ink-3); margin-bottom:4px;">Cold drinks, juice, water, soft drinks, cocktails</div>
+              <div style="font-size:12px; color:var(--brand); font-weight:600;">5,000 per carton &#183; $156.00 ex GST</div>
+            </div>
+          </div>
+          <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center;">
+            <div style="width:14px; height:56px; background:#BCA882; border-radius:5px;"></div>
+            <div>
+              <div style="font-size:15px; font-weight:700; color:var(--ink); margin-bottom:3px;">8mm &#8212; Wide</div>
+              <div style="font-size:13px; color:var(--ink-3); margin-bottom:4px;">Smoothies, iced coffee, milkshakes, thicker drinks</div>
+              <div style="font-size:12px; color:var(--brand); font-weight:600;">5,000 per carton &#183; $175.50 ex GST</div>
+            </div>
+          </div>
+          <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center;">
+            <div style="width:20px; height:56px; background:#C8B89A; border-radius:7px;"></div>
+            <div>
+              <div style="font-size:15px; font-weight:700; color:var(--ink); margin-bottom:3px;">12mm &#8212; Boba</div>
+              <div style="font-size:13px; color:var(--ink-3); margin-bottom:4px;">Bubble tea, boba, thick shakes, chunky drinks</div>
+              <div style="font-size:12px; color:var(--brand); font-weight:600;">2,000 per carton &#183; $117.00 ex GST</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CART DRAWER -->
+<div id="cart-overlay" class="cart-overlay" onclick="cartClose()"></div>
+<div id="cart-drawer" class="cart-drawer">
+  <div class="cart-header"><span>Your order</span><button onclick="cartClose()" aria-label="Close cart">&#215;</button></div>
+  <div class="cart-items" id="cart-items"><p class="cart-empty">Your cart is empty</p></div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-total-row"><span>Total (ex GST)</span><strong id="cart-total">$0.00</strong></div>
+    <p class="cart-ship-note">GST added at checkout. Free express shipping over $200.</p>
+    <button class="cart-checkout-btn" onclick="cartCheckout()">Proceed to checkout &#8594;</button>
+    <p class="cart-assurance">Secure checkout. Proof sent before we print anything.</p>
+  </div>
+</div>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Not sure which size?</h2>
+    <p>Call or email. We pick up. We do not chase you on a sales call.</p>
+    <div class="cta-btns">
+      <a href="tel:+61415743691" class="btn btn-blue btn-lg">Call 0415 743 691</a>
+      <a href="contact.html" class="btn btn-white btn-lg">Email us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="font-size:20px;">pack<b>labb</b></a>
+      <p>Print-on-demand packaging, built in Melbourne.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <a href="printed-cans.html">PET Cans</a>
+      <a href="coffee-cups.html">Coffee Cups</a>
+      <a href="pet-cups.html">PET Cups</a>
+      <a href="straws.html">Straws</a>
+      <a href="menus.html">Menus</a>
+      <a href="byo-stock.html">Print on Your Stock</a>
+      <a href="machine.html">Sealing Machine</a>
+    </div>
+    <div class="footer-col">
+      <h5>Info</h5>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:info@packlabb.com.au" style="color:var(--brand);">info@packlabb.com.au</a>
+      <a href="contact.html" class="btn btn-white" style="margin-top:12px; font-size:13px; padding:8px 16px; display:inline-block;">Contact us &#8594;</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>&#169; 2026 Packlabb. ABN 61 661 239 943. Printed in Australia.</p>
+    <div class="footer-links">
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+<div style="margin-top:16px;padding-top:12px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af;">
+  <a href="https://checkout.packlabb.com.au/policies/privacy-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Privacy Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/refund-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Refund Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/shipping-policy" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Shipping Policy</a>
+  <a href="https://checkout.packlabb.com.au/policies/terms-of-service" style="color:#9ca3af;text-decoration:none;margin:0 8px;">Terms of Service</a>
+</div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+var SIZES = {
+  '6mm': { price: 156.00, carton: 5000, label: '6mm', use: 'Cold drinks &amp; juice' },
+  '8mm': { price: 175.50, carton: 5000, label: '8mm', use: 'Smoothies &amp; iced coffee' },
+  '12mm': { price: 117.00, carton: 2000, label: '12mm', use: 'Boba &amp; thick shakes' }
+};
+var SKU_MAP = {
+  '6mm':  'STRAW-6MM',
+  '8mm':  'STRAW-8MM',
+  '12mm': 'STRAW-12MM'
+};
+
+var state = { size: '6mm', qty: 1 };
+
+function setSize(sz) {
+  state.size = sz; state.qty = 1;
+  ['6mm','8mm','12mm'].forEach(function(s) {
+    document.getElementById('sz' + s.replace('mm','')).classList.toggle('on', s === sz);
+  });
+  document.getElementById('btn-minus').disabled = true;
+  document.getElementById('btn-plus').disabled = false;
+  document.getElementById('qty-display').innerHTML = '1 <small>carton</small>';
+  updateDisplay();
+}
+
+function adjQty(delta) {
+  state.qty = Math.max(1, Math.min(20, state.qty + delta));
+  document.getElementById('btn-minus').disabled = state.qty <= 1;
+  document.getElementById('btn-plus').disabled = state.qty >= 20;
+  document.getElementById('qty-display').innerHTML = state.qty + ' <small>carton' + (state.qty > 1 ? 's' : '') + '</small>';
+  updateDisplay();
+}
+
+function updateDisplay() {
+  var s = SIZES[state.size];
+  var total = (state.qty * s.price).toFixed(2);
+  var totalUnits = (state.qty * s.carton).toLocaleString();
+  var perUnit = (s.price / s.carton).toFixed(3);
+  document.getElementById('unit-count').textContent = totalUnits + ' straws';
+  document.getElementById('p-big').textContent = '$' + parseFloat(total).toLocaleString('en-AU', {minimumFractionDigits: 2});
+  document.getElementById('p-unit').textContent = 'ex GST' + (state.qty > 1 ? ', ' + state.qty + ' cartons' : ', per carton');
+  document.getElementById('p-meta').innerHTML = totalUnits + ' straws &bull; ' + state.size + ' &bull; $' + perUnit + ' per straw';
+  document.getElementById('sticky-label').innerHTML = state.size + ' &bull; ' + totalUnits + ' straws';
+  document.getElementById('sticky-price').textContent = '$' + parseFloat(total).toLocaleString('en-AU', {minimumFractionDigits: 2}) + ' ex GST';
+}
+
+function placeOrder() {
+  var s = SIZES[state.size];
+  var total = state.qty * s.price;
+  var sku = SKU_MAP[state.size];
+  var label = state.size + ' Sugarcane Straws x' + state.qty + ' carton' + (state.qty > 1 ? 's' : '') + ' (' + (state.qty * s.carton).toLocaleString() + ' straws)';
+  goToCheckout(sku, label, total);
+}
+
+updateDisplay();
+
+function setImg(el, src) {
+  document.getElementById('main-img').src = src;
+  document.querySelectorAll('#thumbs div').forEach(function(t){ t.classList.remove('on'); });
+  el.classList.add('on');
+}
+</script>
+</body>
+</html>
