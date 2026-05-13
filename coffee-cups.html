@@ -797,6 +797,13 @@ function skipStraws() {
   document.querySelectorAll('.straw-opt').forEach(function(b){ b.style.border='1.5px solid var(--line)'; b.style.background='var(--surface)'; });
 }
 function resetStraws() {
+  // Remove previously added straws so user can change
+  if (strawState.size) {
+    var prevSku = STRAW_SKUS[strawState.size];
+    cart = cart.filter(function(i){ return i.sku !== prevSku; });
+    cartSave();
+    cartRender();
+  }
   strawState.added=false;
   document.getElementById('straw-add-btn').style.display='block';
   document.getElementById('straw-skip-btn').style.display='block';
@@ -804,6 +811,13 @@ function resetStraws() {
 }
 
 function resetLids() {
+  // Remove the previously added lid from cart so user can change selection
+  if (lidState.size && lidState.colour) {
+    var prevSku = 'LID-COFFEE-' + lidState.size.toUpperCase() + '-' + lidState.colour.toUpperCase();
+    cart = cart.filter(function(i){ return i.sku !== prevSku; });
+    cartSave();
+    cartRender();
+  }
   lidState.added=false;
   document.getElementById('lid-add-btn').style.display='block';
   document.getElementById('lid-skip-btn').style.display='block';
