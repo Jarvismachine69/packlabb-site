@@ -1,6 +1,14 @@
 // Packlabb — shared interactions + cart + Shopify checkout
 
-var SHOPIFY_STORE = 'bxuave-7n.myshopify.com';
+// Primary domain, not the myshopify one — saves a redirect hop and keeps the
+// customer on a Packlabb URL all the way through.
+var SHOPIFY_STORE = 'checkout.packlabb.com.au';
+
+// Cloudflare Worker that stores customer artwork in R2.
+var ARTWORK_UPLOAD_URL = 'https://packlabb-artwork.shiny-flower-d707.workers.dev';
+
+// Largest file the Worker will accept (Cloudflare's request body cap).
+var ARTWORK_MAX_BYTES = 100 * 1024 * 1024;
 
 // SKU → Shopify variant ID map
 var SHOPIFY_VARIANTS = {
@@ -114,6 +122,13 @@ var SHOPIFY_VARIANTS = {
 var CART_KEY = 'packlabb_cart_v1';
 var cart = [];
 
+// Filenames come from the customer, so escape before putting them in innerHTML.
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
+}
+
 function cartLoad() {
   try {
     var raw = localStorage.getItem(CART_KEY);
@@ -138,8 +153,11 @@ function cartAdd(sku, label, price) {
   var existing = cartGetSku(sku);
   if (existing) {
     existing.qty += 1;
+    if (pendingArtwork) existing.artwork = pendingArtwork;
   } else {
-    cart.push({ sku: sku, variantId: vid, label: label, price: price, qty: 1 });
+    var item = { sku: sku, variantId: vid, label: label, price: price, qty: 1 };
+    if (pendingArtwork) item.artwork = pendingArtwork;
+    cart.push(item);
   }
   cartSave();
   cartRender();
@@ -186,9 +204,15 @@ function cartRender() {
   if (footEl) footEl.style.display = 'block';
 
   el.innerHTML = cart.map(function(item) {
+    var art = '';
+    if (item.artwork && item.artwork.url) {
+      art = '<div class="cart-item-art" style="font-size:12px;color:var(--brand);margin-top:3px;">' +
+            '✓ Artwork: ' + escapeHtml(item.artwork.name) + '</div>';
+    }
     return '<div class="cart-item">' +
       '<div class="cart-item-info">' +
-        '<div class="cart-item-label">' + item.label + '</div>' +
+        '<div class="cart-item-label">' + escapeHtml(item.label) + '</div>' +
+        art +
         '<div class="cart-item-price">$' + (item.price * item.qty).toFixed(2) + ' ex GST</div>' +
       '</div>' +
       '<div class="cart-item-actions">' +
@@ -219,6 +243,21 @@ function cartCheckout() {
   if (cart.length === 0) return;
   var items = cart.map(function(i){ return i.variantId + ':' + i.qty; }).join(',');
   var url = 'https://' + SHOPIFY_STORE + '/cart/' + items;
+
+  // Pass artwork links through as cart attributes so they land on the Shopify
+  // order under "Additional details".
+  //
+  // The square brackets MUST be percent-encoded. Shopify silently discards the
+  // attribute if raw [ ] are used and the request crosses a domain redirect.
+  var withArt = cart.filter(function(i){ return i.artwork && i.artwork.url; });
+  if (withArt.length) {
+    var params = withArt.map(function(i){
+      var key = withArt.length === 1 ? 'Artwork' : 'Artwork — ' + i.label;
+      return 'attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(i.artwork.url);
+    });
+    url += '?' + params.join('&');
+  }
+
   window.location.href = url;
 }
 
@@ -272,11 +311,54 @@ function toggleFaq(el) {
   el.classList.toggle('open');
 }
 
+// Artwork the customer picked on this page. Attached to the cart item when they
+// place the order, then written onto the Shopify order as a cart attribute.
+var pendingArtwork = null;
+
+function artStatus(msg, colour) {
+  var n = document.getElementById('art-name');
+  if (!n) return;
+  n.textContent = msg;
+  n.style.color = colour || 'var(--brand)';
+  n.style.display = 'block';
+}
+
 function artUploaded(input) {
-  if (input.files && input.files[0]) {
-    var n = document.getElementById('art-name');
-    if (n) { n.textContent = 'Attached: ' + input.files[0].name; n.style.display = 'block'; }
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+
+  pendingArtwork = null;
+
+  if (file.size > ARTWORK_MAX_BYTES) {
+    artStatus('That file is too big to upload here (' + (file.size / 1024 / 1024).toFixed(0) +
+      'MB). Place your order, then email the file to info@packlabb.com.au with your order number.', '#b00');
+    input.value = '';
+    return;
   }
+
+  artStatus('Uploading ' + file.name + '…', 'var(--ink-3)');
+
+  fetch(ARTWORK_UPLOAD_URL + '/upload?name=' + encodeURIComponent(file.name), {
+    method: 'PUT',
+    body: file,
+    headers: { 'Content-Type': file.type || 'application/octet-stream' }
+  })
+    .then(function (res) {
+      return res.json().then(function (data) {
+        if (!res.ok) throw new Error(data.error || 'Upload failed');
+        return data;
+      });
+    })
+    .then(function (data) {
+      pendingArtwork = { url: data.url, name: file.name };
+      artStatus('✓ Attached: ' + file.name);
+    })
+    .catch(function () {
+      // Never claim the file is attached when it isn't — that was the old bug.
+      artStatus('Upload failed. Place your order anyway and email the file to ' +
+        'info@packlabb.com.au with your order number, or call 0415 743 691.', '#b00');
+      input.value = '';
+    });
 }
 
 function showTab(id, btn) {

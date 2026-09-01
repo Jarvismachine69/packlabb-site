@@ -392,10 +392,9 @@ function setImg(el,src){
   document.querySelectorAll('#thumbs div').forEach(function(t){ t.classList.remove('on'); });
   el.classList.add('on');
 }
-function artUploaded(input){
-  var el=document.getElementById('art-name');
-  if(input.files&&input.files[0]){ el.textContent='&#10003; '+input.files[0].name; el.style.display='block'; }
-}
+// Artwork upload is handled by the shared artUploaded() in app.js, which
+// actually stores the file. Do not redefine it here — the old local copy only
+// displayed the filename and silently discarded the file.
 function placeOrder(){
   if(state.size==='Custom'){ document.getElementById('quote').scrollIntoView({behavior:'smooth'}); return; }
   cartAdd(getSku(), getLabel(), getPrice());
