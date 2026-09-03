@@ -244,19 +244,34 @@ function cartCheckout() {
   var items = cart.map(function(i){ return i.variantId + ':' + i.qty; }).join(',');
   var url = 'https://' + SHOPIFY_STORE + '/cart/' + items;
 
-  // Pass artwork links through as cart attributes so they land on the Shopify
+  // Everything below rides along as cart attributes so it lands on the Shopify
   // order under "Additional details".
   //
   // The square brackets MUST be percent-encoded. Shopify silently discards the
   // attribute if raw [ ] are used and the request crosses a domain redirect.
-  var withArt = cart.filter(function(i){ return i.artwork && i.artwork.url; });
-  if (withArt.length) {
-    var params = withArt.map(function(i){
-      var key = withArt.length === 1 ? 'Artwork' : 'Artwork — ' + i.label;
-      return 'attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(i.artwork.url);
-    });
-    url += '?' + params.join('&');
+  var params = [];
+
+  function attr(key, value) {
+    return 'attributes%5B' + encodeURIComponent(key) + '%5D=' + encodeURIComponent(value);
   }
+
+  // Several sample SKUs are deliberately generic — PETCUP-SAMPLE covers every
+  // size AND both cup styles, CUP-SAMPLE covers every coffee cup size. For those
+  // orders the only record of what was actually configured is the item label, so
+  // it has to be sent. Without this the order arrives with no way to tell what to
+  // make.
+  var specs = cart.map(function(i){
+    return i.label + (i.qty > 1 ? ' x' + i.qty : '');
+  }).join('  |  ');
+  params.push(attr('Order details', specs));
+
+  cart.forEach(function(i){
+    if (!i.artwork || !i.artwork.url) return;
+    var key = cart.length === 1 ? 'Artwork' : 'Artwork — ' + i.label;
+    params.push(attr(key, i.artwork.url));
+  });
+
+  url += '?' + params.join('&');
 
   window.location.href = url;
 }

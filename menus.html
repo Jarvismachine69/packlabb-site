@@ -308,9 +308,12 @@ function getSku(){
 }
 
 function getLabel(){
-  if(state.qty==='sample') return 'Menu Printing Sample (1 menu, credited off first order)';
   var m=state.mat==='graphex'?'1.4mm Polypropylene':'3mm PVC Board';
   var s=state.sides==='double'?'Double-sided':'Single-sided';
+  // MENU-SAMPLE is one generic variant, but size/material/sides are still
+  // chosen by the customer (see the sample price box). They only survive to the
+  // order if they are in the label, so spell them out here.
+  if(state.qty==='sample') return 'Menu Printing Sample - '+state.size+' '+m+' '+s+' (1 menu, credited off first order)';
   return state.size+' '+m+' '+s+' x'+state.qty;
 }
 
