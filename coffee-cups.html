@@ -588,7 +588,8 @@ function placeOrder() {
     label = state.size + ' ' + typeLbl + ' Coffee Cups (' + state.cartons + ' carton' + (state.cartons > 1 ? 's' : '') + ', ' + state.qty.toLocaleString() + ' cups)';
     price = getCurrentPrice();
   } else if (state.qty === 1) {
-    sku = 'CUP-SAMPLE';
+    // Per-size sample SKU so the Shopify line item itself says the size.
+    sku = 'CUP-' + sizeKey + '-SAMPLE';
     label = state.size + ' Coffee Cup Sample';
     price = 30.00;
   } else {

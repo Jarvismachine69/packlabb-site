@@ -683,7 +683,9 @@ function placeOrder() {
     label = state.size + ' ' + styleLbl + ' ' + typeLbl + ' PET Cups (' + state.cartons + ' carton' + (state.cartons > 1 ? 's' : '') + ', ' + state.qty.toLocaleString() + ' cups)';
     price = getCurrentPrice();
   } else if (state.qty === 1) {
-    sku = 'PETCUP-SAMPLE';
+    // Per-size, per-style sample SKU so the Shopify line item itself says
+    // what to make. The old generic PETCUP-SAMPLE recorded neither.
+    sku = 'PCUP-' + styleKey + sizeKey + '-SAMPLE';
     label = state.size + ' ' + styleLbl + ' PET Cup Sample';
     price = 30.00;
   } else {
